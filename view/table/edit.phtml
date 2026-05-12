@@ -1,0 +1,150 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$this->parent('plugin::SqliteAdmin/view/layout');
+$this->block('sqlite-admin', function ($params) {
+$r = Registry::getInstance()->get('sqlite-admin');
+$table = (string) ($params['table'] ?? '');
+$row = $params['row'] ?? [];
+$where = $params['where'] ?? [];
+$columns = $params['columns'] ?? [];
+?>
+
+    <section class="df-sqlite-card">
+        <header class="df-sqlite-card-header">
+            <div>
+                <h2><?=esc_html__('Edit Row:', $r['id']);?> <?= esc_html($table); ?></h2>
+                <p><?=esc_html__('Update the selected record.', $r['id']);?></p>
+            </div>
+
+            <div class="df-sqlite-actions">
+                <a class="button" href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($table)); ?>">
+                    <?=esc_html__('Back to Browse', $r['id']);?>
+                </a>
+            </div>
+        </header>
+
+        <div class="df-sqlite-card-body">
+            <?php if ($row === []): ?>
+                <div class="df-sqlite-empty">
+                    <p><?=esc_html__('No row data was found for editing.', $r['id']);?></p>
+                </div>
+            <?php else: ?>
+                <form
+                        method="post"
+                        action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($table) . '/edit'); ?>"
+                        class="df-sqlite-form"
+                >
+                    <?php foreach ($where as $key => $value): ?>
+                        <input
+                            type="hidden"
+                            name="where[<?= esc_html((string) $key); ?>]"
+                            value="<?= esc_html((string) $value); ?>"
+                        >
+                    <?php endforeach; ?>
+
+                    <div class="df-sqlite-form-grid">
+                        <?php foreach ($row as $column => $value): ?>
+                            <?php if (str_starts_with((string) $column, '_df_')) continue; ?>
+
+                            <?php
+                            $columnName = (string) $column;
+                            $fieldId = 'field-' . preg_replace('/[^A-Za-z0-9_-]/', '-', $columnName);
+
+                            $columnInfo = null;
+
+                            foreach ($columns as $item) {
+                                if (($item['name'] ?? null) === $columnName) {
+                                    $columnInfo = $item;
+                                    break;
+                                }
+                            }
+
+                            $declaredType = strtoupper((string) ($columnInfo['type'] ?? ''));
+                            $rawValue = $value === null ? '' : (string) $value;
+
+                            $isLikelyLongText =
+                                    str_contains($declaredType, 'TEXT')
+                                    || str_contains($declaredType, 'CLOB')
+                                    || str_contains($declaredType, 'JSON')
+                                    || str_contains($declaredType, 'LONG')
+                                    || str_contains($declaredType, 'BLOB')
+                                    || str_contains(strtolower($columnName), 'content')
+                                    || str_contains(strtolower($columnName), 'body')
+                                    || str_contains(strtolower($columnName), 'description')
+                                    || str_contains(strtolower($columnName), 'attribute')
+                                    || str_contains(strtolower($columnName), 'meta')
+                                    || mb_strlen($rawValue) > 160
+                                    || str_contains($rawValue, "\n");
+
+                            $jsonDecoded = null;
+                            $isJson = false;
+
+                            if ($rawValue !== '') {
+                                try {
+                                    $jsonDecoded = json_decode($rawValue, true, flags: JSON_THROW_ON_ERROR);
+                                    $isJson = is_array($jsonDecoded) || is_object($jsonDecoded);
+                                } catch (JsonException) {
+                                    $isJson = false;
+                                }
+                            }
+
+                            $displayValue = $rawValue;
+
+                            if ($isJson) {
+                                $displayValue = json_encode(
+                                        $jsonDecoded,
+                                        JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR
+                                );
+                            }
+                            ?>
+
+                            <div class="df-sqlite-field <?= $isLikelyLongText || $isJson ? 'df-sqlite-field-wide' : ''; ?>">
+                                <label class="df-sqlite-field-label" for="<?= esc_html($fieldId); ?>">
+                                    <?= esc_html($columnName); ?>
+                                </label>
+
+                                <div class="df-sqlite-field-control">
+                                    <?php if ($isLikelyLongText || $isJson): ?>
+                                        <textarea
+                                            id="<?= esc_html($fieldId); ?>"
+                                            name="data[<?= esc_html($columnName); ?>]"
+                                            rows="<?= $isJson ? '14' : '8'; ?>"
+                                            class="<?= $isJson ? 'df-sqlite-json-editor' : ''; ?>"
+                                        ><?= esc_html($displayValue); ?></textarea>
+                                    <?php else: ?>
+                                        <input
+                                            id="<?= esc_html($fieldId); ?>"
+                                            type="text"
+                                            name="data[<?= esc_html($columnName); ?>]"
+                                            value="<?= esc_html($displayValue); ?>"
+                                        >
+                                    <?php endif; ?>
+
+                                    <label class="df-sqlite-null-toggle">
+                                        <input
+                                            type="checkbox"
+                                            name="nulls[]"
+                                            value="<?= esc_html($columnName); ?>"
+                                            <?= $value === null ? 'checked' : ''; ?>
+                                        >
+                                        <span><?=esc_html__('Set NULL', $r['id']);?></span>
+                                    </label>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="df-sqlite-form-actions">
+                        <button type="submit"><?=esc_html__('Save Changes', $r['id']);?></button>
+                    </div>
+                </form>
+            <?php endif; ?>
+        </div>
+    </section>
+<?php }); ?>

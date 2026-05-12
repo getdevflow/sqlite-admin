@@ -1,0 +1,113 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$r = Registry::getInstance()->get('sqlite-admin');
+$dataset = $rows ?? [];
+
+if ($dataset === []) {
+    return;
+}
+
+$showActions = $showActions ?? false;
+$table = $table ?? null;
+
+$columns = array_keys($dataset[0] ?? []);
+$visibleColumns = array_values(array_filter(
+    $columns,
+    static fn (string $column): bool => ! str_starts_with($column, '_df_')
+));
+?>
+
+<div class="df-sqlite-table-wrap">
+    <table class="df-sqlite-grid">
+        <thead>
+        <tr>
+            <?php if ($showActions && $table !== null): ?>
+                <th class="df-sqlite-actions-column"><?=esc_html__('Actions', $r['id']);?></th>
+            <?php endif; ?>
+
+            <?php foreach ($visibleColumns as $column): ?>
+                <th><?= esc_html((string) $column); ?></th>
+            <?php endforeach; ?>
+        </tr>
+        </thead>
+
+        <tbody>
+        <?php foreach ($dataset as $row): ?>
+            <?php $rowKey = (string) ($row['_df_row_key'] ?? ''); ?>
+
+            <tr>
+                <?php if ($showActions && $table !== null): ?>
+                    <td class="df-sqlite-row-actions-cell">
+                        <div class="df-sqlite-row-actions">
+                            <?php if ($rowKey !== ''): ?>
+                                <a href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($table) . '/edit?row=' . rawurlencode($rowKey)); ?>">
+                                    <?=esc_html__('Edit', $r['id']);?>
+                                </a>
+
+                                <form
+                                        method="post"
+                                        action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($table) . '/delete-row'); ?>"
+                                        onsubmit="return confirm('Delete this row? This cannot be undone.');"
+                                >
+
+                                    <input
+                                        type="hidden"
+                                        name="row"
+                                        value="<?= esc_html($rowKey); ?>"
+                                    >
+
+                                    <button type="submit" class="df-sqlite-link-button">
+                                        <?=esc_html__('Delete', $r['id']);?>
+                                    </button>
+                                </form>
+                            <?php else: ?>
+                                <span class="df-sqlite-muted"><?=esc_html__('Unavailable', $r['id']);?></span>
+                            <?php endif; ?>
+                        </div>
+                    </td>
+                <?php endif; ?>
+
+                <?php foreach ($visibleColumns as $column): ?>
+                    <?php
+                    $value = $row[$column] ?? null;
+
+                    $display = match (true) {
+                        $value === null => 'NULL',
+                        is_bool($value) => $value ? 'true' : 'false',
+                        is_scalar($value) => (string) $value,
+                        default => json_encode(
+                            $value,
+                            JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
+                        ),
+                    };
+
+                    $display = $display === false ? '' : $display;
+                    $isNull = $value === null;
+                    $isNumeric = is_int($value) || is_float($value);
+                    $isLarge = mb_strlen((string) $display) > 120;
+                    ?>
+
+                    <td class="<?= $isNull ? 'is-null' : ''; ?> <?= $isNumeric ? 'is-numeric' : ''; ?>">
+                        <?php if ($isLarge): ?>
+                            <details class="df-sqlite-cell-details">
+                                <summary><?= esc_html(mb_substr((string) $display, 0, 120)); ?>…</summary>
+                                <pre class="df-sqlite-cell-pre"><code><?= esc_html((string) $display); ?></code></pre>
+                            </details>
+                        <?php else: ?>
+                            <span class="df-sqlite-cell-value">
+                                <?= esc_html((string) $display); ?>
+                            </span>
+                        <?php endif; ?>
+                    </td>
+                <?php endforeach; ?>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>

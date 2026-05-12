@@ -1,0 +1,75 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$this->parent('plugin::SqliteAdmin/view/layout');
+$this->block('sqlite-admin', function ($params) {
+$r = Registry::getInstance()->get('sqlite-admin');
+
+$table = (string) ($params['table'] ?? '');
+$columns = $params['columns'] ?? [];
+$rows = $params['rows'] ?? [];
+$total = (int) ($params['total'] ?? 0);
+?>
+
+    <section class="df-sqlite-card">
+        <header class="df-sqlite-card-header">
+            <div>
+                <h2><?=esc_html__('Search:', $r['id']);?> <?= esc_html($table); ?></h2>
+                <p><?= esc_html((string) $total); ?> <?=esc_html__('matching records.', $r['id']);?></p>
+            </div>
+
+            <div class="df-sqlite-actions">
+                <a class="button" href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($table)); ?>">Browse</a>
+            </div>
+        </header>
+
+        <div class="df-sqlite-card-body">
+            <form method="post" class="df-sqlite-form">
+                <div class="df-sqlite-form-grid">
+                    <?php foreach ($columns as $column): ?>
+                        <?php $name = (string) ($column['name'] ?? ''); ?>
+
+                        <label>
+                            <?= esc_html($name); ?>
+
+                            <select name="filters[<?= esc_html($name); ?>][operator]">
+                                <option value="LIKE"><?=esc_html__('contains', $r['id']);?></option>
+                                <option value="=">=</option>
+                                <option value="!=">!=</option>
+                                <option value=">">&gt;</option>
+                                <option value=">=">&gt;=</option>
+                                <option value="<">&lt;</option>
+                                <option value="<=">&lt;=</option>
+                            </select>
+
+                            <input type="text" name="filters[<?= esc_html($name); ?>][value]">
+                        </label>
+                    <?php endforeach; ?>
+                </div>
+
+                <div class="df-sqlite-form-actions">
+                    <button type="submit"><?=esc_html__('Search', $r['id']);?></button>
+                </div>
+            </form>
+
+            <?php if ($rows !== []): ?>
+                <div class="df-sqlite-panel">
+                    <h3><?=esc_html__('Results', $r['id']);?></h3>
+                    <?php
+                    $this->insert('plugin::SqliteAdmin/view/partial/table-grid', [
+                        'rows' => $rows,
+                        'table' => $table,
+                        'showActions' => true,
+                    ]);
+                    ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
+
+<?php }); ?>

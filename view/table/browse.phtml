@@ -1,0 +1,85 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$this->parent('plugin::SqliteAdmin/view/layout');
+$this->block('sqlite-admin', function ($params) {
+$r = Registry::getInstance()->get('sqlite-admin');
+$total = (int) ($params['total'] ?? 0);
+$page = max(1, (int) ($params['page'] ?? 1));
+$perPage = max(1, (int) ($params['perPage'] ?? 50));
+$totalPages = max(1, (int) ceil($total / $perPage));
+
+$showActions = true;
+?>
+
+<section class="df-sqlite-card">
+    <header class="df-sqlite-card-header">
+        <div>
+            <h2><?=esc_html__('Browse:', $r['id']);?> <?= esc_html($params['table']); ?></h2>
+            <p>
+                <?= esc_html((string) $total); ?> <?=esc_html__('total records.', $r['id']);?>
+                <?=esc_html__('Page', $r['id']);?> <?= esc_html((string) $page); ?> of <?= esc_html((string) $totalPages); ?>.
+            </p>
+        </div>
+
+        <div class="df-sqlite-actions">
+            <a class="button" href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/insert'); ?>">
+                <?=esc_html__('Insert Row', $r['id']);?>
+            </a>
+
+            <a class="button" href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/search'); ?>">
+                <?=esc_html__('Search', $r['id']);?>
+            </a>
+
+            <a class="button" href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/structure'); ?>">
+                <?=esc_html__('Structure', $r['id']);?>
+            </a>
+        </div>
+    </header>
+
+    <div class="df-sqlite-card-body">
+        <?php if (($params['rows'] ?? []) === []): ?>
+            <div class="df-sqlite-empty">
+                <p><?=esc_html__('No records were found in this table.', $r['id']);?></p>
+
+                <a class="button" href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/insert'); ?>">
+                    <?=esc_html__('Insert First Row', $r['id']);?>
+                </a>
+            </div>
+        <?php else: ?>
+            <?php $this->insert('plugin::SqliteAdmin/view/partial/table-grid', ['showActions' => $showActions]); ?>
+
+            <?php if ($totalPages > 1): ?>
+                <nav class="df-sqlite-pagination" aria-label="Table pagination">
+                    <?php if ($page > 1): ?>
+                        <a
+                            class="button button-secondary"
+                            href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '?page=' . ($page - 1) . '&perPage=' . $perPage); ?>"
+                        >
+                            <?=esc_html__('Previous', $r['id']);?>
+                        </a>
+                    <?php endif; ?>
+
+                    <span>
+                        <?=esc_html__('Page', $r['id']);?> <?= esc_html((string) $page); ?> of <?= esc_html((string) $totalPages); ?>
+                    </span>
+
+                    <?php if ($page < $totalPages): ?>
+                        <a
+                                class="button button-secondary"
+                                href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '?page=' . ($page + 1) . '&perPage=' . $perPage); ?>"
+                        >
+                            <?=esc_html__('Next', $r['id']);?>
+                        </a>
+                    <?php endif; ?>
+                </nav>
+            <?php endif; ?>
+        <?php endif; ?>
+    </div>
+</section>
+<?php }); ?>

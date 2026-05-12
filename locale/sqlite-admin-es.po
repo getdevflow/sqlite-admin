@@ -1,0 +1,1272 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Devflow SQLite Admin\n"
+"POT-Creation-Date: 2026-05-11 22:28-0600\n"
+"PO-Revision-Date: 2026-05-11 22:28-0600\n"
+"Last-Translator: \n"
+"Language-Team: Joshua Parker\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: sqlite-admin\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: t__;esc_html__;esc_attr__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: locale\n"
+"X-Poedit-SearchPathExcluded-1: config\n"
+"X-Poedit-SearchPathExcluded-2: public\n"
+
+#: Controller/DatabaseController.php:55
+#, fuzzy
+msgid "SQLite Manager"
+msgstr "SQLite Manager"
+
+#: Controller/DatabaseController.php:81
+#, fuzzy
+msgid "Database Structure"
+msgstr "Estructura de la base de datos"
+
+#: Controller/DatabaseController.php:105
+#, fuzzy
+msgid "VACUUM Complete"
+msgstr "VACÍO Completo"
+
+#: Controller/DatabaseController.php:106
+#, fuzzy
+msgid "Database VACUUM completed."
+msgstr "Vacío de base de datos completado."
+
+#: Controller/DatabaseController.php:109 Controller/DatabaseController.php:141
+#: Controller/DatabaseController.php:168
+msgid "Back to Dashboard"
+msgstr "Volver al panel de control"
+
+#: Controller/DatabaseController.php:136
+#, fuzzy
+msgid "Integrity Check"
+msgstr "Comprobación de integridad"
+
+#: Controller/DatabaseController.php:137
+#, fuzzy
+msgid "Integrity check completed."
+msgstr "Comprobación de integridad completada."
+
+#: Controller/DatabaseController.php:164
+#, fuzzy
+msgid "Optimize Complete"
+msgstr "Optimizar Completo"
+
+#: Controller/DatabaseController.php:165
+#, fuzzy
+msgid "PRAGMA optimize completed."
+msgstr "PRAGMA optimización completada."
+
+#: Controller/ExportController.php:53
+msgid "Export Database"
+msgstr "Exportar Base de datos"
+
+#: Controller/ExportController.php:89
+msgid "Export Failed"
+msgstr "Fallo en la exportación"
+
+#: Controller/ExportController.php:90
+#, fuzzy
+msgid "No valid tables were selected for export."
+msgstr "No se seleccionaron tablas válidas para exportación."
+
+#: Controller/ExportController.php:125
+#, fuzzy
+msgid "Export Table"
+msgstr "Tabla de exportación"
+
+#: Controller/ImportController.php:59
+#, fuzzy
+msgid "Import Database"
+msgstr "Base de datos de importación"
+
+#: Controller/ImportController.php:79
+#, fuzzy
+msgid "Only SQL database imports are supported here."
+msgstr "Aquí solo se admiten importaciones de bases de datos SQL."
+
+#: Controller/ImportController.php:105
+#, fuzzy
+msgid "Import Into Table"
+msgstr "Importación en tabla"
+
+#: Controller/ImportController.php:129
+#, fuzzy
+msgid "Only CSV and SQL imports are supported."
+msgstr "Solo se admiten importaciones CSV y SQL."
+
+#: Controller/ImportController.php:148
+#, fuzzy
+msgid "No import file was uploaded."
+msgstr "No se subió ningún archivo de importación."
+
+#: Controller/ImportController.php:152
+#, fuzzy
+msgid "The uploaded import file could not be processed."
+msgstr "El archivo de importación subido no pudo procesarse."
+
+#: Controller/IndexController.php:63
+msgid "Indexes"
+msgstr "Índices"
+
+#: Controller/IndexController.php:97 Controller/IndexController.php:150
+#, fuzzy
+msgid "Index name is required."
+msgstr "Se requiere el nombre del índice."
+
+#: Controller/IndexController.php:101
+#, fuzzy
+msgid "At least one column must be selected."
+msgstr "Debe seleccionarse al menos una columna."
+
+#: Controller/SqlController.php:61 Controller/SqlController.php:87
+#: Controller/SqlController.php:148
+#, fuzzy
+msgid "SQL Editor"
+msgstr "SQL Editor"
+
+#: Controller/TableController.php:72
+#, fuzzy
+msgid "Browse "
+msgstr "Explorar "
+
+#: Controller/TableController.php:102
+#, fuzzy
+msgid "Structure "
+msgstr "Estructura "
+
+#: Controller/TableController.php:132 Controller/TableController.php:168
+msgid "Search "
+msgstr "Buscar "
+
+#: Controller/TableController.php:198
+msgid "Insert Row"
+msgstr "Insertar fila"
+
+#: Controller/TableController.php:231
+#, fuzzy
+msgid "Row Not Found"
+msgstr "Fila no encontrada"
+
+#: Controller/TableController.php:232
+#, fuzzy
+msgid "The selected row could not be found."
+msgstr "No se pudo encontrar la fila seleccionada."
+
+#: Controller/TableController.php:234
+#, fuzzy
+msgid "Back to Table"
+msgstr "Volver a la tabla"
+
+#: Controller/TableController.php:239
+msgid "Edit Row"
+msgstr "Editar fila"
+
+#: Controller/TableController.php:451
+#, fuzzy
+msgid "The new table name cannot be empty."
+msgstr "El nuevo nombre de la tabla no puede estar vacío."
+
+#: Controller/TableController.php:458
+#, fuzzy, php-format
+msgid "Table \"%s\" already exists."
+msgstr "La tabla \"%s\" ya existe."
+
+#: Controller/TableController.php:497 Controller/TableController.php:613
+#, fuzzy
+msgid "Column name is required."
+msgstr "Se requiere el nombre de la columna."
+
+#: Controller/TableController.php:517
+#, fuzzy
+msgid "Invalid column type."
+msgstr "Tipo de columna inválido."
+
+#: Controller/TableController.php:563
+#, fuzzy
+msgid "Old and new column names are required."
+msgstr "Se requieren nombres de columnas antiguos y nuevos."
+
+#: Controller/TableController.php:572
+#, fuzzy, php-format
+msgid "Column \"%s\" already exists."
+msgstr "La columna \"%s\" ya existe."
+
+#: Controller/TableController.php:605
+#, fuzzy
+msgid "This SQLite version does not support DROP COLUMN."
+msgstr "Esta versión de SQLite no soporta DROP COLUMN."
+
+#: Controller/TableController.php:673
+#, fuzzy, php-format
+msgid "Table \"%s\" does not exist."
+msgstr "La tabla \"%s\" no existe."
+
+#: Controller/TableController.php:690
+#, fuzzy, php-format
+msgid "Column \"%s\" does not exist."
+msgstr "La columna \"%s\" no existe."
+
+#: Controller/TriggerController.php:65
+msgid "Triggers"
+msgstr "Desencadenantes"
+
+#: Controller/TriggerController.php:101 Controller/TriggerController.php:240
+#, fuzzy
+msgid "Trigger name is required."
+msgstr "Se requiere el nombre del disparador."
+
+#: Controller/TriggerController.php:105
+#, fuzzy
+msgid "Invalid trigger timing."
+msgstr "Sincronización de disparo inválida."
+
+#: Controller/TriggerController.php:109
+#, fuzzy
+msgid "Invalid trigger event."
+msgstr "Evento desencadenante inválido."
+
+#: Controller/TriggerController.php:113
+#, fuzzy
+msgid "SQLite only supports FOR EACH ROW triggers."
+msgstr "SQLite solo soporta triggers PARA CADA FILA."
+
+#: Controller/TriggerController.php:118
+#, fuzzy
+msgid "Trigger statement is required."
+msgstr "Se requiere una declaración de disparo."
+
+#: Controller/TriggerController.php:162
+#, fuzzy
+msgid "Trigger not found."
+msgstr "Desencadenante no encontrado."
+
+#: Controller/TriggerController.php:181
+#, fuzzy
+msgid "Trigger SQL is required."
+msgstr "Es necesario Trigger SQL."
+
+#: Database/SqliteConnectionFactory.php:39
+#, fuzzy
+msgid "SQLite database path is not configured."
+msgstr "La ruta de la base de datos de SQLite no está configurada."
+
+#: Database/SqliteConnectionFactory.php:45
+#, fuzzy
+msgid "SQLite database file could not be found."
+msgstr "No se pudo encontrar el archivo de base de datos SQLite."
+
+#: Database/SqliteConnectionFactory.php:49
+#, fuzzy
+msgid "SQLite database file is not readable."
+msgstr "El archivo de base de datos SQLite no es legible."
+
+#: Database/SqliteImporter.php:37
+#, fuzzy
+msgid "The SQL import file did not contain any executable statements."
+msgstr ""
+"El archivo de importación SQL no contenía ninguna sentencia ejecutable."
+
+#: Database/SqliteImporter.php:61
+#, fuzzy
+msgid "Could not create temporary import file."
+msgstr "No se pudo crear un archivo de importación temporal."
+
+#: Database/SqliteImporter.php:71
+#, fuzzy
+msgid "Could not read temporary import file."
+msgstr "No pude leer el archivo de importación temporal."
+
+#: Database/SqliteImporter.php:78
+#, fuzzy
+msgid "Could not open uploaded CSV file."
+msgstr "No se pude abrir el archivo CSV subido."
+
+#: Database/SqliteImporter.php:86
+#, fuzzy
+msgid "CSV file is empty."
+msgstr "El archivo CSV está vacío."
+
+#: Database/SqliteImporter.php:126
+#, fuzzy
+msgid "CSV file does not contain headers."
+msgstr "El archivo CSV no contiene cabeceras."
+
+#: Database/SqliteImporter.php:145
+#, fuzzy, php-format
+msgid "CSV column \"%s\" does not exist on the selected table."
+msgstr "La columna CSV \"%s\" no existe en la tabla seleccionada."
+
+#: Database/SqliteRowRepository.php:109 Database/SqliteRowRepository.php:144
+#, fuzzy
+msgid "Missing row identity."
+msgstr "Falta la identidad de la fila."
+
+#: Database/SqliteRowRepository.php:267
+#, fuzzy
+msgid "Invalid row key."
+msgstr "Clave de fila inválida."
+
+#: Database/SqliteRowRepository.php:281
+#, fuzzy
+msgid "Invalid row key payload."
+msgstr "Carga útil de clave de fila inválida."
+
+#: Security/Identifier.php:29
+#, fuzzy
+msgid "Invalid SQLite identifier."
+msgstr "Identificador SQLite inválido."
+
+#: Security/SqliteQueryGuard.php:42
+#, fuzzy
+msgid "SQL query is empty."
+msgstr "La consulta SQL está vacía."
+
+#: Security/SqliteQueryGuard.php:47
+#, fuzzy
+msgid "Subsite users may only run one read-only query at a time."
+msgstr ""
+"Los usuarios del subsitio solo pueden ejecutar una consulta de solo lectura "
+"a la vez."
+
+#: Security/SqliteQueryGuard.php:79
+#, fuzzy
+msgid "Only read-only SELECT and safe PRAGMA queries are allowed."
+msgstr "Solo se permiten consultas SELECT de solo lectura y PRAGMA seguras."
+
+#: Security/SqliteQueryGuard.php:92
+#, fuzzy
+msgid "This query references a table outside the current site."
+msgstr "Esta consulta hace referencia a una tabla fuera del sitio actual."
+
+#: Security/SqliteTriggerGuard.php:29
+#, fuzzy
+msgid "Trigger statement cannot be empty."
+msgstr "La sentencia de disparo no puede estar vacía."
+
+#: Security/SqliteTriggerGuard.php:48
+#, fuzzy, php-format
+msgid "Trigger statement contains forbidden operation: %s"
+msgstr "La instrucción de disparo contiene la operación prohibida: %s"
+
+#: SqliteAdminPlugin.php:43
+#, fuzzy
+msgid "SQLite Admin"
+msgstr "Administrador de SQLite"
+
+#: view/action-result.phtml:12
+msgid "Result"
+msgstr "Resultado"
+
+#: view/action-result.phtml:13
+#, fuzzy
+msgid "Action complete."
+msgstr "Acción completada."
+
+#: view/action-result.phtml:14
+msgid "Go Back"
+msgstr "Regresar"
+
+#: view/action-result.phtml:46
+#, fuzzy
+msgid "No additional result data was returned."
+msgstr "No se devolvieron datos adicionales de resultados."
+
+#: view/database/dashboard.phtml:39
+#, fuzzy
+msgid "Database Dashboard"
+msgstr "Panel de Datos"
+
+#: view/database/dashboard.phtml:40
+#, fuzzy
+msgid "SQLite database overview and statistics."
+msgstr "Resumen y estadísticas de la base de datos SQLite."
+
+#: view/database/dashboard.phtml:49 view/database/dashboard.phtml:163
+#: view/database/import.phtml:24 view/database/structure.phtml:121
+#: view/layout.phtml:35 view/table/import.phtml:28
+msgid "Export"
+msgstr "Exportar"
+
+#: view/database/dashboard.phtml:53 view/layout.phtml:36
+msgid "Import"
+msgstr "Importar"
+
+#: view/database/dashboard.phtml:61 view/database/structure.phtml:42
+msgid "Tables"
+msgstr "Tablas"
+
+#: view/database/dashboard.phtml:66 view/database/structure.phtml:47
+msgid "Views"
+msgstr "Vistas"
+
+#: view/database/dashboard.phtml:71
+msgid "Objects"
+msgstr "Objetos"
+
+#: view/database/dashboard.phtml:76
+#, fuzzy
+msgid "SQLite Version"
+msgstr "Versión de SQLite"
+
+#: view/database/dashboard.phtml:82
+#, fuzzy
+msgid "Database Information"
+msgstr "Información de la base de datos"
+
+#: view/database/dashboard.phtml:85
+#, fuzzy
+msgid "Database Path"
+msgstr "Ruta de la base de datos"
+
+#: view/database/dashboard.phtml:90
+msgid "Database Size"
+msgstr "Tamaño de la base de datos"
+
+#: view/database/dashboard.phtml:93
+msgid "Last Modified"
+msgstr "Última modificación"
+
+#: view/database/dashboard.phtml:100
+#, fuzzy
+msgid "PDO SQLite Extension"
+msgstr "Extensión PDO SQLite"
+
+#: view/database/dashboard.phtml:105
+#, fuzzy
+msgid "SQLite3 Extension"
+msgstr "Extensión SQLite3"
+
+#: view/database/dashboard.phtml:113 view/database/sql.phtml:179
+#: view/database/structure.phtml:58 view/partial/sidebar.phtml:28
+#, fuzzy
+msgid "Database Objects"
+msgstr "Objetos de base de datos"
+
+#: view/database/dashboard.phtml:117 view/database/structure.phtml:62
+#, fuzzy
+msgid "No tables or views were found."
+msgstr "No se encontraron tablas ni vistas."
+
+#: view/database/dashboard.phtml:124 view/database/structure.phtml:69
+#: view/table/import.phtml:87 view/table/indexes.phtml:31
+#: view/table/structure.phtml:129 view/table/triggers.phtml:31
+msgid "Name"
+msgstr "Nombre"
+
+#: view/database/dashboard.phtml:125 view/database/structure.phtml:70
+#: view/table/import.phtml:88 view/table/structure.phtml:130
+msgid "Type"
+msgstr "Tipo"
+
+#: view/database/dashboard.phtml:126 view/database/structure.phtml:72
+#: view/partial/table-grid.phtml:31
+msgid "Actions"
+msgstr "Acciones"
+
+#: view/database/dashboard.phtml:151 view/database/structure.phtml:109
+#: view/partial/sidebar.phtml:74 view/table/export.phtml:24
+#: view/table/import.phtml:24 view/table/structure.phtml:28
+msgid "Browse"
+msgstr "Buscar"
+
+#: view/database/dashboard.phtml:155 view/database/structure.phtml:113
+#: view/layout.phtml:33 view/partial/sidebar.phtml:84
+#: view/table/browse.phtml:40 view/table/export.phtml:28
+msgid "Structure"
+msgstr "Estructura"
+
+#: view/database/dashboard.phtml:159 view/layout.phtml:34
+msgid "SQL"
+msgstr "SQL"
+
+#: view/database/export.phtml:20
+#, fuzzy
+msgid "Download a SQL or CSV export of the SQLite database."
+msgstr "Descarga una exportación SQL o CSV de la base de datos SQLite."
+
+#: view/database/export.phtml:25 view/database/import.phtml:23
+#: view/database/sql.phtml:31 view/database/structure.phtml:34
+msgid "Dashboard"
+msgstr "Escritorio"
+
+#: view/database/export.phtml:36 view/table/export.phtml:35
+msgid "Export Options"
+msgstr "Exportar opciones"
+
+#: view/database/export.phtml:46 view/table/export.phtml:41
+msgid "Export Format"
+msgstr "Exportar formato"
+
+#: view/database/export.phtml:50 view/table/export.phtml:43
+#, fuzzy
+msgid "SQL Dump"
+msgstr "Volcado SQL"
+
+#: view/database/export.phtml:54 view/database/export.phtml:130
+#: view/table/export.phtml:44
+msgid "CSV Export"
+msgstr "CSV Exportar"
+
+#: view/database/export.phtml:59
+#, fuzzy
+msgid "SQL preserves schema and data. CSV exports table rows."
+msgstr "SQL preserva el esquema y los datos. CSV exporta filas de tablas."
+
+#: view/database/export.phtml:64
+#, fuzzy
+msgid "Export Scope"
+msgstr "Alcance de exportación"
+
+#: view/database/export.phtml:68
+#, fuzzy
+msgid "Entire Database"
+msgstr "Base de datos completa"
+
+#: view/database/export.phtml:72
+#, fuzzy
+msgid "Selected Tables"
+msgstr "Tablas seleccionadas"
+
+#: view/database/export.phtml:77
+#, fuzzy
+msgid "Export all visible tables or only selected tables."
+msgstr "Exporta todas las tablas visibles o solo las seleccionadas."
+
+#: view/database/export.phtml:84
+#, fuzzy
+msgid "Select Tables"
+msgstr "Tablas de selección"
+
+#: view/database/export.phtml:119
+#, fuzzy
+msgid "Export Information"
+msgstr "Información de exportación"
+
+#: view/database/export.phtml:122 view/database/import.phtml:63
+#, fuzzy
+msgid "Visible Objects"
+msgstr "Objetos visibles"
+
+#: view/database/export.phtml:125
+#, fuzzy
+msgid "SQL Export"
+msgstr "SQL Export"
+
+#: view/database/export.phtml:127
+#, fuzzy
+msgid "Includes schema definitions and INSERT statements."
+msgstr "Incluye definiciones de esquema y sentencias INSERT."
+
+#: view/database/export.phtml:132
+#, fuzzy
+msgid "Exports row data in CSV format."
+msgstr "Exporta los datos de fila en formato CSV."
+
+#: view/database/export.phtml:135
+msgid "Permissions"
+msgstr "Permisos"
+
+#: view/database/export.phtml:137
+#, fuzzy
+msgid "Export visibility respects Devflow multisite table scoping."
+msgstr ""
+"La visibilidad de exportación respeta el alcance de tablas multisitio de "
+"Devflow."
+
+#: view/database/export.phtml:150
+#, fuzzy
+msgid "Export Selected Tables"
+msgstr "Exportar tablas seleccionadas"
+
+#: view/database/import.phtml:19
+#, fuzzy
+msgid "Import a SQL dump into the SQLite database."
+msgstr "Importa un volcado SQL en la base de datos SQLite."
+
+#: view/database/import.phtml:30
+#, fuzzy
+#| msgid "Export Failed"
+msgid "Import SQL File"
+msgstr "Importar archivo SQL"
+
+#: view/database/import.phtml:42
+#, fuzzy
+msgid "Upload a SQLite-compatible SQL dump file."
+msgstr "Sube un archivo de volcado SQL compatible con SQLite."
+
+#: view/database/import.phtml:48
+#, fuzzy
+msgid "I understand this may modify database tables and records."
+msgstr ""
+"Entiendo que esto puede modificar tablas y registros de bases de datos."
+
+#: view/database/import.phtml:49
+#, fuzzy
+msgid "Imports run inside a transaction when supported."
+msgstr ""
+"Las importaciones se ejecutan dentro de una transacción cuando están "
+"soportadas."
+
+#: view/database/import.phtml:60
+#, fuzzy
+msgid "Import Information"
+msgstr "Información de importación"
+
+#: view/database/import.phtml:66
+#, fuzzy
+#| msgid "Export Format"
+msgid "Supported Format"
+msgstr "Formato soportado"
+
+#: view/database/import.phtml:67
+#, fuzzy
+msgid "SQL files only for full database imports."
+msgstr "SQL solo para importaciones completas de bases de datos."
+
+#: view/database/import.phtml:69
+#, fuzzy
+msgid "Recommended First Step"
+msgstr "Primer paso recomendado"
+
+#: view/database/import.phtml:70
+#, fuzzy
+msgid "Export a backup before importing."
+msgstr "Exporta una copia de seguridad antes de importar."
+
+#: view/database/import.phtml:72
+#, fuzzy
+#| msgid "Permissions"
+msgid "Permission Level"
+msgstr "Nivel de permiso"
+
+#: view/database/import.phtml:73
+#, fuzzy
+msgid "Full database imports should be limited to main-site super admins."
+msgstr ""
+"Las importaciones completas de bases de datos deberían limitarse a los "
+"superadministradores del sitio principal."
+
+#: view/database/sql.phtml:23
+#, fuzzy
+msgid "Run SQL against the selected table scope."
+msgstr "Ejecuta SQL sobre el ámbito de la tabla seleccionado."
+
+#: view/database/sql.phtml:24
+#, fuzzy
+msgid "Run SQL against the scoped SQLite database."
+msgstr "Ejecuta SQL contra la base de datos SQLite con alcance."
+
+#: view/database/sql.phtml:39
+#, fuzzy
+msgid "Browse Table"
+msgstr "Explorar la tabla"
+
+#: view/database/sql.phtml:50
+msgid "SQL Query"
+msgstr "Consulta SQL"
+
+#: view/database/sql.phtml:70
+#, fuzzy
+msgid "Multiple statements may be restricted depending on your permissions."
+msgstr ""
+"Varias declaraciones pueden estar restringidas dependiendo de tus permisos."
+
+#: view/database/sql.phtml:76
+#, fuzzy
+msgid "Run Query"
+msgstr "Ejecutar consulta"
+
+#: view/database/sql.phtml:85
+msgid "Clear"
+msgstr "Limpiar"
+
+#: view/database/sql.phtml:93
+#, fuzzy
+#| msgid "Result"
+msgid "Query Results"
+msgstr "Resultados de la consulta"
+
+#: view/database/sql.phtml:111
+msgid "Statement"
+msgstr "Declaración"
+
+#: view/database/sql.phtml:116
+msgid "rows"
+msgstr "filas"
+
+#: view/database/sql.phtml:120
+#, fuzzy
+msgid "Query Time:"
+msgstr "Tiempo de consulta:"
+
+#: view/database/sql.phtml:136
+#, fuzzy
+msgid "No rows returned."
+msgstr "No respondieron las filas."
+
+#: view/database/sql.phtml:145
+#, fuzzy
+msgid "Quick Query Snippets"
+msgstr "Fragmentos de consultas rápidas"
+
+#: view/database/sql.phtml:162
+#, fuzzy
+msgid "Table Structure"
+msgstr "Estructura de la tabla"
+
+#: view/database/sql.phtml:170
+#, fuzzy
+#| msgid "Insert Row"
+msgid "Count Rows"
+msgstr "Cuentas de filas"
+
+#: view/database/structure.phtml:30
+#, fuzzy
+msgid "Tables and views visible to the current user."
+msgstr "Tablas y vistas visibles para el usuario actual."
+
+#: view/database/structure.phtml:52
+#, fuzzy
+#| msgid "Objects"
+msgid "Total Objects"
+msgstr "Objetos totales"
+
+#: view/database/structure.phtml:71
+#, fuzzy
+msgid "Create SQL"
+msgstr "Create SQL"
+
+#: view/database/structure.phtml:98
+#, fuzzy
+#| msgid "Views"
+msgid "View SQL"
+msgstr "Ver SQL"
+
+#: view/error/forbidden.phtml:21
+msgid "Access Denied"
+msgstr "Acceso denegado"
+
+#: view/error/forbidden.phtml:22
+#, fuzzy
+msgid "This SQLite manager is protected by Devflow permissions."
+msgstr "Este gestor SQLite está protegido por permisos Devflow."
+
+#: view/layout.phtml:29
+#, fuzzy
+msgid "Manage your Devflow SQLite database."
+msgstr "Gestiona tu base de datos SQLite de Devflow."
+
+#: view/layout.phtml:32
+msgid "Database"
+msgstr "Base de datos"
+
+#: view/partial/sidebar.phtml:31
+msgid "tables"
+msgstr "tablas"
+
+#: view/partial/sidebar.phtml:32
+msgid "views"
+msgstr "vistas"
+
+#: view/partial/sidebar.phtml:40
+msgid "View All"
+msgstr "Ver todo"
+
+#: view/partial/sidebar.phtml:46
+#, fuzzy
+msgid "No tables or views available."
+msgstr "No hay tablas ni vistas disponibles."
+
+#: view/partial/sidebar.phtml:80
+msgid "Data"
+msgstr "Datos"
+
+#: view/partial/table-grid.phtml:50 view/table/triggers.phtml:55
+msgid "Edit"
+msgstr "Editar"
+
+#: view/partial/table-grid.phtml:66
+msgid "Delete"
+msgstr "Borrar"
+
+#: view/partial/table-grid.phtml:70
+msgid "Unavailable"
+msgstr "No disponible"
+
+#: view/table/browse.phtml:23
+msgid "Browse:"
+msgstr "Navegar:"
+
+#: view/table/browse.phtml:25
+#, fuzzy
+msgid "total records."
+msgstr "Récords totales."
+
+#: view/table/browse.phtml:26 view/table/browse.phtml:69
+msgid "Page"
+msgstr "Página"
+
+#: view/table/browse.phtml:36 view/table/search.phtml:56
+msgid "Search"
+msgstr "Buscar"
+
+#: view/table/browse.phtml:48
+#, fuzzy
+msgid "No records were found in this table."
+msgstr "No se encontraron registros en esta tabla."
+
+#: view/table/browse.phtml:51
+#, fuzzy
+#| msgid "Insert Row"
+msgid "Insert First Row"
+msgstr "Insertar primera fila"
+
+#: view/table/browse.phtml:64
+msgid "Previous"
+msgstr "Anterior"
+
+#: view/table/browse.phtml:77
+msgid "Next"
+msgstr "Siguiente"
+
+#: view/table/edit.phtml:21
+#, fuzzy
+#| msgid "Edit Row"
+msgid "Edit Row:"
+msgstr "Edición de la fila:"
+
+#: view/table/edit.phtml:22
+#, fuzzy
+msgid "Update the selected record."
+msgstr "Actualiza el registro seleccionado."
+
+#: view/table/edit.phtml:27 view/table/insert.phtml:26
+#, fuzzy
+msgid "Back to Browse"
+msgstr "Volver a Navegar"
+
+#: view/table/edit.phtml:35
+#, fuzzy
+msgid "No row data was found for editing."
+msgstr "No se encontraron datos de fila para editar."
+
+#: view/table/edit.phtml:136 view/table/insert.phtml:171
+#, fuzzy
+msgid "Set NULL"
+msgstr "Set NULL"
+
+#: view/table/edit.phtml:144
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+#: view/table/export.phtml:18
+#, fuzzy
+msgid "Export Table:"
+msgstr "Tabla de exportación:"
+
+#: view/table/export.phtml:19
+#, fuzzy
+msgid "Download this table as SQL or CSV."
+msgstr "Descarga esta tabla en SQL o CSV."
+
+#: view/table/export.phtml:46
+#, fuzzy
+msgid "SQL includes CREATE TABLE and INSERT statements. CSV exports row data."
+msgstr ""
+"SQL incluye las sentencias CREATE TABLE e INSERT. CSV exporta los datos de "
+"fila."
+
+#: view/table/export.phtml:57 view/table/import.phtml:65
+msgid "Table Information"
+msgstr "Información de mesa"
+
+#: view/table/export.phtml:60 view/table/import.phtml:68
+msgid "Table"
+msgstr "Tabla"
+
+#: view/table/export.phtml:63 view/table/export.phtml:70
+#: view/table/import.phtml:71 view/table/indexes.phtml:81
+#: view/table/structure.phtml:102 view/table/structure.phtml:118
+msgid "Columns"
+msgstr "Columnas"
+
+#: view/table/import.phtml:18
+#, fuzzy
+msgid "Import Into Table:"
+msgstr "Importar a la tabla:"
+
+#: view/table/import.phtml:19
+#, fuzzy
+msgid "Import CSV or SQL data into this table."
+msgstr "Importa datos CSV o SQL en esta tabla."
+
+#: view/table/import.phtml:35 view/table/import.phtml:45
+msgid "Import File"
+msgstr "Importar archivo"
+
+#: view/table/import.phtml:47
+#, fuzzy
+msgid ""
+"CSV imports are matched by header row. SQL files are executed against this "
+"table scope."
+msgstr ""
+"Las importaciones de CSV se corresponden por fila de encabezado. Los "
+"archivos SQL se ejecutan dentro de este ámbito de tabla."
+
+#: view/table/import.phtml:53
+#, fuzzy
+msgid "I understand this import may modify records."
+msgstr "Entiendo que esta importación puede modificar los registros."
+
+#: view/table/import.phtml:54
+#, fuzzy
+msgid "Export a backup before importing production data."
+msgstr "Exporta una copia de seguridad antes de importar datos de producción."
+
+#: view/table/import.phtml:59
+#, fuzzy
+msgid "Import Table"
+msgstr "Tabla de importación"
+
+#: view/table/import.phtml:74
+#, fuzzy
+msgid "CSV Requirements"
+msgstr "Requisitos de CSV"
+
+#: view/table/import.phtml:75
+#, fuzzy
+msgid "First row must contain column names matching this table."
+msgstr ""
+"La primera fila debe contener nombres de columnas que coincidan con esta "
+"tabla."
+
+#: view/table/import.phtml:81
+#, fuzzy
+msgid "Available Columns"
+msgstr "Columnas disponibles"
+
+#: view/table/import.phtml:89 view/table/structure.phtml:131
+#: view/table/structure.phtml:194
+#, fuzzy
+msgid "Nullable"
+msgstr "Nulo"
+
+#: view/table/import.phtml:90 view/table/structure.phtml:132
+msgid "Default"
+msgstr "Por defecto"
+
+#: view/table/import.phtml:91 view/table/structure.phtml:133
+msgid "Primary Key"
+msgstr "Clave principal"
+
+#: view/table/indexes.phtml:16
+#, fuzzy
+#| msgid "Indexes"
+msgid "Indexes:"
+msgstr "Índices:"
+
+#: view/table/indexes.phtml:17
+#, fuzzy
+msgid "Create, inspect, and drop indexes for this table."
+msgstr "Crea, inspecciona y elimina índices para esta tabla."
+
+#: view/table/indexes.phtml:22
+#, fuzzy
+#| msgid "Indexes"
+msgid "Existing Indexes"
+msgstr "Índices existentes"
+
+#: view/table/indexes.phtml:25
+#, fuzzy
+msgid "No indexes found for this table."
+msgstr "No se han encontrado índices para esta tabla."
+
+#: view/table/indexes.phtml:32
+msgid "Unique"
+msgstr "Único"
+
+#: view/table/indexes.phtml:33
+msgid "Origin"
+msgstr "Origen"
+
+#: view/table/indexes.phtml:34
+msgid "Partial"
+msgstr "Parcial"
+
+#: view/table/indexes.phtml:35 view/table/triggers.phtml:33
+msgid "Action"
+msgstr "Acción"
+
+#: view/table/indexes.phtml:49
+#, fuzzy
+msgid "Drop this index?"
+msgstr "¿Eliminar este índice?"
+
+#: view/table/indexes.phtml:50 view/table/triggers.phtml:78
+msgid "Drop"
+msgstr "Soltar"
+
+#: view/table/indexes.phtml:54
+#, fuzzy
+msgid "System index"
+msgstr "Índice del sistema"
+
+#: view/table/indexes.phtml:66 view/table/indexes.phtml:92
+#, fuzzy
+msgid "Create Index"
+msgstr "Crear índice"
+
+#: view/table/indexes.phtml:71
+msgid "Index Name"
+msgstr "El nombre de index"
+
+#: view/table/indexes.phtml:77
+#, fuzzy
+msgid "Unique index"
+msgstr "Índice único"
+
+#: view/table/insert.phtml:20
+#, fuzzy
+#| msgid "Insert Row"
+msgid "Insert Row:"
+msgstr "Insertar fila:"
+
+#: view/table/insert.phtml:21
+#, fuzzy
+msgid "Add a new record to this table."
+msgstr "Añade un nuevo registro a esta tabla."
+
+#: view/table/insert.phtml:34 view/table/structure.phtml:122
+#, fuzzy
+msgid "No columns were found for this table."
+msgstr "No se encontraron columnas para esta tabla."
+
+#: view/table/insert.phtml:192
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: view/table/search.phtml:22
+msgid "Search:"
+msgstr "Buscar:"
+
+#: view/table/search.phtml:23
+#, fuzzy
+msgid "matching records."
+msgstr "Récords iguales."
+
+#: view/table/search.phtml:41
+msgid "contains"
+msgstr "contiene"
+
+#: view/table/search.phtml:62
+msgid "Results"
+msgstr "Resultados"
+
+#: view/table/structure.phtml:22
+#, fuzzy
+#| msgid "Structure"
+msgid "Structure:"
+msgstr "Estructura:"
+
+#: view/table/structure.phtml:23
+#, fuzzy
+msgid "Columns, indexes, triggers, and CREATE SQL for this table."
+msgstr "Columnas, índices, disparadores y CREATE SQL para esta tabla."
+
+#: view/table/structure.phtml:46
+msgid "Danger Zone"
+msgstr "Zona de peligro"
+
+#: view/table/structure.phtml:52
+#, fuzzy
+msgid "Empty this table? All rows will be permanently deleted."
+msgstr "¿Vaciar esta mesa? Todas las filas serán eliminadas permanentemente."
+
+#: view/table/structure.phtml:59
+msgid "Empty Table"
+msgstr "Tabla vacía"
+
+#: view/table/structure.phtml:73
+msgid "Drop Table"
+msgstr "Arrastrar Tabla"
+
+#: view/table/structure.phtml:86
+#, fuzzy
+msgid "New table name"
+msgstr "Nuevo nombre de tabla"
+
+#: view/table/structure.phtml:91
+#, fuzzy
+msgid "Rename Table"
+msgstr "Tabla de cambio de nombre"
+
+#: view/table/structure.phtml:155
+#, fuzzy
+#| msgid "Columns"
+msgid "Column Tools"
+msgstr "Herramientas de columna"
+
+#: view/table/structure.phtml:163 view/table/structure.phtml:197
+msgid "Add Column"
+msgstr "Añadir columna"
+
+#: view/table/structure.phtml:166
+msgid "Column Name"
+msgstr "Nombre de la columna"
+
+#: view/table/structure.phtml:171
+msgid "Column Type"
+msgstr "Tipo"
+
+#: view/table/structure.phtml:188
+msgid "Default Value"
+msgstr "Valor por Defecto"
+
+#: view/table/structure.phtml:205 view/table/structure.phtml:223
+msgid "Rename Column"
+msgstr "Cambiar el nombre de la columna"
+
+#: view/table/structure.phtml:208
+#, fuzzy
+#| msgid "Indexes"
+msgid "Existing Column"
+msgstr "Columna existente"
+
+#: view/table/structure.phtml:219
+msgid "New Column Name"
+msgstr "Nuevo nombre de columna"
+
+#: view/table/structure.phtml:232 view/table/structure.phtml:246
+#, fuzzy
+#| msgid "Columns"
+msgid "Drop Column"
+msgstr "Columna de caída"
+
+#: view/table/structure.phtml:235
+msgid "Column"
+msgstr "Columna"
+
+#: view/table/structure.phtml:250
+#, fuzzy
+msgid ""
+"Requires SQLite 3.35.0 or newer and may fail if the column is used by "
+"constraints, indexes, triggers, or generated columns."
+msgstr ""
+"Requiere SQLite 3.35.0 o posterior y puede fallar si la columna es "
+"utilizada por restricciones, índices, disparadores o columnas generadas."
+
+#: view/table/structure.phtml:262
+#, fuzzy
+msgid "No indexes were found for this table."
+msgstr "No se encontraron índices para esta tabla."
+
+#: view/table/structure.phtml:277
+#, fuzzy
+msgid "No triggers were found for this table."
+msgstr "No se encontraron desencadenantes para esta tabla."
+
+#: view/table/structure.phtml:288
+#, fuzzy
+msgid "CREATE SQL"
+msgstr "CREATE SQL"
+
+#: view/table/structure.phtml:292
+#, fuzzy
+msgid "No CREATE SQL was found for this table."
+msgstr "No se encontró ningún SQL CREATE para esta tabla."
+
+#: view/table/trigger-edit.phtml:20
+msgid "Edit Trigger"
+msgstr "Editar Disparador"
+
+#: view/table/trigger-edit.phtml:56
+#, fuzzy
+#| msgid "Triggers"
+msgid "Save Trigger"
+msgstr "Guardar Trigger"
+
+#: view/table/triggers.phtml:16
+msgid "Triggers:"
+msgstr "Activadores:"
+
+#: view/table/triggers.phtml:17
+#, fuzzy
+msgid "Create, inspect, and drop triggers for this table."
+msgstr "Crea, inspecciona y elimina los disparadores para esta tabla."
+
+#: view/table/triggers.phtml:22
+#, fuzzy
+#| msgid "Triggers"
+msgid "Existing Triggers"
+msgstr "Desencadenantes existentes"
+
+#: view/table/triggers.phtml:25
+#, fuzzy
+msgid "No triggers found for this table."
+msgstr "No se han encontrado desencadenantes para esta tabla."
+
+#: view/table/triggers.phtml:97 view/table/triggers.phtml:167
+#, fuzzy
+#| msgid "Triggers"
+msgid "Create Trigger"
+msgstr "Crear Trigger"
+
+#: view/table/triggers.phtml:105
+msgid "Audit Log"
+msgstr "Registro de auditoría"
+
+#: view/table/triggers.phtml:113
+#, fuzzy
+msgid "Auto Updated At"
+msgstr "Actualización automática en"
+
+#: view/table/triggers.phtml:119
+msgid "Trigger Name"
+msgstr "Nombre de activador"
+
+#: view/table/triggers.phtml:124
+msgid "Timing"
+msgstr "Sincronización"
+
+#: view/table/triggers.phtml:126
+msgid "BEFORE"
+msgstr "ANTES"
+
+#: view/table/triggers.phtml:127
+msgid "AFTER"
+msgstr "DESPUÉS"
+
+#: view/table/triggers.phtml:128
+#, fuzzy
+msgid "INSTEAD OF"
+msgstr "EN LUGAR DE"
+
+#: view/table/triggers.phtml:133
+msgid "Event"
+msgstr "Evento"
+
+#: view/table/triggers.phtml:135
+msgid "INSERT"
+msgstr "INSERTAR"
+
+#: view/table/triggers.phtml:136
+msgid "UPDATE"
+msgstr "ACTUALIZAR"
+
+#: view/table/triggers.phtml:137
+msgid "DELETE"
+msgstr "ELIMINAR"
+
+#: view/table/triggers.phtml:147
+#, fuzzy
+msgid "Trigger SQL Statement"
+msgstr "Activa la sentencia SQL"

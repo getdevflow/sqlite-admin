@@ -1,0 +1,1224 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Devflow SQLite Admin\n"
+"POT-Creation-Date: 2026-05-11 22:27-0600\n"
+"PO-Revision-Date: 2026-05-11 22:27-0600\n"
+"Last-Translator: \n"
+"Language-Team: Joshua Parker\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: sqlite-admin\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: t__;esc_html__;esc_attr__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: locale\n"
+"X-Poedit-SearchPathExcluded-1: config\n"
+"X-Poedit-SearchPathExcluded-2: public\n"
+
+#: Controller/DatabaseController.php:55
+#, fuzzy
+msgid "SQLite Manager"
+msgstr "SQLite 管理器"
+
+#: Controller/DatabaseController.php:81
+msgid "Database Structure"
+msgstr "数据结构"
+
+#: Controller/DatabaseController.php:105
+#, fuzzy
+msgid "VACUUM Complete"
+msgstr "吸尘器完成"
+
+#: Controller/DatabaseController.php:106
+#, fuzzy
+msgid "Database VACUUM completed."
+msgstr "数据库吸尘器完成。"
+
+#: Controller/DatabaseController.php:109 Controller/DatabaseController.php:141
+#: Controller/DatabaseController.php:168
+msgid "Back to Dashboard"
+msgstr "回到仪表板"
+
+#: Controller/DatabaseController.php:136
+#, fuzzy
+msgid "Integrity Check"
+msgstr "完整性检查"
+
+#: Controller/DatabaseController.php:137
+#, fuzzy
+msgid "Integrity check completed."
+msgstr "完整性检查完成。"
+
+#: Controller/DatabaseController.php:164
+#, fuzzy
+msgid "Optimize Complete"
+msgstr "优化完成"
+
+#: Controller/DatabaseController.php:165
+#, fuzzy
+msgid "PRAGMA optimize completed."
+msgstr "PRAGMA 优化完成。"
+
+#: Controller/ExportController.php:53
+msgid "Export Database"
+msgstr "备份和导出数据库"
+
+#: Controller/ExportController.php:89
+#, fuzzy
+msgid "Export Failed"
+msgstr "出口失败"
+
+#: Controller/ExportController.php:90
+#, fuzzy
+msgid "No valid tables were selected for export."
+msgstr "没有选择有效的导出表。"
+
+#: Controller/ExportController.php:125
+msgid "Export Table"
+msgstr "导出表"
+
+#: Controller/ImportController.php:59
+msgid "Import Database"
+msgstr "导入数据库"
+
+#: Controller/ImportController.php:79
+#, fuzzy
+msgid "Only SQL database imports are supported here."
+msgstr "这里只支持SQL数据库导入。"
+
+#: Controller/ImportController.php:105
+#, fuzzy
+msgid "Import Into Table"
+msgstr "导入到表格"
+
+#: Controller/ImportController.php:129
+#, fuzzy
+msgid "Only CSV and SQL imports are supported."
+msgstr "只支持CSV和SQL导入。"
+
+#: Controller/ImportController.php:148
+#, fuzzy
+msgid "No import file was uploaded."
+msgstr "没有上传导入文件。"
+
+#: Controller/ImportController.php:152
+#, fuzzy
+msgid "The uploaded import file could not be processed."
+msgstr "上传的导入文件无法处理。"
+
+#: Controller/IndexController.php:63
+msgid "Indexes"
+msgstr "索引"
+
+#: Controller/IndexController.php:97 Controller/IndexController.php:150
+#, fuzzy
+msgid "Index name is required."
+msgstr "需要索引名称。"
+
+#: Controller/IndexController.php:101
+#, fuzzy
+msgid "At least one column must be selected."
+msgstr "至少必须选中一列。"
+
+#: Controller/SqlController.php:61 Controller/SqlController.php:87
+#: Controller/SqlController.php:148
+msgid "SQL Editor"
+msgstr "SQL查询"
+
+#: Controller/TableController.php:72
+#, fuzzy
+msgid "Browse "
+msgstr "浏览"
+
+#: Controller/TableController.php:102
+#, fuzzy
+msgid "Structure "
+msgstr "结构"
+
+#: Controller/TableController.php:132 Controller/TableController.php:168
+msgid "Search "
+msgstr "搜索 "
+
+#: Controller/TableController.php:198
+msgid "Insert Row"
+msgstr "插入行"
+
+#: Controller/TableController.php:231
+#, fuzzy
+msgid "Row Not Found"
+msgstr "未找到行列"
+
+#: Controller/TableController.php:232
+#, fuzzy
+msgid "The selected row could not be found."
+msgstr "选定的行找不到。"
+
+#: Controller/TableController.php:234
+#, fuzzy
+msgid "Back to Table"
+msgstr "返回表格"
+
+#: Controller/TableController.php:239
+msgid "Edit Row"
+msgstr "编辑行"
+
+#: Controller/TableController.php:451
+#, fuzzy
+msgid "The new table name cannot be empty."
+msgstr "新表名不能空。"
+
+#: Controller/TableController.php:458
+#, fuzzy, php-format
+msgid "Table \"%s\" already exists."
+msgstr "表“%s”已经存在。"
+
+#: Controller/TableController.php:497 Controller/TableController.php:613
+#, fuzzy
+msgid "Column name is required."
+msgstr "列名是必填的。"
+
+#: Controller/TableController.php:517
+#, fuzzy
+msgid "Invalid column type."
+msgstr "列类型无效。"
+
+#: Controller/TableController.php:563
+#, fuzzy
+msgid "Old and new column names are required."
+msgstr "需要提供旧列名和新列名。"
+
+#: Controller/TableController.php:572
+#, fuzzy, php-format
+msgid "Column \"%s\" already exists."
+msgstr "“%s”栏已经存在。"
+
+#: Controller/TableController.php:605
+#, fuzzy
+msgid "This SQLite version does not support DROP COLUMN."
+msgstr "此 SQLite 版本不支持 DROP COLUMN。"
+
+#: Controller/TableController.php:673
+#, fuzzy, php-format
+msgid "Table \"%s\" does not exist."
+msgstr "表格“%s”不存在。"
+
+#: Controller/TableController.php:690
+#, fuzzy, php-format
+msgid "Column \"%s\" does not exist."
+msgstr "“%s”栏不存在。"
+
+#: Controller/TriggerController.php:65
+msgid "Triggers"
+msgstr "触发器"
+
+#: Controller/TriggerController.php:101 Controller/TriggerController.php:240
+#, fuzzy
+msgid "Trigger name is required."
+msgstr "需要提供触发名称。"
+
+#: Controller/TriggerController.php:105
+#, fuzzy
+msgid "Invalid trigger timing."
+msgstr "触发时机无效。"
+
+#: Controller/TriggerController.php:109
+#, fuzzy
+msgid "Invalid trigger event."
+msgstr "触发事件无效。"
+
+#: Controller/TriggerController.php:113
+#, fuzzy
+msgid "SQLite only supports FOR EACH ROW triggers."
+msgstr "SQLite 只支持每行触发。"
+
+#: Controller/TriggerController.php:118
+#, fuzzy
+msgid "Trigger statement is required."
+msgstr "触发语句是必需的。"
+
+#: Controller/TriggerController.php:162
+#, fuzzy
+msgid "Trigger not found."
+msgstr "未找到触发点。"
+
+#: Controller/TriggerController.php:181
+#, fuzzy
+msgid "Trigger SQL is required."
+msgstr "需要触发 SQL。"
+
+#: Database/SqliteConnectionFactory.php:39
+#, fuzzy
+msgid "SQLite database path is not configured."
+msgstr "SQLite数据库路径未配置。"
+
+#: Database/SqliteConnectionFactory.php:45
+#, fuzzy
+msgid "SQLite database file could not be found."
+msgstr "找不到SQLite数据库文件。"
+
+#: Database/SqliteConnectionFactory.php:49
+#, fuzzy
+msgid "SQLite database file is not readable."
+msgstr "SQLite数据库文件不可读取。"
+
+#: Database/SqliteImporter.php:37
+#, fuzzy
+msgid "The SQL import file did not contain any executable statements."
+msgstr "SQL 导入文件中没有包含任何可执行语句。"
+
+#: Database/SqliteImporter.php:61
+#, fuzzy
+msgid "Could not create temporary import file."
+msgstr "无法创建临时导入文件。"
+
+#: Database/SqliteImporter.php:71
+#, fuzzy
+msgid "Could not read temporary import file."
+msgstr "无法读取临时导入文件。"
+
+#: Database/SqliteImporter.php:78
+#, fuzzy
+msgid "Could not open uploaded CSV file."
+msgstr "无法打开上传的CSV文件。"
+
+#: Database/SqliteImporter.php:86
+msgid "CSV file is empty."
+msgstr "CSV 文件为空。"
+
+#: Database/SqliteImporter.php:126
+#, fuzzy
+msgid "CSV file does not contain headers."
+msgstr "CSV 文件不包含头部。"
+
+#: Database/SqliteImporter.php:145
+#, fuzzy, php-format
+msgid "CSV column \"%s\" does not exist on the selected table."
+msgstr "CSV 列“%s”不存在于所选表中。"
+
+#: Database/SqliteRowRepository.php:109 Database/SqliteRowRepository.php:144
+#, fuzzy
+msgid "Missing row identity."
+msgstr "缺少行身份。"
+
+#: Database/SqliteRowRepository.php:267
+#, fuzzy
+msgid "Invalid row key."
+msgstr "行键无效。"
+
+#: Database/SqliteRowRepository.php:281
+#, fuzzy
+msgid "Invalid row key payload."
+msgstr "行密钥有效载荷无效。"
+
+#: Security/Identifier.php:29
+#, fuzzy
+msgid "Invalid SQLite identifier."
+msgstr "SQLite标识符无效。"
+
+#: Security/SqliteQueryGuard.php:42
+#, fuzzy
+msgid "SQL query is empty."
+msgstr "SQL 查询是空的。"
+
+#: Security/SqliteQueryGuard.php:47
+#, fuzzy
+msgid "Subsite users may only run one read-only query at a time."
+msgstr "子站用户一次只能运行一个只读查询。"
+
+#: Security/SqliteQueryGuard.php:79
+#, fuzzy
+msgid "Only read-only SELECT and safe PRAGMA queries are allowed."
+msgstr "仅允许只读 SELECT 和安全的 PRAGMA 查询。"
+
+#: Security/SqliteQueryGuard.php:92
+#, fuzzy
+msgid "This query references a table outside the current site."
+msgstr "该查询引用当前站点外的表。"
+
+#: Security/SqliteTriggerGuard.php:29
+#, fuzzy
+msgid "Trigger statement cannot be empty."
+msgstr "触发语句不能空。"
+
+#: Security/SqliteTriggerGuard.php:48
+#, fuzzy, php-format
+msgid "Trigger statement contains forbidden operation: %s"
+msgstr "触发语句包含禁止操作：%s"
+
+#: SqliteAdminPlugin.php:43
+#, fuzzy
+msgid "SQLite Admin"
+msgstr "SQLite 管理员"
+
+#: view/action-result.phtml:12
+msgid "Result"
+msgstr "结果"
+
+#: view/action-result.phtml:13
+#, fuzzy
+msgid "Action complete."
+msgstr "行动完成。"
+
+#: view/action-result.phtml:14
+msgid "Go Back"
+msgstr "返回"
+
+#: view/action-result.phtml:46
+#, fuzzy
+msgid "No additional result data was returned."
+msgstr "未返回更多结果数据。"
+
+#: view/database/dashboard.phtml:39
+#, fuzzy
+msgid "Database Dashboard"
+msgstr "数据库仪表盘"
+
+#: view/database/dashboard.phtml:40
+#, fuzzy
+msgid "SQLite database overview and statistics."
+msgstr "SQLite数据库概览与统计。"
+
+#: view/database/dashboard.phtml:49 view/database/dashboard.phtml:163
+#: view/database/import.phtml:24 view/database/structure.phtml:121
+#: view/layout.phtml:35 view/table/import.phtml:28
+msgid "Export"
+msgstr "导出"
+
+#: view/database/dashboard.phtml:53 view/layout.phtml:36
+msgid "Import"
+msgstr "导入"
+
+#: view/database/dashboard.phtml:61 view/database/structure.phtml:42
+msgid "Tables"
+msgstr "表格"
+
+#: view/database/dashboard.phtml:66 view/database/structure.phtml:47
+msgid "Views"
+msgstr "查看"
+
+#: view/database/dashboard.phtml:71
+msgid "Objects"
+msgstr "对象"
+
+#: view/database/dashboard.phtml:76
+#, fuzzy
+msgid "SQLite Version"
+msgstr "SQLite 版本"
+
+#: view/database/dashboard.phtml:82
+msgid "Database Information"
+msgstr "数据库信息"
+
+#: view/database/dashboard.phtml:85
+#, fuzzy
+msgid "Database Path"
+msgstr "数据库路径"
+
+#: view/database/dashboard.phtml:90
+msgid "Database Size"
+msgstr "数据库大小"
+
+#: view/database/dashboard.phtml:93
+msgid "Last Modified"
+msgstr "最后修改"
+
+#: view/database/dashboard.phtml:100
+#, fuzzy
+msgid "PDO SQLite Extension"
+msgstr "PDO SQLite 扩展"
+
+#: view/database/dashboard.phtml:105
+#, fuzzy
+msgid "SQLite3 Extension"
+msgstr "SQLite3 扩展"
+
+#: view/database/dashboard.phtml:113 view/database/sql.phtml:179
+#: view/database/structure.phtml:58 view/partial/sidebar.phtml:28
+msgid "Database Objects"
+msgstr "数据库对象"
+
+#: view/database/dashboard.phtml:117 view/database/structure.phtml:62
+#, fuzzy
+msgid "No tables or views were found."
+msgstr "没有发现任何表格或视图。"
+
+#: view/database/dashboard.phtml:124 view/database/structure.phtml:69
+#: view/table/import.phtml:87 view/table/indexes.phtml:31
+#: view/table/structure.phtml:129 view/table/triggers.phtml:31
+msgid "Name"
+msgstr "名称"
+
+#: view/database/dashboard.phtml:125 view/database/structure.phtml:70
+#: view/table/import.phtml:88 view/table/structure.phtml:130
+msgid "Type"
+msgstr "类型"
+
+#: view/database/dashboard.phtml:126 view/database/structure.phtml:72
+#: view/partial/table-grid.phtml:31
+msgid "Actions"
+msgstr "操作"
+
+#: view/database/dashboard.phtml:151 view/database/structure.phtml:109
+#: view/partial/sidebar.phtml:74 view/table/export.phtml:24
+#: view/table/import.phtml:24 view/table/structure.phtml:28
+msgid "Browse"
+msgstr "浏览"
+
+#: view/database/dashboard.phtml:155 view/database/structure.phtml:113
+#: view/layout.phtml:33 view/partial/sidebar.phtml:84
+#: view/table/browse.phtml:40 view/table/export.phtml:28
+msgid "Structure"
+msgstr "结构"
+
+#: view/database/dashboard.phtml:159 view/layout.phtml:34
+msgid "SQL"
+msgstr "SQL语句"
+
+#: view/database/export.phtml:20
+#, fuzzy
+msgid "Download a SQL or CSV export of the SQLite database."
+msgstr "下载SQLite数据库的SQL或CSV导出文件。"
+
+#: view/database/export.phtml:25 view/database/import.phtml:23
+#: view/database/sql.phtml:31 view/database/structure.phtml:34
+msgid "Dashboard"
+msgstr "仪表盘"
+
+#: view/database/export.phtml:36 view/table/export.phtml:35
+msgid "Export Options"
+msgstr "导出选项"
+
+#: view/database/export.phtml:46 view/table/export.phtml:41
+msgid "Export Format"
+msgstr "导出格式"
+
+#: view/database/export.phtml:50 view/table/export.phtml:43
+#, fuzzy
+msgid "SQL Dump"
+msgstr "SQL 转储"
+
+#: view/database/export.phtml:54 view/database/export.phtml:130
+#: view/table/export.phtml:44
+msgid "CSV Export"
+msgstr "CSV导出"
+
+#: view/database/export.phtml:59
+#, fuzzy
+msgid "SQL preserves schema and data. CSV exports table rows."
+msgstr "SQL 保留模式和数据。CSV 导出表格行。"
+
+#: view/database/export.phtml:64
+#, fuzzy
+msgid "Export Scope"
+msgstr "出口范围"
+
+#: view/database/export.phtml:68
+#, fuzzy
+msgid "Entire Database"
+msgstr "整个数据库"
+
+#: view/database/export.phtml:72
+msgid "Selected Tables"
+msgstr "选定表"
+
+#: view/database/export.phtml:77
+#, fuzzy
+msgid "Export all visible tables or only selected tables."
+msgstr "导出所有可见的表格，或仅导出选中的表格。"
+
+#: view/database/export.phtml:84
+msgid "Select Tables"
+msgstr "选择数据表"
+
+#: view/database/export.phtml:119
+msgid "Export Information"
+msgstr "导出信息"
+
+#: view/database/export.phtml:122 view/database/import.phtml:63
+msgid "Visible Objects"
+msgstr "可见物体"
+
+#: view/database/export.phtml:125
+msgid "SQL Export"
+msgstr "SQL导出"
+
+#: view/database/export.phtml:127
+#, fuzzy
+msgid "Includes schema definitions and INSERT statements."
+msgstr "包含模式定义和INSERT语句。"
+
+#: view/database/export.phtml:132
+#, fuzzy
+msgid "Exports row data in CSV format."
+msgstr "导出行数据以CSV格式。"
+
+#: view/database/export.phtml:135
+msgid "Permissions"
+msgstr "权限"
+
+#: view/database/export.phtml:137
+#, fuzzy
+msgid "Export visibility respects Devflow multisite table scoping."
+msgstr "导出可视化尊重Devflow多站点表的范围限制。"
+
+#: view/database/export.phtml:150
+#, fuzzy
+msgid "Export Selected Tables"
+msgstr "导出选定表格"
+
+#: view/database/import.phtml:19
+#, fuzzy
+msgid "Import a SQL dump into the SQLite database."
+msgstr "将SQL转储导入到SQLite数据库中。"
+
+#: view/database/import.phtml:30
+#, fuzzy
+msgid "Import SQL File"
+msgstr "导入SQL文件"
+
+#: view/database/import.phtml:42
+#, fuzzy
+msgid "Upload a SQLite-compatible SQL dump file."
+msgstr "上传一个兼容SQLite的SQL转储文件。"
+
+#: view/database/import.phtml:48
+#, fuzzy
+msgid "I understand this may modify database tables and records."
+msgstr "我知道这可能会修改数据库的表和记录。"
+
+#: view/database/import.phtml:49
+#, fuzzy
+msgid "Imports run inside a transaction when supported."
+msgstr "当支持时，导入会在交易中运行。"
+
+#: view/database/import.phtml:60
+#, fuzzy
+msgid "Import Information"
+msgstr "进口信息"
+
+#: view/database/import.phtml:66
+#, fuzzy
+msgid "Supported Format"
+msgstr "支持的格式"
+
+#: view/database/import.phtml:67
+#, fuzzy
+msgid "SQL files only for full database imports."
+msgstr "仅限SQL文件用于完整数据库导入。"
+
+#: view/database/import.phtml:69
+#, fuzzy
+msgid "Recommended First Step"
+msgstr "推荐的第一步"
+
+#: view/database/import.phtml:70
+#, fuzzy
+msgid "Export a backup before importing."
+msgstr "导入前先导出备份。"
+
+#: view/database/import.phtml:72
+#, fuzzy
+msgid "Permission Level"
+msgstr "许可级别"
+
+#: view/database/import.phtml:73
+#, fuzzy
+msgid "Full database imports should be limited to main-site super admins."
+msgstr "完整的数据库导入应限于主站超级管理员。"
+
+#: view/database/sql.phtml:23
+#, fuzzy
+msgid "Run SQL against the selected table scope."
+msgstr "对选定的表作用域运行 SQL。"
+
+#: view/database/sql.phtml:24
+#, fuzzy
+msgid "Run SQL against the scoped SQLite database."
+msgstr "对作用域的SQLite数据库运行SQL。"
+
+#: view/database/sql.phtml:39
+#, fuzzy
+msgid "Browse Table"
+msgstr "浏览表"
+
+#: view/database/sql.phtml:50
+msgid "SQL Query"
+msgstr "SQL查询"
+
+#: view/database/sql.phtml:70
+#, fuzzy
+msgid "Multiple statements may be restricted depending on your permissions."
+msgstr "根据您的权限，多个语句可能会受到限制。"
+
+#: view/database/sql.phtml:76
+msgid "Run Query"
+msgstr "查询运行"
+
+#: view/database/sql.phtml:85
+msgid "Clear"
+msgstr "清除"
+
+#: view/database/sql.phtml:93
+msgid "Query Results"
+msgstr "查询结果"
+
+#: view/database/sql.phtml:111
+msgid "Statement"
+msgstr "报表"
+
+#: view/database/sql.phtml:116
+msgid "rows"
+msgstr "行"
+
+#: view/database/sql.phtml:120
+#, fuzzy
+msgid "Query Time:"
+msgstr "查询时间："
+
+#: view/database/sql.phtml:136
+#, fuzzy
+msgid "No rows returned."
+msgstr "没有回应任何一行。"
+
+#: view/database/sql.phtml:145
+#, fuzzy
+msgid "Quick Query Snippets"
+msgstr "快速查询摘要"
+
+#: view/database/sql.phtml:162
+#, fuzzy
+msgid "Table Structure"
+msgstr "表格结构"
+
+#: view/database/sql.phtml:170
+msgid "Count Rows"
+msgstr "行数"
+
+#: view/database/structure.phtml:30
+#, fuzzy
+msgid "Tables and views visible to the current user."
+msgstr "当前用户可见的表格和视图。"
+
+#: view/database/structure.phtml:52
+#, fuzzy
+msgid "Total Objects"
+msgstr "总对象"
+
+#: view/database/structure.phtml:71
+#, fuzzy
+msgid "Create SQL"
+msgstr "创建SQL"
+
+#: view/database/structure.phtml:98
+#, fuzzy
+msgid "View SQL"
+msgstr "查看SQL"
+
+#: view/error/forbidden.phtml:21
+msgid "Access Denied"
+msgstr "拒绝访问"
+
+#: view/error/forbidden.phtml:22
+#, fuzzy
+msgid "This SQLite manager is protected by Devflow permissions."
+msgstr "这个SQLite管理器受Devflow权限保护。"
+
+#: view/layout.phtml:29
+#, fuzzy
+msgid "Manage your Devflow SQLite database."
+msgstr "管理你的Devflow的SQLite数据库。"
+
+#: view/layout.phtml:32
+msgid "Database"
+msgstr "数据库"
+
+#: view/partial/sidebar.phtml:31
+msgid "tables"
+msgstr "数据表"
+
+#: view/partial/sidebar.phtml:32
+msgid "views"
+msgstr "浏览"
+
+#: view/partial/sidebar.phtml:40
+msgid "View All"
+msgstr "查看全部"
+
+#: view/partial/sidebar.phtml:46
+#, fuzzy
+msgid "No tables or views available."
+msgstr "没有桌子或景观。"
+
+#: view/partial/sidebar.phtml:80
+#, fuzzy
+msgid "Data"
+msgstr "数据"
+
+#: view/partial/table-grid.phtml:50 view/table/triggers.phtml:55
+msgid "Edit"
+msgstr "编辑"
+
+#: view/partial/table-grid.phtml:66
+msgid "Delete"
+msgstr "删除"
+
+#: view/partial/table-grid.phtml:70
+msgid "Unavailable"
+msgstr "不可用"
+
+#: view/table/browse.phtml:23
+msgid "Browse:"
+msgstr "浏览："
+
+#: view/table/browse.phtml:25
+#, fuzzy
+msgid "total records."
+msgstr "总纪录。"
+
+#: view/table/browse.phtml:26 view/table/browse.phtml:69
+msgid "Page"
+msgstr "页面"
+
+#: view/table/browse.phtml:36 view/table/search.phtml:56
+msgid "Search"
+msgstr "搜索"
+
+#: view/table/browse.phtml:48
+#, fuzzy
+msgid "No records were found in this table."
+msgstr "该表中未发现任何记录。"
+
+#: view/table/browse.phtml:51
+#, fuzzy
+msgid "Insert First Row"
+msgstr "插入第一排"
+
+#: view/table/browse.phtml:64
+msgid "Previous"
+msgstr "上一个"
+
+#: view/table/browse.phtml:77
+#, fuzzy
+msgid "Next"
+msgstr "下一个"
+
+#: view/table/edit.phtml:21
+#, fuzzy
+msgid "Edit Row:"
+msgstr "编辑行："
+
+#: view/table/edit.phtml:22
+#, fuzzy
+msgid "Update the selected record."
+msgstr "更新所选记录。"
+
+#: view/table/edit.phtml:27 view/table/insert.phtml:26
+#, fuzzy
+msgid "Back to Browse"
+msgstr "返回浏览"
+
+#: view/table/edit.phtml:35
+#, fuzzy
+msgid "No row data was found for editing."
+msgstr "未发现可用于编辑的行数据。"
+
+#: view/table/edit.phtml:136 view/table/insert.phtml:171
+msgid "Set NULL"
+msgstr "设为 NULL"
+
+#: view/table/edit.phtml:144
+msgid "Save Changes"
+msgstr "保存更改"
+
+#: view/table/export.phtml:18
+#, fuzzy
+msgid "Export Table:"
+msgstr "导出表："
+
+#: view/table/export.phtml:19
+#, fuzzy
+msgid "Download this table as SQL or CSV."
+msgstr "下载此表为SQL或CSV。"
+
+#: view/table/export.phtml:46
+#, fuzzy
+msgid "SQL includes CREATE TABLE and INSERT statements. CSV exports row data."
+msgstr "SQL 包含 CREATE TABLE 和 INSERT 语句。CSV 导出行数据。"
+
+#: view/table/export.phtml:57 view/table/import.phtml:65
+msgid "Table Information"
+msgstr "表信息"
+
+#: view/table/export.phtml:60 view/table/import.phtml:68
+msgid "Table"
+msgstr "表格"
+
+#: view/table/export.phtml:63 view/table/export.phtml:70
+#: view/table/import.phtml:71 view/table/indexes.phtml:81
+#: view/table/structure.phtml:102 view/table/structure.phtml:118
+msgid "Columns"
+msgstr "列"
+
+#: view/table/import.phtml:18
+#, fuzzy
+msgid "Import Into Table:"
+msgstr "导入表格："
+
+#: view/table/import.phtml:19
+#, fuzzy
+msgid "Import CSV or SQL data into this table."
+msgstr "将CSV或SQL数据导入该表。"
+
+#: view/table/import.phtml:35 view/table/import.phtml:45
+msgid "Import File"
+msgstr "导入文件"
+
+#: view/table/import.phtml:47
+#, fuzzy
+msgid ""
+"CSV imports are matched by header row. SQL files are executed against this "
+"table scope."
+msgstr "CSV 导入按头行匹配。SQL 文件针对该表作用域执行。"
+
+#: view/table/import.phtml:53
+#, fuzzy
+msgid "I understand this import may modify records."
+msgstr "我知道这次导入可能会修改记录。"
+
+#: view/table/import.phtml:54
+#, fuzzy
+msgid "Export a backup before importing production data."
+msgstr "导入生产数据前先导出备份。"
+
+#: view/table/import.phtml:59
+msgid "Import Table"
+msgstr "导入表格"
+
+#: view/table/import.phtml:74
+#, fuzzy
+msgid "CSV Requirements"
+msgstr "CSV要求"
+
+#: view/table/import.phtml:75
+#, fuzzy
+msgid "First row must contain column names matching this table."
+msgstr "第一行必须包含与该表相符的列名。"
+
+#: view/table/import.phtml:81
+msgid "Available Columns"
+msgstr "可用列"
+
+#: view/table/import.phtml:89 view/table/structure.phtml:131
+#: view/table/structure.phtml:194
+#, fuzzy
+msgid "Nullable"
+msgstr "可空"
+
+#: view/table/import.phtml:90 view/table/structure.phtml:132
+msgid "Default"
+msgstr "默认"
+
+#: view/table/import.phtml:91 view/table/structure.phtml:133
+msgid "Primary Key"
+msgstr "主键"
+
+#: view/table/indexes.phtml:16
+#, fuzzy
+msgid "Indexes:"
+msgstr "索引："
+
+#: view/table/indexes.phtml:17
+#, fuzzy
+msgid "Create, inspect, and drop indexes for this table."
+msgstr "创建、检查并删除该表的索引。"
+
+#: view/table/indexes.phtml:22
+#, fuzzy
+msgid "Existing Indexes"
+msgstr "现有索引"
+
+#: view/table/indexes.phtml:25
+#, fuzzy
+msgid "No indexes found for this table."
+msgstr "未找到该表的索引。"
+
+#: view/table/indexes.phtml:32
+msgid "Unique"
+msgstr "唯一的"
+
+#: view/table/indexes.phtml:33
+msgid "Origin"
+msgstr "来源"
+
+#: view/table/indexes.phtml:34
+msgid "Partial"
+msgstr "部分"
+
+#: view/table/indexes.phtml:35 view/table/triggers.phtml:33
+#, fuzzy
+msgid "Action"
+msgstr "行动"
+
+#: view/table/indexes.phtml:49
+#, fuzzy
+msgid "Drop this index?"
+msgstr "放弃这个指数？"
+
+#: view/table/indexes.phtml:50 view/table/triggers.phtml:78
+msgid "Drop"
+msgstr "删除"
+
+#: view/table/indexes.phtml:54
+#, fuzzy
+msgid "System index"
+msgstr "系统索引"
+
+#: view/table/indexes.phtml:66 view/table/indexes.phtml:92
+#, fuzzy
+msgid "Create Index"
+msgstr "创建索引"
+
+#: view/table/indexes.phtml:71
+msgid "Index Name"
+msgstr "参照股指"
+
+#: view/table/indexes.phtml:77
+#, fuzzy
+msgid "Unique index"
+msgstr "唯一索引"
+
+#: view/table/insert.phtml:20
+#, fuzzy
+msgid "Insert Row:"
+msgstr "插入行："
+
+#: view/table/insert.phtml:21
+#, fuzzy
+msgid "Add a new record to this table."
+msgstr "向此表新增一条记录。"
+
+#: view/table/insert.phtml:34 view/table/structure.phtml:122
+#, fuzzy
+msgid "No columns were found for this table."
+msgstr "未找到该表的列。"
+
+#: view/table/insert.phtml:192
+msgid "Cancel"
+msgstr "取消"
+
+#: view/table/search.phtml:22
+msgid "Search:"
+msgstr "搜索："
+
+#: view/table/search.phtml:23
+#, fuzzy
+msgid "matching records."
+msgstr "记录匹配。"
+
+#: view/table/search.phtml:41
+msgid "contains"
+msgstr "包含"
+
+#: view/table/search.phtml:62
+msgid "Results"
+msgstr "结果"
+
+#: view/table/structure.phtml:22
+#, fuzzy
+msgid "Structure:"
+msgstr "结构："
+
+#: view/table/structure.phtml:23
+#, fuzzy
+msgid "Columns, indexes, triggers, and CREATE SQL for this table."
+msgstr "该表的列、索引、触发器和创建 SQL。"
+
+#: view/table/structure.phtml:46
+msgid "Danger Zone"
+msgstr "危险区"
+
+#: view/table/structure.phtml:52
+#, fuzzy
+msgid "Empty this table? All rows will be permanently deleted."
+msgstr "清空这张桌子？所有行将被永久删除。"
+
+#: view/table/structure.phtml:59
+msgid "Empty Table"
+msgstr "空表"
+
+#: view/table/structure.phtml:73
+msgid "Drop Table"
+msgstr "删除表"
+
+#: view/table/structure.phtml:86
+#, fuzzy
+msgid "New table name"
+msgstr "新桌子名称"
+
+#: view/table/structure.phtml:91
+msgid "Rename Table"
+msgstr "重命名表"
+
+#: view/table/structure.phtml:155
+#, fuzzy
+#| msgid "Columns"
+msgid "Column Tools"
+msgstr "柱式工具"
+
+#: view/table/structure.phtml:163 view/table/structure.phtml:197
+msgid "Add Column"
+msgstr "添加列"
+
+#: view/table/structure.phtml:166
+msgid "Column Name"
+msgstr "列名称"
+
+#: view/table/structure.phtml:171
+msgid "Column Type"
+msgstr "列类型"
+
+#: view/table/structure.phtml:188
+msgid "Default Value"
+msgstr "默认值"
+
+#: view/table/structure.phtml:205 view/table/structure.phtml:223
+msgid "Rename Column"
+msgstr "重新命名列"
+
+#: view/table/structure.phtml:208
+#, fuzzy
+msgid "Existing Column"
+msgstr "现存柱子"
+
+#: view/table/structure.phtml:219
+#, fuzzy
+msgid "New Column Name"
+msgstr "新柱名"
+
+#: view/table/structure.phtml:232 view/table/structure.phtml:246
+#, fuzzy
+#| msgid "Columns"
+msgid "Drop Column"
+msgstr "投递专栏"
+
+#: view/table/structure.phtml:235
+msgid "Column"
+msgstr "列"
+
+#: view/table/structure.phtml:250
+#, fuzzy
+msgid ""
+"Requires SQLite 3.35.0 or newer and may fail if the column is used by "
+"constraints, indexes, triggers, or generated columns."
+msgstr ""
+"需要 SQLite 3.35.0 或更新版本，若该列被约束、索引、触发器或生成列使用，可能"
+"会失败。"
+
+#: view/table/structure.phtml:262
+#, fuzzy
+msgid "No indexes were found for this table."
+msgstr "未找到该表格的索引。"
+
+#: view/table/structure.phtml:277
+#, fuzzy
+msgid "No triggers were found for this table."
+msgstr "未发现该表格的触发因素。"
+
+#: view/table/structure.phtml:288
+#, fuzzy
+msgid "CREATE SQL"
+msgstr "创建 SQL"
+
+#: view/table/structure.phtml:292
+#, fuzzy
+msgid "No CREATE SQL was found for this table."
+msgstr "该表未发现任何 CREATE SQL。"
+
+#: view/table/trigger-edit.phtml:20
+msgid "Edit Trigger"
+msgstr "编辑触发器"
+
+#: view/table/trigger-edit.phtml:56
+msgid "Save Trigger"
+msgstr "保存触发器"
+
+#: view/table/triggers.phtml:16
+msgid "Triggers:"
+msgstr "触发器:"
+
+#: view/table/triggers.phtml:17
+#, fuzzy
+msgid "Create, inspect, and drop triggers for this table."
+msgstr "为此表创建、检查并删除触发器。"
+
+#: view/table/triggers.phtml:22
+#, fuzzy
+msgid "Existing Triggers"
+msgstr "现有触发因素"
+
+#: view/table/triggers.phtml:25
+#, fuzzy
+msgid "No triggers found for this table."
+msgstr "这张表没有发现触发器。"
+
+#: view/table/triggers.phtml:97 view/table/triggers.phtml:167
+#, fuzzy
+msgid "Create Trigger"
+msgstr "创建触发器"
+
+#: view/table/triggers.phtml:105
+msgid "Audit Log"
+msgstr "审计日志"
+
+#: view/table/triggers.phtml:113
+#, fuzzy
+msgid "Auto Updated At"
+msgstr "自动更新于"
+
+#: view/table/triggers.phtml:119
+msgid "Trigger Name"
+msgstr "触发名称"
+
+#: view/table/triggers.phtml:124
+msgid "Timing"
+msgstr "校时"
+
+#: view/table/triggers.phtml:126
+msgid "BEFORE"
+msgstr "之前"
+
+#: view/table/triggers.phtml:127
+msgid "AFTER"
+msgstr "之后"
+
+#: view/table/triggers.phtml:128
+#, fuzzy
+msgid "INSTEAD OF"
+msgstr "而不是"
+
+#: view/table/triggers.phtml:133
+msgid "Event"
+msgstr "事件"
+
+#: view/table/triggers.phtml:135
+#, fuzzy
+msgid "INSERT"
+msgstr "插入"
+
+#: view/table/triggers.phtml:136
+msgid "UPDATE"
+msgstr "更新"
+
+#: view/table/triggers.phtml:137
+msgid "DELETE"
+msgstr "删除"
+
+#: view/table/triggers.phtml:147
+#, fuzzy
+msgid "Trigger SQL Statement"
+msgstr "触发SQL语句"

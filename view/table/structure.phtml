@@ -1,0 +1,301 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function Qubus\Security\Helpers\esc_attr__;
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$this->parent('plugin::SqliteAdmin/view/layout');
+$this->block('sqlite-admin', function ($params) {
+$r = Registry::getInstance()->get('sqlite-admin');
+$columns = $params['columns'] ?? [];
+$indexes = $params['indexes'] ?? [];
+$triggers = $params['triggers'] ?? [];
+$createSql = $params['createSql'] ?? '';
+?>
+
+<section class="df-sqlite-card">
+    <header class="df-sqlite-card-header">
+        <div>
+            <h2><?=esc_html__('Structure:', $r['id']);?> <?= esc_html($params['table']); ?></h2>
+            <p><?=esc_html__('Columns, indexes, triggers, and CREATE SQL for this table.', $r['id']);?></p>
+        </div>
+
+        <div class="df-sqlite-actions">
+            <a class="button" href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table'])); ?>">
+                <?=esc_html__('Browse', $r['id']);?>
+            </a>
+
+            <a class="button" href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/insert'); ?>">
+                <?=esc_html__('Insert Row', $r['id']);?>
+            </a>
+
+            <a class="button" href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/sql'); ?>">
+                SQL
+            </a>
+
+            <a class="button" href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/triggers'); ?>">
+                <?=esc_html__('Triggers', $r['id']);?>
+            </a>
+        </div>
+
+        <?php if ($params['policy']->canDropTable()): ?>
+            <div class="df-sqlite-danger-zone">
+                <h3><?=esc_html__('Danger Zone', $r['id']);?></h3>
+
+                <div class="df-sqlite-danger-actions">
+                    <form
+                            method="post"
+                            action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/empty'); ?>"
+                            onsubmit="return confirm(<?=esc_attr__('Empty this table? All rows will be permanently deleted.', $r['id']);?>);"
+                    >
+
+                        <button
+                                type="submit"
+                                class="button button-danger"
+                        >
+                            <?=esc_html__('Empty Table', $r['id']);?>
+                        </button>
+                    </form>
+
+                    <form
+                            method="post"
+                            action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/drop'); ?>"
+                            onsubmit="return confirm('DROP TABLE <?= esc_html($params['table']); ?>? This cannot be undone.');"
+                    >
+
+                        <button
+                                type="submit"
+                                class="button button-danger"
+                        >
+                            <?=esc_html__('Drop Table', $r['id']);?>
+                        </button>
+                    </form>
+
+                    <form
+                        method="post"
+                        action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/rename'); ?>"
+                        class="df-sqlite-rename-form"
+                    >
+
+                        <input
+                            type="text"
+                            name="new_name"
+                            placeholder=<?=esc_attr__("New table name", $r['id']);?>
+                            required
+                        >
+
+                        <button type="submit" class="button">
+                            <?=esc_html__('Rename Table', $r['id']);?>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        <?php endif; ?>
+    </header>
+
+    <div class="df-sqlite-card-body">
+        <div class="df-sqlite-stats-grid">
+            <div class="df-sqlite-stat">
+                <span class="df-sqlite-stat-label"><?=esc_html__('Columns', $r['id']);?></span>
+                <strong><?= esc_html((string) count($columns)); ?></strong>
+            </div>
+
+            <div class="df-sqlite-stat">
+                <span class="df-sqlite-stat-label"><?=esc_html__('Indexes', $r['id']);?></span>
+                <strong><?= esc_html((string) count($indexes)); ?></strong>
+            </div>
+
+            <div class="df-sqlite-stat">
+                <span class="df-sqlite-stat-label"><?=esc_html__('Triggers', $r['id']);?></span>
+                <strong><?= esc_html((string) count($triggers)); ?></strong>
+            </div>
+        </div>
+
+        <div class="df-sqlite-panel">
+            <h3><?=esc_html__('Columns', $r['id']);?></h3>
+
+            <?php if ($columns === []): ?>
+                <div class="df-sqlite-empty">
+                    <p><?=esc_html__('No columns were found for this table.', $r['id']);?></p>
+                </div>
+            <?php else: ?>
+                <div class="df-sqlite-table-wrap">
+                    <table class="df-sqlite-grid">
+                        <thead>
+                        <tr>
+                            <th><?=esc_html__('Name', $r['id']);?></th>
+                            <th><?=esc_html__('Type', $r['id']);?></th>
+                            <th><?=esc_html__('Nullable', $r['id']);?></th>
+                            <th><?=esc_html__('Default', $r['id']);?></th>
+                            <th><?=esc_html__('Primary Key', $r['id']);?></th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <?php foreach ($columns as $column): ?>
+                            <tr>
+                                <td><strong><?= esc_html((string) ($column['name'] ?? '')); ?></strong></td>
+                                <td><?= esc_html((string) ($column['type'] ?? '')); ?></td>
+                                <td><?= ! empty($column['notnull']) ? 'No' : 'Yes'; ?></td>
+                                <td><?= esc_html((string) ($column['dflt_value'] ?? 'NULL')); ?></td>
+                                <td><?= ! empty($column['pk']) ? 'Yes' : 'No'; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php endif; ?>
+        </div>
+
+        <?php if ($params['policy']->canDropTable()): ?>
+            <div class="df-sqlite-panel">
+                <h3><?=esc_html__('Column Tools', $r['id']);?></h3>
+
+                <div class="df-sqlite-column-tools">
+                    <form
+                            method="post"
+                            action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/columns/add'); ?>"
+                            class="df-sqlite-form df-sqlite-tool-form"
+                    >
+                        <h4><?=esc_html__('Add Column', $r['id']);?></h4>
+
+                        <label>
+                            <?=esc_html__('Column Name', $r['id']);?>
+                            <input type="text" name="column_name" required>
+                        </label>
+
+                        <label>
+                            <?=esc_html__('Column Type', $r['id']);?>
+                            <select name="column_type">
+                                <option value="TEXT">TEXT</option>
+                                <option value="INTEGER">INTEGER</option>
+                                <option value="REAL">REAL</option>
+                                <option value="NUMERIC">NUMERIC</option>
+                                <option value="BLOB">BLOB</option>
+                                <option value="VARCHAR(191)">VARCHAR(191)</option>
+                                <option value="VARCHAR(255)">VARCHAR(255)</option>
+                                <option value="LONGTEXT">LONGTEXT</option>
+                                <option value="DATETIME">DATETIME</option>
+                                <option value="DATE">DATE</option>
+                                <option value="BOOLEAN">BOOLEAN</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            <?=esc_html__('Default Value', $r['id']);?>
+                            <input type="text" name="default_value">
+                        </label>
+
+                        <label class="df-sqlite-checkbox">
+                            <input type="checkbox" name="nullable" value="1" checked>
+                            <span><?=esc_html__('Nullable', $r['id']);?></span>
+                        </label>
+
+                        <button type="submit"><?=esc_html__('Add Column', $r['id']);?></button>
+                    </form>
+
+                    <form
+                            method="post"
+                            action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/columns/rename'); ?>"
+                            class="df-sqlite-form df-sqlite-tool-form"
+                    >
+                        <h4><?=esc_html__('Rename Column', $r['id']);?></h4>
+
+                        <label>
+                            <?=esc_html__('Existing Column', $r['id']);?>
+                            <select name="old_column_name" required>
+                                <?php foreach ($columns as $column): ?>
+                                    <option value="<?= esc_html((string) $column['name']); ?>">
+                                        <?= esc_html((string) $column['name']); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </label>
+
+                        <label>
+                            <?=esc_html__('New Column Name', $r['id']);?>
+                            <input type="text" name="new_column_name" required>
+                        </label>
+
+                        <button type="submit"><?=esc_html__('Rename Column', $r['id']);?></button>
+                    </form>
+
+                    <form
+                            method="post"
+                            action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/columns/drop'); ?>"
+                            class="df-sqlite-form df-sqlite-tool-form"
+                            onsubmit="return confirm('Drop this column? This cannot be undone.');"
+                    >
+                        <h4><?=esc_html__('Drop Column', $r['id']);?></h4>
+
+                        <label>
+                            <?=esc_html__('Column', $r['id']);?>
+                            <select name="column_name" required>
+                                <?php foreach ($columns as $column): ?>
+                                    <option value="<?= esc_html((string) $column['name']); ?>">
+                                        <?= esc_html((string) $column['name']); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </label>
+
+                        <button type="submit" class="button button-danger">
+                            <?=esc_html__('Drop Column', $r['id']);?>
+                        </button>
+
+                        <small>
+                            <?=esc_html__('Requires SQLite 3.35.0 or newer and may fail if the column is used by constraints, indexes, triggers, or generated columns.', $r['id']);?>
+                        </small>
+                    </form>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <div class="df-sqlite-panel">
+            <h3><?=esc_html__('Indexes', $r['id']);?></h3>
+
+            <?php if ($indexes === []): ?>
+                <div class="df-sqlite-empty">
+                    <p><?=esc_html__('No indexes were found for this table.', $r['id']);?></p>
+                </div>
+            <?php else: ?>
+                <?php
+                $rows = $indexes;
+                $this->insert('plugin::SqliteAdmin/view/partial/table-grid', ['rows' => $rows]);
+                ?>
+            <?php endif; ?>
+        </div>
+
+        <div class="df-sqlite-panel">
+            <h3><?=esc_html__('Triggers', $r['id']);?></h3>
+
+            <?php if ($triggers === []): ?>
+                <div class="df-sqlite-empty">
+                    <p><?=esc_html__('No triggers were found for this table.', $r['id']);?></p>
+                </div>
+            <?php else: ?>
+                <?php
+                $rows = $triggers;
+                $this->insert('plugin::SqliteAdmin/view/partial/table-grid', ['rows' => $rows]);
+                ?>
+            <?php endif; ?>
+        </div>
+
+        <div class="df-sqlite-panel">
+            <h3><?=esc_html__('CREATE SQL', $r['id']);?></h3>
+
+            <?php if ($createSql === ''): ?>
+                <div class="df-sqlite-empty">
+                    <p><?=esc_html__('No CREATE SQL was found for this table.', $r['id']);?></p>
+                </div>
+            <?php else: ?>
+                <pre class="df-sqlite-code"><code><?= esc_html($createSql); ?></code></pre>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+<?php }); ?>
+

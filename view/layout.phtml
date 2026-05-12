@@ -1,0 +1,48 @@
+<?php
+
+use App\Application\Devflow;
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function App\Shared\Helpers\plugin_url;
+use function Qubus\Security\Helpers\esc_html__;
+use function Qubus\Security\Helpers\t__;
+
+$r = Registry::getInstance()->get('sqlite-admin');
+?>
+<!doctype html>
+<html lang="<?=Devflow::$PHP->configContainer->string('app.language');?>">
+<head>
+    <meta charset="<?=Devflow::$PHP->configContainer->string('app.charset');?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?= $title ?? t__('SQLite Manager', $r['id']); ?></title>
+    <link rel="stylesheet" href="<?= plugin_url('SqliteAdmin/css/sqlite-admin.css'); ?>">
+    <link rel="stylesheet" href="<?= plugin_url('SqliteAdmin/css/alert.css'); ?>">
+    <link rel="stylesheet" href="<?= plugin_url('SqliteAdmin/css/prism.min.css'); ?>">
+    <script src="<?= plugin_url('SqliteAdmin/js/prism.min.js'); ?>" defer></script>
+    <script src="<?= plugin_url('SqliteAdmin/js/prism-sql.min.js'); ?>" defer></script>
+</head>
+<body class="df-sqlite-admin">
+<header class="df-sqlite-topbar">
+    <div>
+        <h1><?=esc_html__('SQLite Manager', $r['id']);?></h1>
+        <p><?=esc_html__('Manage your Devflow SQLite database.', $r['id']);?></p>
+    </div>
+    <nav>
+        <a href="<?= admin_url('plugin/sqlite-admin/'); ?>"><?=esc_html__('Database', $r['id']);?></a>
+        <a href="<?= admin_url('plugin/sqlite-admin/structure'); ?>"><?=esc_html__('Structure', $r['id']);?></a>
+        <a href="<?= admin_url('plugin/sqlite-admin/sql'); ?>"><?=esc_html__('SQL', $r['id']);?></a>
+        <a href="<?= admin_url('plugin/sqlite-admin/export'); ?>"><?=esc_html__('Export', $r['id']);?></a>
+        <a href="<?= admin_url('plugin/sqlite-admin/import'); ?>"><?=esc_html__('Import', $r['id']);?></a>
+    </nav>
+</header>
+<div class="df-sqlite-shell">
+    <?php $this->insert('plugin::SqliteAdmin/view/partial/sidebar'); ?>
+    <main class="df-sqlite-main">
+        <?php $this->insert('plugin::SqliteAdmin/view/partial/flash'); ?>
+        <?php $this->block('sqlite-admin'); ?>
+    </main>
+</div>
+<script src="<?= plugin_url('SqliteAdmin/js/sqlite-admin.js'); ?>"></script>
+</body>
+</html>

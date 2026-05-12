@@ -1,0 +1,80 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$this->parent('plugin::SqliteAdmin/view/layout');
+$this->block('sqlite-admin', function ($params) {
+$r = Registry::getInstance()->get('sqlite-admin');
+$columnCount = count($params['columns'] ?? []);
+?>
+
+<section class="df-sqlite-card">
+    <header class="df-sqlite-card-header">
+        <div>
+            <h2><?=esc_html__('Export Table:', $r['id']);?> <?= esc_html($params['table']); ?></h2>
+            <p><?=esc_html__('Download this table as SQL or CSV.', $r['id']);?></p>
+        </div>
+
+        <div class="df-sqlite-actions">
+            <a class="button" href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table'])); ?>">
+                <?=esc_html__('Browse', $r['id']);?>
+            </a>
+
+            <a class="button" href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/structure'); ?>">
+                <?=esc_html__('Structure', $r['id']);?>
+            </a>
+        </div>
+    </header>
+
+    <div class="df-sqlite-card-body">
+        <div class="df-sqlite-panel">
+            <h3><?=esc_html__('Export Options', $r['id']);?></h3>
+
+            <form method="post" action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/export'); ?>" class="df-sqlite-form">
+
+                <div class="df-sqlite-form-grid">
+                    <label>
+                        <?=esc_html__('Export Format', $r['id']);?>
+                        <select name="format" required>
+                            <option value="sql" selected><?=esc_html__('SQL Dump', $r['id']);?> (.sql)</option>
+                            <option value="csv"><?=esc_html__('CSV Export', $r['id']);?> (.csv)</option>
+                        </select>
+                        <small><?=esc_html__('SQL includes CREATE TABLE and INSERT statements. CSV exports row data.', $r['id']);?></small>
+                    </label>
+                </div>
+
+                <div class="df-sqlite-form-actions">
+                    <button type="submit"><?=esc_html__('Export Table', $r['id']);?></button>
+                </div>
+            </form>
+        </div>
+
+        <div class="df-sqlite-panel">
+            <h3><?=esc_html__('Table Information', $r['id']);?></h3>
+
+            <dl class="df-sqlite-meta">
+                <dt><?=esc_html__('Table', $r['id']);?></dt>
+                <dd><code><?= esc_html($params['table']); ?></code></dd>
+
+                <dt><?=esc_html__('Columns', $r['id']);?></dt>
+                <dd><?= esc_html((string) $columnCount); ?></dd>
+            </dl>
+        </div>
+
+        <?php if (($params['columns'] ?? []) !== []): ?>
+            <div class="df-sqlite-panel">
+                <h3><?=esc_html__('Columns', $r['id']);?></h3>
+
+                <?php
+                $rows = $params['columns'];
+                $this->insert('plugin::SqliteAdmin/view/partial/table-grid', ['rows' => $rows]);
+                ?>
+            </div>
+        <?php endif; ?>
+    </div>
+</section>
+<?php }); ?>

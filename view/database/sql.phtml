@@ -1,0 +1,256 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$this->parent('plugin::SqliteAdmin/view/layout');
+$this->block('sqlite-admin', function ($params) {
+$r = Registry::getInstance()->get('sqlite-admin');
+$currentSql = $params['sql'] ?? '';
+$isTableScoped = isset($params['table']) && $params['table'] !== '';
+?>
+
+<section class="df-sqlite-card">
+    <header class="df-sqlite-card-header">
+        <div>
+            <h2><?=esc_html__('SQL Editor', $r['id']);?></h2>
+
+            <p>
+                <?= $isTableScoped
+                    ? esc_html__('Run SQL against the selected table scope.', $r['id'])
+                    : esc_html__('Run SQL against the scoped SQLite database.', $r['id'])
+                ;?>
+            </p>
+        </div>
+
+        <div class="df-sqlite-actions">
+            <a class="button" href="<?= admin_url('plugin/sqlite-admin/'); ?>">
+                <?=esc_html__('Dashboard', $r['id']);?>
+            </a>
+
+            <?php if ($isTableScoped): ?>
+                <a
+                        class="button"
+                        href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table'])); ?>"
+                >
+                    <?=esc_html__('Browse Table', $r['id']);?>
+                </a>
+            <?php endif; ?>
+        </div>
+    </header>
+
+    <div class="df-sqlite-card-body">
+        <div class="df-sqlite-panel">
+            <form method="post" class="df-sqlite-form">
+
+                <label>
+                    <?=esc_html__('SQL Query', $r['id']);?>
+
+                    <div class="df-sqlite-sql-editor">
+                        <pre
+                                id="sql-highlighting"
+                                class="df-sqlite-sql-highlight language-sql"
+                                aria-hidden="true"
+                        ><code id="sql-highlight" class="language-sql"><?= esc_html($currentSql); ?></code></pre>
+
+                        <textarea
+                                name="sql"
+                                id="sql-editor"
+                                class="df-sqlite-sql-textarea"
+                                rows="14"
+                                spellcheck="false"
+                                required
+                        ><?= esc_html($currentSql); ?></textarea>
+                    </div>
+
+                    <small>
+                        <?=esc_html__('Multiple statements may be restricted depending on your permissions.', $r['id']);?>
+                    </small>
+                </label>
+
+                <div class="df-sqlite-form-actions">
+                    <button type="submit" class="btn btn-default">
+                        <?=esc_html__('Run Query', $r['id']);?>
+                    </button>
+
+                    <button
+                        type="button"
+                        id="clear-sql-editor"
+                        class="button button-secondary"
+                        onclick="document.querySelector('.df-sqlite-editor').value='';"
+                    >
+                        <?=esc_html__('Clear', $r['id']);?>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <?php if (($params['results'] ?? []) !== []): ?>
+            <div class="df-sqlite-panel">
+                <h3><?=esc_html__('Query Results', $r['id']);?></h3>
+
+                <?php foreach ($params['results'] as $index => $result): ?>
+                    <?php
+                    $statementSql = (string) ($result['sql'] ?? '');
+                    $rows = $result['rows'] ?? [];
+                    $rowCount = (int) ($result['rowCount'] ?? count($rows));
+                    $time = (float) ($result['time'] ?? 0);
+
+                    $formatted = $time < 1
+                        ? number_format($time * 1000, 2) . ' m'
+                        : number_format($time, 4) . ' s';
+                    ?>
+
+                    <section class="df-sqlite-result">
+                        <header class="df-sqlite-result-header">
+                            <div>
+                                <h4>
+                                    <?=esc_html__('Statement', $r['id']);?> #<?= esc_html((string) ($index + 1)); ?>
+                                </h4>
+
+                                <div class="df-sqlite-result-meta">
+                                    <span>
+                                        <?= esc_html((string) $rowCount); ?> <?=esc_html__('rows', $r['id']);?>
+                                    </span>
+
+                                    <span>
+                                        <?=esc_html__('Query Time:');?> <?= esc_html($formatted); ?>s
+                                    </span>
+                                </div>
+                            </div>
+                        </header>
+
+                        <div class="df-sqlite-code-wrap">
+                            <pre class="df-sqlite-code"><code id="sql-highlight" class="language-sql"><?= esc_html($statementSql); ?></code></pre>
+                        </div>
+
+                        <?php if ($rows !== []): ?>
+                            <?php
+                            $this->insert('plugin::SqliteAdmin/view/partial/table-grid', ['rows' => $rows]);
+                            ?>
+                        <?php else: ?>
+                            <div class="df-sqlite-empty">
+                                <p><?=esc_html__('No rows returned.', $r['id']);?></p>
+                            </div>
+                        <?php endif; ?>
+                    </section>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+
+        <div class="df-sqlite-panel">
+            <h3><?=esc_html__('Quick Query Snippets', $r['id']);?></h3>
+
+            <div class="df-sqlite-snippets">
+                <?php if ($isTableScoped): ?>
+                    <button
+                        type="button"
+                        class="df-sqlite-snippet"
+                        data-sql='SELECT * FROM "<?= esc_html($params['table']); ?>" LIMIT 50;'
+                    >
+                    SELECT *
+                    </button>
+
+                    <button
+                        type="button"
+                        class="df-sqlite-snippet"
+                        data-sql='PRAGMA table_info("<?= esc_html($params['table']); ?>");'
+                    >
+                        <?=esc_html__('Table Structure', $r['id']);?>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="df-sqlite-snippet"
+                        data-sql='SELECT COUNT(*) AS total FROM "<?= esc_html($params['table']); ?>";'
+                    >
+                        <?=esc_html__('Count Rows', $r['id']);?>
+                    </button>
+                <?php endif; ?>
+
+                <button
+                    type="button"
+                    class="df-sqlite-snippet"
+                    data-sql='SELECT name, type FROM sqlite_master ORDER BY name;'
+                >
+                    <?=esc_html__('Database Objects', $r['id']);?>
+                </button>
+
+                <button
+                    type="button"
+                    class="df-sqlite-snippet"
+                    data-sql='PRAGMA integrity_check;'
+                >
+                    <?=esc_html__('Integrity Check', $r['id']);?>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const textarea = document.querySelector('#sql-editor');
+            const pre = document.querySelector('#sql-highlighting');
+            const code = document.querySelector('#sql-highlight');
+
+            const syncHighlight = () => {
+                if (!textarea || !code) {
+                    return;
+                }
+
+                code.textContent = textarea.value || ' ';
+
+                if (window.Prism) {
+                    Prism.highlightElement(code);
+                }
+            };
+
+            const syncScroll = () => {
+                if (!textarea || !pre) {
+                    return;
+                }
+
+                pre.scrollTop = textarea.scrollTop;
+                pre.scrollLeft = textarea.scrollLeft;
+            };
+
+            if (textarea) {
+                textarea.addEventListener('input', syncHighlight);
+                textarea.addEventListener('scroll', syncScroll);
+
+                syncHighlight();
+                syncScroll();
+            }
+
+            document.querySelectorAll('.df-sqlite-snippet').forEach((button) => {
+                button.addEventListener('click', () => {
+                    if (!textarea) {
+                        return;
+                    }
+
+                    textarea.value = button.dataset.sql || '';
+                    syncHighlight();
+                    syncScroll();
+                    textarea.focus();
+                    textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+                });
+            });
+
+            document.querySelector('#clear-sql-editor')?.addEventListener('click', () => {
+                if (!textarea) {
+                    return;
+                }
+
+                textarea.value = '';
+
+                syncHighlight();
+                syncScroll();
+
+                textarea.focus();
+            });
+        });
+    </script>
+</section>
+<?php }); ?>

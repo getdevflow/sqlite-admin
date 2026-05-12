@@ -1,0 +1,62 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$this->parent('plugin::SqliteAdmin/view/layout');
+$this->block('sqlite-admin', function ($params) {
+
+$r = Registry::getInstance()->get('sqlite-admin');
+
+$table = (string) ($params['table'] ?? '');
+$trigger = $params['trigger'] ?? [];
+?>
+<section class="df-sqlite-card">
+    <header class="df-sqlite-card-header">
+        <div>
+            <h2><?=esc_html__('Edit Trigger', $r['id']);?></h2>
+            <p><?= esc_html($trigger['name'] ?? ''); ?></p>
+        </div>
+    </header>
+
+    <div class="df-sqlite-card-body">
+        <form
+                method="post"
+                action="<?= admin_url(
+                        'plugin/sqlite-admin/table/'
+                        . rawurlencode($table)
+                        . '/triggers/edit/'
+                        . rawurlencode((string) ($trigger['name'] ?? ''))
+                ); ?>"
+        >
+
+            <div class="df-sqlite-sql-editor">
+                <pre
+                        id="sql-highlighting"
+                        class="df-sqlite-sql-highlight language-sql"
+                        aria-hidden="true"
+                ><code
+                            id="sql-highlight"
+                            class="language-sql"
+                    ><?= esc_html($trigger['sql'] ?? ''); ?></code></pre>
+
+                <textarea
+                        name="sql"
+                        id="sql-editor"
+                        class="df-sqlite-sql-textarea"
+                        spellcheck="false"
+                ><?= esc_html($trigger['sql'] ?? ''); ?></textarea>
+            </div>
+
+            <div class="df-sqlite-form-actions">
+                <button type="submit">
+                    <?=esc_html__('Save Trigger', $r['id']);?>
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+<?php }); ?>

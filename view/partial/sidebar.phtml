@@ -1,0 +1,103 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$r = Registry::getInstance()->get('sqlite-admin');
+$objects = $params['tables'] ?? [];
+$currentTable = $activeTable ?? null;
+
+$tableCount = 0;
+$viewCount = 0;
+
+foreach ($objects as $object) {
+    if (($object['type'] ?? '') === 'view') {
+        $viewCount++;
+    } else {
+        $tableCount++;
+    }
+}
+?>
+
+<aside class="df-sqlite-sidebar">
+    <div class="df-sqlite-sidebar-header">
+        <div>
+            <strong><?=esc_html__('Database Objects', $r['id']);?></strong>
+
+            <small>
+                <?= esc_html((string) $tableCount); ?> <?=esc_html__('tables', $r['id']);?> /
+                <?= esc_html((string) $viewCount); ?> <?=esc_html__('views', $r['id']);?>
+            </small>
+        </div>
+
+        <a
+                class="df-sqlite-sidebar-link"
+                href="<?= admin_url('plugin/sqlite-admin/structure'); ?>"
+        >
+            <?=esc_html__('View All', $r['id']);?>
+        </a>
+    </div>
+
+    <?php if ($objects === []): ?>
+        <div class="df-sqlite-sidebar-empty">
+            <p><?=esc_html__('No tables or views available.', $r['id']);?></p>
+        </div>
+    <?php else: ?>
+        <ul class="df-sqlite-table-list">
+            <?php foreach ($objects as $item): ?>
+                <?php
+                $name = (string) ($item['name'] ?? '');
+                $type = (string) ($item['type'] ?? 'table');
+
+                $isActive = $currentTable === $name;
+                ?>
+
+                <li class="<?= $isActive ? 'is-active' : ''; ?>">
+                    <a
+                            href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($name)); ?>"
+                            class="df-sqlite-table-link"
+                    >
+                        <div class="df-sqlite-table-link-main">
+                            <span class="df-sqlite-table-name">
+                                <?= esc_html($name); ?>
+                            </span>
+
+                            <small class="df-sqlite-table-type">
+                                <?= esc_html(ucfirst($type)); ?>
+                            </small>
+                        </div>
+
+                        <div class="df-sqlite-table-actions">
+                            <span><?=esc_html__('Browse', $r['id']);?></span>
+                        </div>
+                    </a>
+
+                    <div class="df-sqlite-subnav">
+                        <a href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($name)); ?>">
+                            <?=esc_html__('Data', $r['id']);?>
+                        </a>
+
+                        <a href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($name) . '/structure'); ?>">
+                            <?=esc_html__('Structure', $r['id']);?>
+                        </a>
+
+                        <a href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($name) . '/sql'); ?>">
+                            SQL
+                        </a>
+
+                        <a href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($name) . '/indexes'); ?>">
+                            <?=esc_html__('Indexes', $r['id']);?>
+                        </a>
+
+                        <a href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($name) . '/triggers'); ?>">
+                            <?=esc_html__('Triggers', $r['id']);?>
+                        </a>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+</aside>

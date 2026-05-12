@@ -1,0 +1,1261 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Devflow SQLite Admin\n"
+"POT-Creation-Date: 2026-05-11 22:29-0600\n"
+"PO-Revision-Date: 2026-05-11 22:29-0600\n"
+"Last-Translator: \n"
+"Language-Team: Joshua Parker\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: sqlite-admin\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: t__;esc_html__;esc_attr__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: locale\n"
+"X-Poedit-SearchPathExcluded-1: config\n"
+"X-Poedit-SearchPathExcluded-2: public\n"
+
+#: Controller/DatabaseController.php:55
+#, fuzzy
+msgid "SQLite Manager"
+msgstr "SQLite Manager"
+
+#: Controller/DatabaseController.php:81
+msgid "Database Structure"
+msgstr "データベース構造"
+
+#: Controller/DatabaseController.php:105
+#, fuzzy
+msgid "VACUUM Complete"
+msgstr "真空コンプリート"
+
+#: Controller/DatabaseController.php:106
+#, fuzzy
+msgid "Database VACUUM completed."
+msgstr "データベースのVACUUM完了。"
+
+#: Controller/DatabaseController.php:109 Controller/DatabaseController.php:141
+#: Controller/DatabaseController.php:168
+msgid "Back to Dashboard"
+msgstr "ダッシュボードに戻る"
+
+#: Controller/DatabaseController.php:136
+#, fuzzy
+msgid "Integrity Check"
+msgstr "完全性チェック"
+
+#: Controller/DatabaseController.php:137
+#, fuzzy
+msgid "Integrity check completed."
+msgstr "インテグリティチェック完了。"
+
+#: Controller/DatabaseController.php:164
+#, fuzzy
+msgid "Optimize Complete"
+msgstr "最適化コンプリート"
+
+#: Controller/DatabaseController.php:165
+#, fuzzy
+msgid "PRAGMA optimize completed."
+msgstr "PRAGMA最適化完了。"
+
+#: Controller/ExportController.php:53
+#, fuzzy
+msgid "Export Database"
+msgstr "輸出データベース"
+
+#: Controller/ExportController.php:89
+#, fuzzy
+msgid "Export Failed"
+msgstr "輸出失敗"
+
+#: Controller/ExportController.php:90
+#, fuzzy
+msgid "No valid tables were selected for export."
+msgstr "エクスポート用の有効なテーブルは選ばれませんでした。"
+
+#: Controller/ExportController.php:125
+#, fuzzy
+msgid "Export Table"
+msgstr "輸出表"
+
+#: Controller/ImportController.php:59
+#, fuzzy
+msgid "Import Database"
+msgstr "インポートデータベース"
+
+#: Controller/ImportController.php:79
+#, fuzzy
+msgid "Only SQL database imports are supported here."
+msgstr "ここではSQLデータベースのインポートのみをサポートしています。"
+
+#: Controller/ImportController.php:105
+#, fuzzy
+msgid "Import Into Table"
+msgstr "テーブルへのインポート"
+
+#: Controller/ImportController.php:129
+#, fuzzy
+msgid "Only CSV and SQL imports are supported."
+msgstr "サポートされているのはCSVとSQLのインポートのみです。"
+
+#: Controller/ImportController.php:148
+#, fuzzy
+msgid "No import file was uploaded."
+msgstr "インポートファイルはアップロードされていません。"
+
+#: Controller/ImportController.php:152
+#, fuzzy
+msgid "The uploaded import file could not be processed."
+msgstr "アップロードされたインポートファイルは処理できませんでした。"
+
+#: Controller/IndexController.php:63
+#, fuzzy
+msgid "Indexes"
+msgstr "インデックス"
+
+#: Controller/IndexController.php:97 Controller/IndexController.php:150
+#, fuzzy
+msgid "Index name is required."
+msgstr "インデックス名は必須です。"
+
+#: Controller/IndexController.php:101
+#, fuzzy
+msgid "At least one column must be selected."
+msgstr "少なくとも1つの列を選択する必要があります。"
+
+#: Controller/SqlController.php:61 Controller/SqlController.php:87
+#: Controller/SqlController.php:148
+msgid "SQL Editor"
+msgstr "SQL Editor"
+
+#: Controller/TableController.php:72
+#, fuzzy
+msgid "Browse "
+msgstr "閲覧"
+
+#: Controller/TableController.php:102
+#, fuzzy
+msgid "Structure "
+msgstr "構成"
+
+#: Controller/TableController.php:132 Controller/TableController.php:168
+msgid "Search "
+msgstr "検索 "
+
+#: Controller/TableController.php:198
+#, fuzzy
+msgid "Insert Row"
+msgstr "インサート・ロー"
+
+#: Controller/TableController.php:231
+#, fuzzy
+msgid "Row Not Found"
+msgstr "列が見つからない"
+
+#: Controller/TableController.php:232
+#, fuzzy
+msgid "The selected row could not be found."
+msgstr "選択した行は見つかりませんでした。"
+
+#: Controller/TableController.php:234
+#, fuzzy
+msgid "Back to Table"
+msgstr "テーブルに戻る"
+
+#: Controller/TableController.php:239
+msgid "Edit Row"
+msgstr "行の編集"
+
+#: Controller/TableController.php:451
+#, fuzzy
+msgid "The new table name cannot be empty."
+msgstr "新しいテーブル名は空にはなりません。"
+
+#: Controller/TableController.php:458
+#, fuzzy, php-format
+msgid "Table \"%s\" already exists."
+msgstr "表「%s」はすでに存在します。"
+
+#: Controller/TableController.php:497 Controller/TableController.php:613
+#, fuzzy
+msgid "Column name is required."
+msgstr "列名は必須です。"
+
+#: Controller/TableController.php:517
+#, fuzzy
+msgid "Invalid column type."
+msgstr "無効な列タイプ。"
+
+#: Controller/TableController.php:563
+#, fuzzy
+msgid "Old and new column names are required."
+msgstr "旧列名と新列名の両方が必要です。"
+
+#: Controller/TableController.php:572
+#, fuzzy, php-format
+msgid "Column \"%s\" already exists."
+msgstr "「%s」列はすでに存在しています。"
+
+#: Controller/TableController.php:605
+#, fuzzy
+msgid "This SQLite version does not support DROP COLUMN."
+msgstr "このSQLiteバージョンはDROP COLUMNをサポートしていません。"
+
+#: Controller/TableController.php:673
+#, fuzzy, php-format
+msgid "Table \"%s\" does not exist."
+msgstr "表「%s」は存在しません。"
+
+#: Controller/TableController.php:690
+#, fuzzy, php-format
+msgid "Column \"%s\" does not exist."
+msgstr "「%s」列は存在しません。"
+
+#: Controller/TriggerController.php:65
+msgid "Triggers"
+msgstr "トリガー機能"
+
+#: Controller/TriggerController.php:101 Controller/TriggerController.php:240
+#, fuzzy
+msgid "Trigger name is required."
+msgstr "トリガーネームは必須です。"
+
+#: Controller/TriggerController.php:105
+#, fuzzy
+msgid "Invalid trigger timing."
+msgstr "トリガータイミングが無効です。"
+
+#: Controller/TriggerController.php:109
+#, fuzzy
+msgid "Invalid trigger event."
+msgstr "無効なトリガーイベント。"
+
+#: Controller/TriggerController.php:113
+#, fuzzy
+msgid "SQLite only supports FOR EACH ROW triggers."
+msgstr "SQLiteは各行のトリガーのみをサポートしています。"
+
+#: Controller/TriggerController.php:118
+#, fuzzy
+msgid "Trigger statement is required."
+msgstr "トリガーステートメントが必要です。"
+
+#: Controller/TriggerController.php:162
+#, fuzzy
+msgid "Trigger not found."
+msgstr "トリガーは見つかりません。"
+
+#: Controller/TriggerController.php:181
+#, fuzzy
+msgid "Trigger SQL is required."
+msgstr "トリガーSQLが必要です。"
+
+#: Database/SqliteConnectionFactory.php:39
+#, fuzzy
+msgid "SQLite database path is not configured."
+msgstr "SQLiteデータベースパスは設定されていません。"
+
+#: Database/SqliteConnectionFactory.php:45
+#, fuzzy
+msgid "SQLite database file could not be found."
+msgstr "SQLiteデータベースファイルは見つかりませんでした。"
+
+#: Database/SqliteConnectionFactory.php:49
+#, fuzzy
+msgid "SQLite database file is not readable."
+msgstr "SQLiteデータベースファイルは読み取れません。"
+
+#: Database/SqliteImporter.php:37
+#, fuzzy
+msgid "The SQL import file did not contain any executable statements."
+msgstr "SQLインポートファイルには実行可能な文が含まれていませんでした。"
+
+#: Database/SqliteImporter.php:61
+#, fuzzy
+msgid "Could not create temporary import file."
+msgstr "一時的なインポートファイルを作成できませんでした。"
+
+#: Database/SqliteImporter.php:71
+#, fuzzy
+msgid "Could not read temporary import file."
+msgstr "一時的なインポートファイルを読み取ることができませんでした。"
+
+#: Database/SqliteImporter.php:78
+#, fuzzy
+msgid "Could not open uploaded CSV file."
+msgstr "アップロードしたCSVファイルが開けませんでした。"
+
+#: Database/SqliteImporter.php:86
+#, fuzzy
+msgid "CSV file is empty."
+msgstr "CSVファイルは空です。"
+
+#: Database/SqliteImporter.php:126
+#, fuzzy
+msgid "CSV file does not contain headers."
+msgstr "CSVファイルにはヘッダーが含まれていません。"
+
+#: Database/SqliteImporter.php:145
+#, fuzzy, php-format
+msgid "CSV column \"%s\" does not exist on the selected table."
+msgstr "選択したテーブルにはCSV列「%s」が存在しません。"
+
+#: Database/SqliteRowRepository.php:109 Database/SqliteRowRepository.php:144
+#, fuzzy
+msgid "Missing row identity."
+msgstr "列のアイデンティティが欠落しています。"
+
+#: Database/SqliteRowRepository.php:267
+#, fuzzy
+msgid "Invalid row key."
+msgstr "行キーが無効です。"
+
+#: Database/SqliteRowRepository.php:281
+#, fuzzy
+msgid "Invalid row key payload."
+msgstr "行キーのペイロードが無効です。"
+
+#: Security/Identifier.php:29
+#, fuzzy
+msgid "Invalid SQLite identifier."
+msgstr "SQLite識別子が無効です。"
+
+#: Security/SqliteQueryGuard.php:42
+#, fuzzy
+msgid "SQL query is empty."
+msgstr "SQLクエリは空です。"
+
+#: Security/SqliteQueryGuard.php:47
+#, fuzzy
+msgid "Subsite users may only run one read-only query at a time."
+msgstr ""
+"サブサイトのユーザーは一度に1つの読み取り専用クエリのみを実行できます。"
+
+#: Security/SqliteQueryGuard.php:79
+#, fuzzy
+msgid "Only read-only SELECT and safe PRAGMA queries are allowed."
+msgstr ""
+"読み取り専用のSELECTクエリと安全なPRAGMAクエリのみが許可されています。"
+
+#: Security/SqliteQueryGuard.php:92
+#, fuzzy
+msgid "This query references a table outside the current site."
+msgstr "このクエリは現在のサイト外のテーブルを参照します。"
+
+#: Security/SqliteTriggerGuard.php:29
+#, fuzzy
+msgid "Trigger statement cannot be empty."
+msgstr "トリガー文は空にはなりません。"
+
+#: Security/SqliteTriggerGuard.php:48
+#, fuzzy, php-format
+msgid "Trigger statement contains forbidden operation: %s"
+msgstr "トリガー文には禁止された操作が含まれています:%s"
+
+#: SqliteAdminPlugin.php:43
+#, fuzzy
+msgid "SQLite Admin"
+msgstr "SQLite管理者"
+
+#: view/action-result.phtml:12
+msgid "Result"
+msgstr "結果"
+
+#: view/action-result.phtml:13
+#, fuzzy
+msgid "Action complete."
+msgstr "行動完了。"
+
+#: view/action-result.phtml:14
+msgid "Go Back"
+msgstr "前に戻る"
+
+#: view/action-result.phtml:46
+#, fuzzy
+msgid "No additional result data was returned."
+msgstr "追加の結果データは返されませんでした。"
+
+#: view/database/dashboard.phtml:39
+#, fuzzy
+msgid "Database Dashboard"
+msgstr "データベースダッシュボード"
+
+#: view/database/dashboard.phtml:40
+#, fuzzy
+msgid "SQLite database overview and statistics."
+msgstr "SQLiteデータベースの概要と統計。"
+
+#: view/database/dashboard.phtml:49 view/database/dashboard.phtml:163
+#: view/database/import.phtml:24 view/database/structure.phtml:121
+#: view/layout.phtml:35 view/table/import.phtml:28
+msgid "Export"
+msgstr "エクスポート"
+
+#: view/database/dashboard.phtml:53 view/layout.phtml:36
+msgid "Import"
+msgstr "インポート"
+
+#: view/database/dashboard.phtml:61 view/database/structure.phtml:42
+msgid "Tables"
+msgstr "テーブル"
+
+#: view/database/dashboard.phtml:66 view/database/structure.phtml:47
+msgid "Views"
+msgstr "閲覧数"
+
+#: view/database/dashboard.phtml:71
+msgid "Objects"
+msgstr "オブジェクト"
+
+#: view/database/dashboard.phtml:76
+#, fuzzy
+msgid "SQLite Version"
+msgstr "SQLiteバージョン"
+
+#: view/database/dashboard.phtml:82
+msgid "Database Information"
+msgstr "データベース情報"
+
+#: view/database/dashboard.phtml:85
+#, fuzzy
+msgid "Database Path"
+msgstr "データベースパス"
+
+#: view/database/dashboard.phtml:90
+msgid "Database Size"
+msgstr "データベースのサイズ"
+
+#: view/database/dashboard.phtml:93
+msgid "Last Modified"
+msgstr "最終編集日"
+
+#: view/database/dashboard.phtml:100
+#, fuzzy
+msgid "PDO SQLite Extension"
+msgstr "PDO SQLite 拡張"
+
+#: view/database/dashboard.phtml:105
+#, fuzzy
+msgid "SQLite3 Extension"
+msgstr "SQLite3 拡張"
+
+#: view/database/dashboard.phtml:113 view/database/sql.phtml:179
+#: view/database/structure.phtml:58 view/partial/sidebar.phtml:28
+#, fuzzy
+msgid "Database Objects"
+msgstr "データベースオブジェクト"
+
+#: view/database/dashboard.phtml:117 view/database/structure.phtml:62
+#, fuzzy
+msgid "No tables or views were found."
+msgstr "表や風景は見つかりませんでした。"
+
+#: view/database/dashboard.phtml:124 view/database/structure.phtml:69
+#: view/table/import.phtml:87 view/table/indexes.phtml:31
+#: view/table/structure.phtml:129 view/table/triggers.phtml:31
+msgid "Name"
+msgstr "名前"
+
+#: view/database/dashboard.phtml:125 view/database/structure.phtml:70
+#: view/table/import.phtml:88 view/table/structure.phtml:130
+msgid "Type"
+msgstr "タイプ"
+
+#: view/database/dashboard.phtml:126 view/database/structure.phtml:72
+#: view/partial/table-grid.phtml:31
+msgid "Actions"
+msgstr "アクション"
+
+#: view/database/dashboard.phtml:151 view/database/structure.phtml:109
+#: view/partial/sidebar.phtml:74 view/table/export.phtml:24
+#: view/table/import.phtml:24 view/table/structure.phtml:28
+msgid "Browse"
+msgstr "参照"
+
+#: view/database/dashboard.phtml:155 view/database/structure.phtml:113
+#: view/layout.phtml:33 view/partial/sidebar.phtml:84
+#: view/table/browse.phtml:40 view/table/export.phtml:28
+msgid "Structure"
+msgstr "構造"
+
+#: view/database/dashboard.phtml:159 view/layout.phtml:34
+msgid "SQL"
+msgstr "SQL"
+
+#: view/database/export.phtml:20
+#, fuzzy
+msgid "Download a SQL or CSV export of the SQLite database."
+msgstr ""
+"SQLiteデータベースのSQLまたはCSVエクスポートをダウンロードしてください。"
+
+#: view/database/export.phtml:25 view/database/import.phtml:23
+#: view/database/sql.phtml:31 view/database/structure.phtml:34
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+#: view/database/export.phtml:36 view/table/export.phtml:35
+msgid "Export Options"
+msgstr "オプションをエクスポート"
+
+#: view/database/export.phtml:46 view/table/export.phtml:41
+msgid "Export Format"
+msgstr "エクスポート形式"
+
+#: view/database/export.phtml:50 view/table/export.phtml:43
+#, fuzzy
+msgid "SQL Dump"
+msgstr "SQLダンプ"
+
+#: view/database/export.phtml:54 view/database/export.phtml:130
+#: view/table/export.phtml:44
+msgid "CSV Export"
+msgstr "CSVエクスポート"
+
+#: view/database/export.phtml:59
+#, fuzzy
+msgid "SQL preserves schema and data. CSV exports table rows."
+msgstr ""
+"SQLはスキーマとデータを保存します。CSVはテーブルの行をエクスポートします。"
+
+#: view/database/export.phtml:64
+#, fuzzy
+msgid "Export Scope"
+msgstr "輸出範囲"
+
+#: view/database/export.phtml:68
+#, fuzzy
+msgid "Entire Database"
+msgstr "全データベース"
+
+#: view/database/export.phtml:72
+#, fuzzy
+msgid "Selected Tables"
+msgstr "選択表"
+
+#: view/database/export.phtml:77
+#, fuzzy
+msgid "Export all visible tables or only selected tables."
+msgstr ""
+"見えるすべてのテーブルをエクスポートするか、選択したテーブルのみをエクスポー"
+"トしてください。"
+
+#: view/database/export.phtml:84
+#, fuzzy
+msgid "Select Tables"
+msgstr "選択表"
+
+#: view/database/export.phtml:119
+msgid "Export Information"
+msgstr "情報のエクスポート"
+
+#: view/database/export.phtml:122 view/database/import.phtml:63
+#, fuzzy
+msgid "Visible Objects"
+msgstr "可視物体"
+
+#: view/database/export.phtml:125
+#, fuzzy
+msgid "SQL Export"
+msgstr "SQL エクスポート"
+
+#: view/database/export.phtml:127
+#, fuzzy
+msgid "Includes schema definitions and INSERT statements."
+msgstr "スキーマ定義とINSERT文を含みます。"
+
+#: view/database/export.phtml:132
+#, fuzzy
+msgid "Exports row data in CSV format."
+msgstr "行データをCSV形式でエクスポートします。"
+
+#: view/database/export.phtml:135
+msgid "Permissions"
+msgstr "権限"
+
+#: view/database/export.phtml:137
+#, fuzzy
+msgid "Export visibility respects Devflow multisite table scoping."
+msgstr ""
+"エクスポートの可視性はDevflowのマルチサイトテーブルスコープを尊重していま"
+"す。"
+
+#: view/database/export.phtml:150
+#, fuzzy
+msgid "Export Selected Tables"
+msgstr "選択されたテーブルをエクスポート"
+
+#: view/database/import.phtml:19
+#, fuzzy
+msgid "Import a SQL dump into the SQLite database."
+msgstr "SQLダンプをSQLiteデータベースにインポートします。"
+
+#: view/database/import.phtml:30
+#, fuzzy
+msgid "Import SQL File"
+msgstr "SQLファイルをインポートする"
+
+#: view/database/import.phtml:42
+#, fuzzy
+msgid "Upload a SQLite-compatible SQL dump file."
+msgstr "SQLite互換のSQLダンプファイルをアップロードします。"
+
+#: view/database/import.phtml:48
+#, fuzzy
+msgid "I understand this may modify database tables and records."
+msgstr ""
+"これによりデータベースのテーブルやレコードが変更される可能性があると理解して"
+"います。"
+
+#: view/database/import.phtml:49
+#, fuzzy
+msgid "Imports run inside a transaction when supported."
+msgstr "インポートはトランザクション内で実行されます。"
+
+#: view/database/import.phtml:60
+msgid "Import Information"
+msgstr "インポート情報"
+
+#: view/database/import.phtml:66
+#, fuzzy
+msgid "Supported Format"
+msgstr "対応フォーマット"
+
+#: view/database/import.phtml:67
+#, fuzzy
+msgid "SQL files only for full database imports."
+msgstr "完全なデータベースインポートにはSQLファイルのみ。"
+
+#: view/database/import.phtml:69
+#, fuzzy
+msgid "Recommended First Step"
+msgstr "推奨される最初のステップ"
+
+#: view/database/import.phtml:70
+#, fuzzy
+msgid "Export a backup before importing."
+msgstr "インポート前にバックアップをエクスポートしてください。"
+
+#: view/database/import.phtml:72
+#, fuzzy
+msgid "Permission Level"
+msgstr "許可レベル"
+
+#: view/database/import.phtml:73
+#, fuzzy
+msgid "Full database imports should be limited to main-site super admins."
+msgstr ""
+"完全なデータベースインポートはメインサイトのスーパー管理者に限定すべきです。"
+
+#: view/database/sql.phtml:23
+#, fuzzy
+msgid "Run SQL against the selected table scope."
+msgstr "選択したテーブルのスコープに対してSQLを実行します。"
+
+#: view/database/sql.phtml:24
+#, fuzzy
+msgid "Run SQL against the scoped SQLite database."
+msgstr "スコープ付きのSQLiteデータベースに対してSQLを実行します。"
+
+#: view/database/sql.phtml:39
+#, fuzzy
+msgid "Browse Table"
+msgstr "ブラウズテーブル"
+
+#: view/database/sql.phtml:50
+msgid "SQL Query"
+msgstr "SQL クエリー"
+
+#: view/database/sql.phtml:70
+#, fuzzy
+msgid "Multiple statements may be restricted depending on your permissions."
+msgstr "複数の声明は許可によって制限される場合があります。"
+
+#: view/database/sql.phtml:76
+#, fuzzy
+msgid "Run Query"
+msgstr "クエリを実行してください"
+
+#: view/database/sql.phtml:85
+msgid "Clear"
+msgstr "クリア"
+
+#: view/database/sql.phtml:93
+#, fuzzy
+msgid "Query Results"
+msgstr "クエリ結果"
+
+#: view/database/sql.phtml:111
+msgid "Statement"
+msgstr "ステートメント"
+
+#: view/database/sql.phtml:116
+msgid "rows"
+msgstr "行"
+
+#: view/database/sql.phtml:120
+#, fuzzy
+msgid "Query Time:"
+msgstr "クエリ時間:"
+
+#: view/database/sql.phtml:136
+#, fuzzy
+msgid "No rows returned."
+msgstr "また、誰も戻ってきませんでした。"
+
+#: view/database/sql.phtml:145
+#, fuzzy
+msgid "Quick Query Snippets"
+msgstr "クイッククエリスニペット"
+
+#: view/database/sql.phtml:162
+#, fuzzy
+msgid "Table Structure"
+msgstr "テーブル構成"
+
+#: view/database/sql.phtml:170
+#, fuzzy
+msgid "Count Rows"
+msgstr "カウント・ローズ"
+
+#: view/database/structure.phtml:30
+#, fuzzy
+msgid "Tables and views visible to the current user."
+msgstr "現在のユーザーがテーブルやビューを閲覧できます。"
+
+#: view/database/structure.phtml:52
+#, fuzzy
+msgid "Total Objects"
+msgstr "総オブジェクト"
+
+#: view/database/structure.phtml:71
+#, fuzzy
+msgid "Create SQL"
+msgstr "SQLを作成"
+
+#: view/database/structure.phtml:98
+#, fuzzy
+msgid "View SQL"
+msgstr "SQLを見る"
+
+#: view/error/forbidden.phtml:21
+msgid "Access Denied"
+msgstr "アクセスが拒否されました"
+
+#: view/error/forbidden.phtml:22
+#, fuzzy
+msgid "This SQLite manager is protected by Devflow permissions."
+msgstr "このSQLiteマネージャーはDevflow権限によって保護されています。"
+
+#: view/layout.phtml:29
+#, fuzzy
+msgid "Manage your Devflow SQLite database."
+msgstr "DevflowのSQLiteデータベースを管理しましょう。"
+
+#: view/layout.phtml:32
+msgid "Database"
+msgstr "データベース"
+
+#: view/partial/sidebar.phtml:31
+msgid "tables"
+msgstr "テーブルを編集します。"
+
+#: view/partial/sidebar.phtml:32
+msgid "views"
+msgstr "表示"
+
+#: view/partial/sidebar.phtml:40
+msgid "View All"
+msgstr "すべて表示"
+
+#: view/partial/sidebar.phtml:46
+#, fuzzy
+msgid "No tables or views available."
+msgstr "テーブルやビューはありません。"
+
+#: view/partial/sidebar.phtml:80
+msgid "Data"
+msgstr "データ"
+
+#: view/partial/table-grid.phtml:50 view/table/triggers.phtml:55
+msgid "Edit"
+msgstr "編集"
+
+#: view/partial/table-grid.phtml:66
+msgid "Delete"
+msgstr "削除"
+
+#: view/partial/table-grid.phtml:70
+msgid "Unavailable"
+msgstr "利用不可"
+
+#: view/table/browse.phtml:23
+msgid "Browse:"
+msgstr "参照:"
+
+#: view/table/browse.phtml:25
+#, fuzzy
+msgid "total records."
+msgstr "トータルレコード。"
+
+#: view/table/browse.phtml:26 view/table/browse.phtml:69
+msgid "Page"
+msgstr "ページ"
+
+#: view/table/browse.phtml:36 view/table/search.phtml:56
+msgid "Search"
+msgstr "検索"
+
+#: view/table/browse.phtml:48
+#, fuzzy
+msgid "No records were found in this table."
+msgstr "この表には記録は見つかりませんでした。"
+
+#: view/table/browse.phtml:51
+#, fuzzy
+msgid "Insert First Row"
+msgstr "挿入:第一列"
+
+#: view/table/browse.phtml:64
+msgid "Previous"
+msgstr "前へ"
+
+#: view/table/browse.phtml:77
+#, fuzzy
+msgid "Next"
+msgstr "次"
+
+#: view/table/edit.phtml:21
+#, fuzzy
+msgid "Edit Row:"
+msgstr "編集列:"
+
+#: view/table/edit.phtml:22
+#, fuzzy
+msgid "Update the selected record."
+msgstr "選択したレコードを更新してください。"
+
+#: view/table/edit.phtml:27 view/table/insert.phtml:26
+#, fuzzy
+msgid "Back to Browse"
+msgstr "ブラウズに戻る"
+
+#: view/table/edit.phtml:35
+#, fuzzy
+msgid "No row data was found for editing."
+msgstr "編集用の行データは見つかりませんでした。"
+
+#: view/table/edit.phtml:136 view/table/insert.phtml:171
+#, fuzzy
+msgid "Set NULL"
+msgstr "セットNULL"
+
+#: view/table/edit.phtml:144
+msgid "Save Changes"
+msgstr "変更を保存"
+
+#: view/table/export.phtml:18
+#, fuzzy
+msgid "Export Table:"
+msgstr "エクスポート表:"
+
+#: view/table/export.phtml:19
+#, fuzzy
+msgid "Download this table as SQL or CSV."
+msgstr "このテーブルはSQLまたはCSVとしてダウンロードしてください。"
+
+#: view/table/export.phtml:46
+#, fuzzy
+msgid "SQL includes CREATE TABLE and INSERT statements. CSV exports row data."
+msgstr ""
+"SQLにはCREATE TABLE文とINSERT文が含まれています。CSVは行データをエクスポート"
+"します。"
+
+#: view/table/export.phtml:57 view/table/import.phtml:65
+#, fuzzy
+msgid "Table Information"
+msgstr "表情報"
+
+#: view/table/export.phtml:60 view/table/import.phtml:68
+msgid "Table"
+msgstr "テーブル"
+
+#: view/table/export.phtml:63 view/table/export.phtml:70
+#: view/table/import.phtml:71 view/table/indexes.phtml:81
+#: view/table/structure.phtml:102 view/table/structure.phtml:118
+msgid "Columns"
+msgstr "カラム"
+
+#: view/table/import.phtml:18
+#, fuzzy
+msgid "Import Into Table:"
+msgstr "テーブルへのインポート:"
+
+#: view/table/import.phtml:19
+#, fuzzy
+msgid "Import CSV or SQL data into this table."
+msgstr "CSVまたはSQLデータをこのテーブルにインポートします。"
+
+#: view/table/import.phtml:35 view/table/import.phtml:45
+msgid "Import File"
+msgstr "ファイルをインポート"
+
+#: view/table/import.phtml:47
+#, fuzzy
+msgid ""
+"CSV imports are matched by header row. SQL files are executed against this "
+"table scope."
+msgstr ""
+"CSVインポートはヘッダー行でマッチングされます。SQLファイルはこのテーブルス"
+"コープに対して実行されます。"
+
+#: view/table/import.phtml:53
+#, fuzzy
+msgid "I understand this import may modify records."
+msgstr ""
+"このインポートによって記録が改変される可能性があることは理解しています。"
+
+#: view/table/import.phtml:54
+#, fuzzy
+msgid "Export a backup before importing production data."
+msgstr ""
+"本番データをインポートする前にバックアップをエクスポートしてください。"
+
+#: view/table/import.phtml:59
+#, fuzzy
+msgid "Import Table"
+msgstr "インポート表"
+
+#: view/table/import.phtml:74
+#, fuzzy
+msgid "CSV Requirements"
+msgstr "CSV要件"
+
+#: view/table/import.phtml:75
+#, fuzzy
+msgid "First row must contain column names matching this table."
+msgstr "最初の行はこのテーブルに一致する列名を含まなければなりません。"
+
+#: view/table/import.phtml:81
+msgid "Available Columns"
+msgstr "利用可能な列"
+
+#: view/table/import.phtml:89 view/table/structure.phtml:131
+#: view/table/structure.phtml:194
+msgid "Nullable"
+msgstr "Null 値を許容"
+
+#: view/table/import.phtml:90 view/table/structure.phtml:132
+msgid "Default"
+msgstr "デフォルト"
+
+#: view/table/import.phtml:91 view/table/structure.phtml:133
+#, fuzzy
+msgid "Primary Key"
+msgstr "主キー"
+
+#: view/table/indexes.phtml:16
+msgid "Indexes:"
+msgstr "インデックス:"
+
+#: view/table/indexes.phtml:17
+#, fuzzy
+msgid "Create, inspect, and drop indexes for this table."
+msgstr "このテーブルのインデックスを作成、検査、削除してください。"
+
+#: view/table/indexes.phtml:22
+#, fuzzy
+msgid "Existing Indexes"
+msgstr "既存のインデックス"
+
+#: view/table/indexes.phtml:25
+#, fuzzy
+msgid "No indexes found for this table."
+msgstr "この表の索引は見つかりません。"
+
+#: view/table/indexes.phtml:32
+msgid "Unique"
+msgstr "ユニーク"
+
+#: view/table/indexes.phtml:33
+msgid "Origin"
+msgstr "オリジナル"
+
+#: view/table/indexes.phtml:34
+msgid "Partial"
+msgstr "部分"
+
+#: view/table/indexes.phtml:35 view/table/triggers.phtml:33
+msgid "Action"
+msgstr "アクション"
+
+#: view/table/indexes.phtml:49
+#, fuzzy
+msgid "Drop this index?"
+msgstr "このインデックスをやめる?"
+
+#: view/table/indexes.phtml:50 view/table/triggers.phtml:78
+msgid "Drop"
+msgstr "ドロップ"
+
+#: view/table/indexes.phtml:54
+#, fuzzy
+msgid "System index"
+msgstr "システムインデックス"
+
+#: view/table/indexes.phtml:66 view/table/indexes.phtml:92
+msgid "Create Index"
+msgstr "インデックスを作成"
+
+#: view/table/indexes.phtml:71
+#, fuzzy
+msgid "Index Name"
+msgstr "インデックス名"
+
+#: view/table/indexes.phtml:77
+#, fuzzy
+msgid "Unique index"
+msgstr "ユニークインデックス"
+
+#: view/table/insert.phtml:20
+#, fuzzy
+msgid "Insert Row:"
+msgstr "挿入列:"
+
+#: view/table/insert.phtml:21
+#, fuzzy
+msgid "Add a new record to this table."
+msgstr "このテーブルに新しい記録を追加してください。"
+
+#: view/table/insert.phtml:34 view/table/structure.phtml:122
+#, fuzzy
+msgid "No columns were found for this table."
+msgstr "この表の列は見つかりませんでした。"
+
+#: view/table/insert.phtml:192
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: view/table/search.phtml:22
+msgid "Search:"
+msgstr "検索:"
+
+#: view/table/search.phtml:23
+#, fuzzy
+msgid "matching records."
+msgstr "記録が一致している。"
+
+#: view/table/search.phtml:41
+msgid "contains"
+msgstr "含む"
+
+#: view/table/search.phtml:62
+msgid "Results"
+msgstr "結果"
+
+#: view/table/structure.phtml:22
+#, fuzzy
+msgid "Structure:"
+msgstr "構成:"
+
+#: view/table/structure.phtml:23
+#, fuzzy
+msgid "Columns, indexes, triggers, and CREATE SQL for this table."
+msgstr ""
+"このテーブルには列、インデックス、トリガー、そしてCREATE SQLが必要です。"
+
+#: view/table/structure.phtml:46
+msgid "Danger Zone"
+msgstr "危険ゾーン"
+
+#: view/table/structure.phtml:52
+#, fuzzy
+msgid "Empty this table? All rows will be permanently deleted."
+msgstr "このテーブルを空にする?すべての行は永久に削除されます。"
+
+#: view/table/structure.phtml:59
+#, fuzzy
+msgid "Empty Table"
+msgstr "空のテーブル"
+
+#: view/table/structure.phtml:73
+msgid "Drop Table"
+msgstr "テーブルをドロップ"
+
+#: view/table/structure.phtml:86
+#, fuzzy
+msgid "New table name"
+msgstr "新しいテーブル名"
+
+#: view/table/structure.phtml:91
+#, fuzzy
+msgid "Rename Table"
+msgstr "リネーム表"
+
+#: view/table/structure.phtml:155
+#, fuzzy
+#| msgid "Columns"
+msgid "Column Tools"
+msgstr "カラムツール"
+
+#: view/table/structure.phtml:163 view/table/structure.phtml:197
+msgid "Add Column"
+msgstr "列の追加"
+
+#: view/table/structure.phtml:166
+#, fuzzy
+#| msgid "Columns"
+msgid "Column Name"
+msgstr "コラム名"
+
+#: view/table/structure.phtml:171
+msgid "Column Type"
+msgstr "カラムタイプ"
+
+#: view/table/structure.phtml:188
+msgid "Default Value"
+msgstr "初期値"
+
+#: view/table/structure.phtml:205 view/table/structure.phtml:223
+#, fuzzy
+msgid "Rename Column"
+msgstr "コラム名変更"
+
+#: view/table/structure.phtml:208
+#, fuzzy
+msgid "Existing Column"
+msgstr "現存する柱"
+
+#: view/table/structure.phtml:219
+#, fuzzy
+msgid "New Column Name"
+msgstr "新しいコラム名"
+
+#: view/table/structure.phtml:232 view/table/structure.phtml:246
+#, fuzzy
+#| msgid "Columns"
+msgid "Drop Column"
+msgstr "ドロップ・コラム"
+
+#: view/table/structure.phtml:235
+msgid "Column"
+msgstr "列"
+
+#: view/table/structure.phtml:250
+#, fuzzy
+msgid ""
+"Requires SQLite 3.35.0 or newer and may fail if the column is used by "
+"constraints, indexes, triggers, or generated columns."
+msgstr ""
+"SQLite 3.35.0以降が必要で、制約、インデックス、トリガー、生成された列に使わ"
+"れている場合に失敗する可能性があります。"
+
+#: view/table/structure.phtml:262
+#, fuzzy
+msgid "No indexes were found for this table."
+msgstr "この表の索引は見つかりませんでした。"
+
+#: view/table/structure.phtml:277
+#, fuzzy
+msgid "No triggers were found for this table."
+msgstr "このテーブルのトリガーは見つかりませんでした。"
+
+#: view/table/structure.phtml:288
+#, fuzzy
+msgid "CREATE SQL"
+msgstr "SQLを作成"
+
+#: view/table/structure.phtml:292
+#, fuzzy
+msgid "No CREATE SQL was found for this table."
+msgstr "このテーブルに対してCREATE SQLは見つかりませんでした。"
+
+#: view/table/trigger-edit.phtml:20
+msgid "Edit Trigger"
+msgstr "トリガーを編集する"
+
+#: view/table/trigger-edit.phtml:56
+#, fuzzy
+msgid "Save Trigger"
+msgstr "セーブトリガー"
+
+#: view/table/triggers.phtml:16
+msgid "Triggers:"
+msgstr "トリガー:"
+
+#: view/table/triggers.phtml:17
+#, fuzzy
+msgid "Create, inspect, and drop triggers for this table."
+msgstr "このテーブルのトリガーを作成、検査し、削除してください。"
+
+#: view/table/triggers.phtml:22
+#, fuzzy
+msgid "Existing Triggers"
+msgstr "既存のトリガー"
+
+#: view/table/triggers.phtml:25
+#, fuzzy
+msgid "No triggers found for this table."
+msgstr "このテーブルにはトリガーは見つかりませんでした。"
+
+#: view/table/triggers.phtml:97 view/table/triggers.phtml:167
+#, fuzzy
+msgid "Create Trigger"
+msgstr "トリガーを作成"
+
+#: view/table/triggers.phtml:105
+#, fuzzy
+msgid "Audit Log"
+msgstr "監査ログ"
+
+#: view/table/triggers.phtml:113
+#, fuzzy
+msgid "Auto Updated At"
+msgstr "自動更新"
+
+#: view/table/triggers.phtml:119
+msgid "Trigger Name"
+msgstr "トリガー名"
+
+#: view/table/triggers.phtml:124
+msgid "Timing"
+msgstr "タイミング"
+
+#: view/table/triggers.phtml:126
+msgid "BEFORE"
+msgstr "ビフォア"
+
+#: view/table/triggers.phtml:127
+msgid "AFTER"
+msgstr "その後"
+
+#: view/table/triggers.phtml:128
+#, fuzzy
+msgid "INSTEAD OF"
+msgstr "代わりに"
+
+#: view/table/triggers.phtml:133
+msgid "Event"
+msgstr "イベント"
+
+#: view/table/triggers.phtml:135
+msgid "INSERT"
+msgstr "挿入"
+
+#: view/table/triggers.phtml:136
+msgid "UPDATE"
+msgstr "更新"
+
+#: view/table/triggers.phtml:137
+msgid "DELETE"
+msgstr "削除"
+
+#: view/table/triggers.phtml:147
+#, fuzzy
+msgid "Trigger SQL Statement"
+msgstr "トリガーSQL文"

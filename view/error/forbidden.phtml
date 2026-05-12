@@ -1,0 +1,38 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$this->parent('plugin::SqliteAdmin/view/layout');
+$this->block('sqlite-admin', function ($params) {
+$r = Registry::getInstance()->get('sqlite-admin');
+$tables = $params['tables'] ?? [];
+$message = $message ?? 'You do not have permission to manage this SQLite database.';
+$backUrl = $backUrl ?? admin_url();
+$backLabel = $backLabel ?? 'Return to Admin';
+?>
+
+<section class="df-sqlite-card">
+    <header class="df-sqlite-card-header">
+        <div>
+            <h2><?=esc_html__('Access Denied', $r['id']);?></h2>
+            <p><?=esc_html__('This SQLite manager is protected by Devflow permissions.', $r['id']);?></p>
+        </div>
+
+        <div class="df-sqlite-actions">
+            <a class="button" href="<?= esc_html($backUrl); ?>">
+                <?= esc_html($backLabel); ?>
+            </a>
+        </div>
+    </header>
+
+    <div class="df-sqlite-card-body">
+        <div class="df-sqlite-empty">
+            <p><?= esc_html($message); ?></p>
+        </div>
+    </div>
+</section>
+<?php }); ?>

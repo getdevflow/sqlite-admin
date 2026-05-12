@@ -1,0 +1,31 @@
+{
+  "name": "getdevflow/sqlite-admin",
+  "description": "SQLite admin plugin for Devflow CMF inspired by phpLiteAdmin.",
+  "type": "devflow-plugin",
+  "keywords": ["adminer","database-management","mysql","sqlite","phpLiteAdmin"],
+  "license": "GPL-2.0-only",
+  "authors": [
+    {
+      "name": "Joshua Parker",
+      "email": "joshua@joshuaparker.dev"
+    }
+  ],
+  "require": {
+    "php": ">=8.4",
+    "oomphinc/composer-installers-extender": "^2.0",
+    "ext-pdo": "*",
+    "ext-pdo_sqlite": "*"
+  },
+  "extra": {
+    "installer-name": "SqliteAdmin",
+    "installer-types": ["devflow-plugin"]
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "oomphinc/composer-installers-extender": true
+    }
+  }
+}

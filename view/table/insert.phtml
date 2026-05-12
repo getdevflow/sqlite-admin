@@ -1,0 +1,200 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$this->parent('plugin::SqliteAdmin/view/layout');
+
+$this->block('sqlite-admin', function ($params) {
+$r = Registry::getInstance()->get('sqlite-admin');
+$table = (string) ($params['table'] ?? '');
+$columns = $params['columns'] ?? [];
+?>
+
+    <section class="df-sqlite-card">
+        <header class="df-sqlite-card-header">
+            <div>
+                <h2><?=esc_html__('Insert Row:', $r['id']);?> <?= esc_html($table); ?></h2>
+                <p><?=esc_html__('Add a new record to this table.', $r['id']);?></p>
+            </div>
+
+            <div class="df-sqlite-actions">
+                <a class="button" href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($table)); ?>">
+                    <?=esc_html__('Back to Browse', $r['id']);?>
+                </a>
+            </div>
+        </header>
+
+        <div class="df-sqlite-card-body">
+            <?php if ($columns === []): ?>
+                <div class="df-sqlite-empty">
+                    <p><?=esc_html__('No columns were found for this table.', $r['id']);?></p>
+                </div>
+            <?php else: ?>
+                <form
+                    method="post"
+                    action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($table) . '/insert'); ?>"
+                    class="df-sqlite-form"
+                >
+                    <div class="df-sqlite-form-grid">
+                        <?php foreach ($columns as $column): ?>
+                            <?php
+                            $columnName = (string) ($column['name'] ?? '');
+                            $declaredType = strtoupper((string) ($column['type'] ?? 'TEXT'));
+                            $nullable = empty($column['notnull']);
+                            $primaryKey = ! empty($column['pk']);
+                            $default = $column['dflt_value'] ?? null;
+
+                            if ($columnName === '') {
+                                continue;
+                            }
+
+                            $fieldId = 'field-' . preg_replace('/[^A-Za-z0-9_-]/', '-', $columnName);
+                            $declaredType = strtoupper(trim((string) ($column['type'] ?? 'TEXT')));
+                            $lowerColumn = strtolower($columnName);
+
+                            $isPrimaryKeyText =
+                                    $primaryKey
+                                    && (
+                                            str_contains($declaredType, 'CHAR')
+                                            || str_contains($declaredType, 'VARCHAR')
+                                            || str_contains($declaredType, 'UUID')
+                                            || str_contains($declaredType, 'ULID')
+                                            || str_contains($declaredType, 'CUID')
+                                    );
+
+                            $isInteger =
+                                    preg_match('/\b(INT|INTEGER|BIGINT|SMALLINT|TINYINT)\b/', $declaredType) === 1;
+
+                            $isNumeric =
+                                    ! $isInteger
+                                    && preg_match('/\b(REAL|FLOAT|DOUBLE|NUMERIC|DECIMAL)\b/', $declaredType) === 1;
+
+
+                            $isDateTime =
+                                    preg_match('/\b(DATE|DATETIME|TIMESTAMP|TIME)\b/', $declaredType) === 1
+                                    || str_ends_with($lowerColumn, '_at')
+                                    || str_contains($lowerColumn, 'date');
+
+                            $isBoolean =
+                                    preg_match('/\b(BOOL|BOOLEAN)\b/', $declaredType) === 1
+                                    || str_starts_with($lowerColumn, 'is_')
+                                    || str_starts_with($lowerColumn, 'has_')
+                                    || str_starts_with($lowerColumn, 'can_')
+                                    || str_contains($lowerColumn, 'enabled')
+                                    || str_contains($lowerColumn, 'active');
+
+
+                            $isJson =
+                                    str_contains($declaredType, 'JSON')
+                                    || str_contains($lowerColumn, 'json')
+                                    || str_contains($lowerColumn, 'attribute')
+                                    || str_contains($lowerColumn, 'meta')
+                                    || str_contains($lowerColumn, 'settings')
+                                    || str_contains($lowerColumn, 'config');
+
+                            $isLikelyLongText =
+                                    ! $isInteger
+                                    && ! $isNumeric
+                                    && ! $isDateTime
+                                    && ! $isBoolean
+                                    && ! $isPrimaryKeyText
+                                    && (
+                                            str_contains($declaredType, 'LONGTEXT')
+                                            || str_contains($declaredType, 'MEDIUMTEXT')
+                                            || str_contains($declaredType, 'CLOB')
+                                            || (
+                                                    str_contains($declaredType, 'TEXT')
+                                                    && ! str_contains($declaredType, 'VARCHAR')
+                                            )
+                                            || str_contains($lowerColumn, 'content')
+                                            || str_contains($lowerColumn, 'body')
+                                            || str_contains($lowerColumn, 'description')
+                                            || str_contains($lowerColumn, 'excerpt')
+                                            || str_contains($lowerColumn, 'notes')
+                                    );
+
+                            $inputType = match (true) {
+                                $isPrimaryKeyText => 'text',
+                                $isInteger || $isNumeric => 'number',
+                                $isDateTime => 'datetime-local',
+                                default => 'text',
+                            };
+
+                            $step = $isNumeric && ! $isInteger ? 'any' : '1';
+                            ?>
+
+                            <div class="df-sqlite-field <?= $isLikelyLongText || $isJson ? 'df-sqlite-field-wide' : ''; ?>">
+                                <label class="df-sqlite-field-label" for="<?= esc_html($fieldId); ?>">
+                                    <?= esc_html($columnName); ?>
+                                </label>
+
+                                <div class="df-sqlite-field-control">
+                                    <?php if ($isLikelyLongText || $isJson): ?>
+                                        <textarea
+                                                id="<?= esc_html($fieldId); ?>"
+                                                name="data[<?= esc_html($columnName); ?>]"
+                                                rows="<?= $isJson ? '14' : '8'; ?>"
+                                                class="<?= $isJson ? 'df-sqlite-json-editor' : ''; ?>"
+                                                placeholder="<?= $isJson ? esc_html("{\n    \"key\": \"value\"\n}") : ''; ?>"
+                                        ></textarea>
+                                    <?php elseif ($isBoolean): ?>
+                                        <select
+                                                id="<?= esc_html($fieldId); ?>"
+                                                name="data[<?= esc_html($columnName); ?>]"
+                                        >
+                                            <option value="">Use default / blank</option>
+                                            <option value="1">1 / true</option>
+                                            <option value="0">0 / false</option>
+                                        </select>
+                                    <?php else: ?>
+                                        <input
+                                                id="<?= esc_html($fieldId); ?>"
+                                                type="<?= esc_html($inputType); ?>"
+                                                name="data[<?= esc_html($columnName); ?>]"
+                                                value=""
+                                                <?= $inputType === 'number' ? 'step="' . esc_html($step) . '"' : ''; ?>
+                                                <?= ! $nullable && $default === null && ! $primaryKey ? 'required' : ''; ?>
+                                        >
+                                    <?php endif; ?>
+
+                                    <label class="df-sqlite-null-toggle">
+                                        <input
+                                                type="checkbox"
+                                                name="nulls[]"
+                                                value="<?= esc_html($columnName); ?>"
+                                                <?= $nullable ? '' : 'disabled'; ?>
+                                        >
+                                        <span><?=esc_html__('Set NULL', $r['id']);?></span>
+                                    </label>
+                                </div>
+
+                                <small class="df-sqlite-field-hint">
+                                    <?= esc_html($declaredType !== '' ? $declaredType : 'TEXT'); ?>
+                                    <?= $primaryKey ? ' · Primary Key' : ''; ?>
+                                    <?= $nullable ? ' · Nullable' : ' · Required'; ?>
+                                    <?= $default !== null ? ' · Default: ' . esc_html((string) $default) : ''; ?>
+                                </small>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="df-sqlite-form-actions">
+                        <button type="submit"><?=esc_html__('Insert Row', $r['id']);?></button>
+
+                        <a
+                                class="button button-secondary"
+                                href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($table)); ?>"
+                        >
+                            <?=esc_html__('Cancel', $r['id']);?>
+                        </a>
+                    </div>
+                </form>
+            <?php endif; ?>
+        </div>
+    </section>
+
+<?php }); ?>

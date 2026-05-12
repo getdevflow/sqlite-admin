@@ -1,0 +1,1069 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Devflow SQLite Admin\n"
+"POT-Creation-Date: 2026-05-11 22:28-0600\n"
+"PO-Revision-Date: 2026-05-11 22:28-0600\n"
+"Last-Translator: \n"
+"Language-Team: Joshua Parker\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: sqlite-admin\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: t__;esc_html__;esc_attr__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: locale\n"
+"X-Poedit-SearchPathExcluded-1: config\n"
+"X-Poedit-SearchPathExcluded-2: public\n"
+
+#: Controller/DatabaseController.php:55
+msgid "SQLite Manager"
+msgstr ""
+
+#: Controller/DatabaseController.php:81
+msgid "Database Structure"
+msgstr ""
+
+#: Controller/DatabaseController.php:105
+msgid "VACUUM Complete"
+msgstr ""
+
+#: Controller/DatabaseController.php:106
+msgid "Database VACUUM completed."
+msgstr ""
+
+#: Controller/DatabaseController.php:109 Controller/DatabaseController.php:141
+#: Controller/DatabaseController.php:168
+msgid "Back to Dashboard"
+msgstr ""
+
+#: Controller/DatabaseController.php:136
+msgid "Integrity Check"
+msgstr ""
+
+#: Controller/DatabaseController.php:137
+msgid "Integrity check completed."
+msgstr ""
+
+#: Controller/DatabaseController.php:164
+msgid "Optimize Complete"
+msgstr ""
+
+#: Controller/DatabaseController.php:165
+msgid "PRAGMA optimize completed."
+msgstr ""
+
+#: Controller/ExportController.php:53
+msgid "Export Database"
+msgstr ""
+
+#: Controller/ExportController.php:89
+msgid "Export Failed"
+msgstr ""
+
+#: Controller/ExportController.php:90
+msgid "No valid tables were selected for export."
+msgstr ""
+
+#: Controller/ExportController.php:125
+msgid "Export Table"
+msgstr ""
+
+#: Controller/ImportController.php:59
+msgid "Import Database"
+msgstr ""
+
+#: Controller/ImportController.php:79
+msgid "Only SQL database imports are supported here."
+msgstr ""
+
+#: Controller/ImportController.php:105
+msgid "Import Into Table"
+msgstr ""
+
+#: Controller/ImportController.php:129
+msgid "Only CSV and SQL imports are supported."
+msgstr ""
+
+#: Controller/ImportController.php:148
+msgid "No import file was uploaded."
+msgstr ""
+
+#: Controller/ImportController.php:152
+msgid "The uploaded import file could not be processed."
+msgstr ""
+
+#: Controller/IndexController.php:63
+msgid "Indexes"
+msgstr ""
+
+#: Controller/IndexController.php:97 Controller/IndexController.php:150
+msgid "Index name is required."
+msgstr ""
+
+#: Controller/IndexController.php:101
+msgid "At least one column must be selected."
+msgstr ""
+
+#: Controller/SqlController.php:61 Controller/SqlController.php:87
+#: Controller/SqlController.php:148
+msgid "SQL Editor"
+msgstr ""
+
+#: Controller/TableController.php:72
+msgid "Browse "
+msgstr ""
+
+#: Controller/TableController.php:102
+msgid "Structure "
+msgstr ""
+
+#: Controller/TableController.php:132 Controller/TableController.php:168
+msgid "Search "
+msgstr ""
+
+#: Controller/TableController.php:198
+msgid "Insert Row"
+msgstr ""
+
+#: Controller/TableController.php:231
+msgid "Row Not Found"
+msgstr ""
+
+#: Controller/TableController.php:232
+msgid "The selected row could not be found."
+msgstr ""
+
+#: Controller/TableController.php:234
+msgid "Back to Table"
+msgstr ""
+
+#: Controller/TableController.php:239
+msgid "Edit Row"
+msgstr ""
+
+#: Controller/TableController.php:451
+msgid "The new table name cannot be empty."
+msgstr ""
+
+#: Controller/TableController.php:458
+#, php-format
+msgid "Table \"%s\" already exists."
+msgstr ""
+
+#: Controller/TableController.php:497 Controller/TableController.php:613
+msgid "Column name is required."
+msgstr ""
+
+#: Controller/TableController.php:517
+msgid "Invalid column type."
+msgstr ""
+
+#: Controller/TableController.php:563
+msgid "Old and new column names are required."
+msgstr ""
+
+#: Controller/TableController.php:572
+#, php-format
+msgid "Column \"%s\" already exists."
+msgstr ""
+
+#: Controller/TableController.php:605
+msgid "This SQLite version does not support DROP COLUMN."
+msgstr ""
+
+#: Controller/TableController.php:673
+#, php-format
+msgid "Table \"%s\" does not exist."
+msgstr ""
+
+#: Controller/TableController.php:690
+#, php-format
+msgid "Column \"%s\" does not exist."
+msgstr ""
+
+#: Controller/TriggerController.php:65
+msgid "Triggers"
+msgstr ""
+
+#: Controller/TriggerController.php:101 Controller/TriggerController.php:240
+msgid "Trigger name is required."
+msgstr ""
+
+#: Controller/TriggerController.php:105
+msgid "Invalid trigger timing."
+msgstr ""
+
+#: Controller/TriggerController.php:109
+msgid "Invalid trigger event."
+msgstr ""
+
+#: Controller/TriggerController.php:113
+msgid "SQLite only supports FOR EACH ROW triggers."
+msgstr ""
+
+#: Controller/TriggerController.php:118
+msgid "Trigger statement is required."
+msgstr ""
+
+#: Controller/TriggerController.php:162
+msgid "Trigger not found."
+msgstr ""
+
+#: Controller/TriggerController.php:181
+msgid "Trigger SQL is required."
+msgstr ""
+
+#: Database/SqliteConnectionFactory.php:39
+msgid "SQLite database path is not configured."
+msgstr ""
+
+#: Database/SqliteConnectionFactory.php:45
+msgid "SQLite database file could not be found."
+msgstr ""
+
+#: Database/SqliteConnectionFactory.php:49
+msgid "SQLite database file is not readable."
+msgstr ""
+
+#: Database/SqliteImporter.php:37
+msgid "The SQL import file did not contain any executable statements."
+msgstr ""
+
+#: Database/SqliteImporter.php:61
+msgid "Could not create temporary import file."
+msgstr ""
+
+#: Database/SqliteImporter.php:71
+msgid "Could not read temporary import file."
+msgstr ""
+
+#: Database/SqliteImporter.php:78
+msgid "Could not open uploaded CSV file."
+msgstr ""
+
+#: Database/SqliteImporter.php:86
+msgid "CSV file is empty."
+msgstr ""
+
+#: Database/SqliteImporter.php:126
+msgid "CSV file does not contain headers."
+msgstr ""
+
+#: Database/SqliteImporter.php:145
+#, php-format
+msgid "CSV column \"%s\" does not exist on the selected table."
+msgstr ""
+
+#: Database/SqliteRowRepository.php:109 Database/SqliteRowRepository.php:144
+msgid "Missing row identity."
+msgstr ""
+
+#: Database/SqliteRowRepository.php:267
+msgid "Invalid row key."
+msgstr ""
+
+#: Database/SqliteRowRepository.php:281
+msgid "Invalid row key payload."
+msgstr ""
+
+#: Security/Identifier.php:29
+msgid "Invalid SQLite identifier."
+msgstr ""
+
+#: Security/SqliteQueryGuard.php:42
+msgid "SQL query is empty."
+msgstr ""
+
+#: Security/SqliteQueryGuard.php:47
+msgid "Subsite users may only run one read-only query at a time."
+msgstr ""
+
+#: Security/SqliteQueryGuard.php:79
+msgid "Only read-only SELECT and safe PRAGMA queries are allowed."
+msgstr ""
+
+#: Security/SqliteQueryGuard.php:92
+msgid "This query references a table outside the current site."
+msgstr ""
+
+#: Security/SqliteTriggerGuard.php:29
+msgid "Trigger statement cannot be empty."
+msgstr ""
+
+#: Security/SqliteTriggerGuard.php:48
+#, php-format
+msgid "Trigger statement contains forbidden operation: %s"
+msgstr ""
+
+#: SqliteAdminPlugin.php:43
+msgid "SQLite Admin"
+msgstr ""
+
+#: view/action-result.phtml:12
+msgid "Result"
+msgstr ""
+
+#: view/action-result.phtml:13
+msgid "Action complete."
+msgstr ""
+
+#: view/action-result.phtml:14
+msgid "Go Back"
+msgstr ""
+
+#: view/action-result.phtml:46
+msgid "No additional result data was returned."
+msgstr ""
+
+#: view/database/dashboard.phtml:39
+msgid "Database Dashboard"
+msgstr ""
+
+#: view/database/dashboard.phtml:40
+msgid "SQLite database overview and statistics."
+msgstr ""
+
+#: view/database/dashboard.phtml:49 view/database/dashboard.phtml:163
+#: view/database/import.phtml:24 view/database/structure.phtml:121
+#: view/layout.phtml:35 view/table/import.phtml:28
+msgid "Export"
+msgstr ""
+
+#: view/database/dashboard.phtml:53 view/layout.phtml:36
+msgid "Import"
+msgstr ""
+
+#: view/database/dashboard.phtml:61 view/database/structure.phtml:42
+msgid "Tables"
+msgstr ""
+
+#: view/database/dashboard.phtml:66 view/database/structure.phtml:47
+msgid "Views"
+msgstr ""
+
+#: view/database/dashboard.phtml:71
+msgid "Objects"
+msgstr ""
+
+#: view/database/dashboard.phtml:76
+msgid "SQLite Version"
+msgstr ""
+
+#: view/database/dashboard.phtml:82
+msgid "Database Information"
+msgstr ""
+
+#: view/database/dashboard.phtml:85
+msgid "Database Path"
+msgstr ""
+
+#: view/database/dashboard.phtml:90
+msgid "Database Size"
+msgstr ""
+
+#: view/database/dashboard.phtml:93
+msgid "Last Modified"
+msgstr ""
+
+#: view/database/dashboard.phtml:100
+msgid "PDO SQLite Extension"
+msgstr ""
+
+#: view/database/dashboard.phtml:105
+msgid "SQLite3 Extension"
+msgstr ""
+
+#: view/database/dashboard.phtml:113 view/database/sql.phtml:179
+#: view/database/structure.phtml:58 view/partial/sidebar.phtml:28
+msgid "Database Objects"
+msgstr ""
+
+#: view/database/dashboard.phtml:117 view/database/structure.phtml:62
+msgid "No tables or views were found."
+msgstr ""
+
+#: view/database/dashboard.phtml:124 view/database/structure.phtml:69
+#: view/table/import.phtml:87 view/table/indexes.phtml:31
+#: view/table/structure.phtml:129 view/table/triggers.phtml:31
+msgid "Name"
+msgstr ""
+
+#: view/database/dashboard.phtml:125 view/database/structure.phtml:70
+#: view/table/import.phtml:88 view/table/structure.phtml:130
+msgid "Type"
+msgstr ""
+
+#: view/database/dashboard.phtml:126 view/database/structure.phtml:72
+#: view/partial/table-grid.phtml:31
+msgid "Actions"
+msgstr ""
+
+#: view/database/dashboard.phtml:151 view/database/structure.phtml:109
+#: view/partial/sidebar.phtml:74 view/table/export.phtml:24
+#: view/table/import.phtml:24 view/table/structure.phtml:28
+msgid "Browse"
+msgstr ""
+
+#: view/database/dashboard.phtml:155 view/database/structure.phtml:113
+#: view/layout.phtml:33 view/partial/sidebar.phtml:84
+#: view/table/browse.phtml:40 view/table/export.phtml:28
+msgid "Structure"
+msgstr ""
+
+#: view/database/dashboard.phtml:159 view/layout.phtml:34
+msgid "SQL"
+msgstr ""
+
+#: view/database/export.phtml:20
+msgid "Download a SQL or CSV export of the SQLite database."
+msgstr ""
+
+#: view/database/export.phtml:25 view/database/import.phtml:23
+#: view/database/sql.phtml:31 view/database/structure.phtml:34
+msgid "Dashboard"
+msgstr ""
+
+#: view/database/export.phtml:36 view/table/export.phtml:35
+msgid "Export Options"
+msgstr ""
+
+#: view/database/export.phtml:46 view/table/export.phtml:41
+msgid "Export Format"
+msgstr ""
+
+#: view/database/export.phtml:50 view/table/export.phtml:43
+msgid "SQL Dump"
+msgstr ""
+
+#: view/database/export.phtml:54 view/database/export.phtml:130
+#: view/table/export.phtml:44
+msgid "CSV Export"
+msgstr ""
+
+#: view/database/export.phtml:59
+msgid "SQL preserves schema and data. CSV exports table rows."
+msgstr ""
+
+#: view/database/export.phtml:64
+msgid "Export Scope"
+msgstr ""
+
+#: view/database/export.phtml:68
+msgid "Entire Database"
+msgstr ""
+
+#: view/database/export.phtml:72
+msgid "Selected Tables"
+msgstr ""
+
+#: view/database/export.phtml:77
+msgid "Export all visible tables or only selected tables."
+msgstr ""
+
+#: view/database/export.phtml:84
+msgid "Select Tables"
+msgstr ""
+
+#: view/database/export.phtml:119
+msgid "Export Information"
+msgstr ""
+
+#: view/database/export.phtml:122 view/database/import.phtml:63
+msgid "Visible Objects"
+msgstr ""
+
+#: view/database/export.phtml:125
+msgid "SQL Export"
+msgstr ""
+
+#: view/database/export.phtml:127
+msgid "Includes schema definitions and INSERT statements."
+msgstr ""
+
+#: view/database/export.phtml:132
+msgid "Exports row data in CSV format."
+msgstr ""
+
+#: view/database/export.phtml:135
+msgid "Permissions"
+msgstr ""
+
+#: view/database/export.phtml:137
+msgid "Export visibility respects Devflow multisite table scoping."
+msgstr ""
+
+#: view/database/export.phtml:150
+msgid "Export Selected Tables"
+msgstr ""
+
+#: view/database/import.phtml:19
+msgid "Import a SQL dump into the SQLite database."
+msgstr ""
+
+#: view/database/import.phtml:30
+msgid "Import SQL File"
+msgstr ""
+
+#: view/database/import.phtml:42
+msgid "Upload a SQLite-compatible SQL dump file."
+msgstr ""
+
+#: view/database/import.phtml:48
+msgid "I understand this may modify database tables and records."
+msgstr ""
+
+#: view/database/import.phtml:49
+msgid "Imports run inside a transaction when supported."
+msgstr ""
+
+#: view/database/import.phtml:60
+msgid "Import Information"
+msgstr ""
+
+#: view/database/import.phtml:66
+msgid "Supported Format"
+msgstr ""
+
+#: view/database/import.phtml:67
+msgid "SQL files only for full database imports."
+msgstr ""
+
+#: view/database/import.phtml:69
+msgid "Recommended First Step"
+msgstr ""
+
+#: view/database/import.phtml:70
+msgid "Export a backup before importing."
+msgstr ""
+
+#: view/database/import.phtml:72
+msgid "Permission Level"
+msgstr ""
+
+#: view/database/import.phtml:73
+msgid "Full database imports should be limited to main-site super admins."
+msgstr ""
+
+#: view/database/sql.phtml:23
+msgid "Run SQL against the selected table scope."
+msgstr ""
+
+#: view/database/sql.phtml:24
+msgid "Run SQL against the scoped SQLite database."
+msgstr ""
+
+#: view/database/sql.phtml:39
+msgid "Browse Table"
+msgstr ""
+
+#: view/database/sql.phtml:50
+msgid "SQL Query"
+msgstr ""
+
+#: view/database/sql.phtml:70
+msgid "Multiple statements may be restricted depending on your permissions."
+msgstr ""
+
+#: view/database/sql.phtml:76
+msgid "Run Query"
+msgstr ""
+
+#: view/database/sql.phtml:85
+msgid "Clear"
+msgstr ""
+
+#: view/database/sql.phtml:93
+msgid "Query Results"
+msgstr ""
+
+#: view/database/sql.phtml:111
+msgid "Statement"
+msgstr ""
+
+#: view/database/sql.phtml:116
+msgid "rows"
+msgstr ""
+
+#: view/database/sql.phtml:120
+msgid "Query Time:"
+msgstr ""
+
+#: view/database/sql.phtml:136
+msgid "No rows returned."
+msgstr ""
+
+#: view/database/sql.phtml:145
+msgid "Quick Query Snippets"
+msgstr ""
+
+#: view/database/sql.phtml:162
+msgid "Table Structure"
+msgstr ""
+
+#: view/database/sql.phtml:170
+msgid "Count Rows"
+msgstr ""
+
+#: view/database/structure.phtml:30
+msgid "Tables and views visible to the current user."
+msgstr ""
+
+#: view/database/structure.phtml:52
+msgid "Total Objects"
+msgstr ""
+
+#: view/database/structure.phtml:71
+msgid "Create SQL"
+msgstr ""
+
+#: view/database/structure.phtml:98
+msgid "View SQL"
+msgstr ""
+
+#: view/error/forbidden.phtml:21
+msgid "Access Denied"
+msgstr ""
+
+#: view/error/forbidden.phtml:22
+msgid "This SQLite manager is protected by Devflow permissions."
+msgstr ""
+
+#: view/layout.phtml:29
+msgid "Manage your Devflow SQLite database."
+msgstr ""
+
+#: view/layout.phtml:32
+msgid "Database"
+msgstr ""
+
+#: view/partial/sidebar.phtml:31
+msgid "tables"
+msgstr ""
+
+#: view/partial/sidebar.phtml:32
+msgid "views"
+msgstr ""
+
+#: view/partial/sidebar.phtml:40
+msgid "View All"
+msgstr ""
+
+#: view/partial/sidebar.phtml:46
+msgid "No tables or views available."
+msgstr ""
+
+#: view/partial/sidebar.phtml:80
+msgid "Data"
+msgstr ""
+
+#: view/partial/table-grid.phtml:50 view/table/triggers.phtml:55
+msgid "Edit"
+msgstr ""
+
+#: view/partial/table-grid.phtml:66
+msgid "Delete"
+msgstr ""
+
+#: view/partial/table-grid.phtml:70
+msgid "Unavailable"
+msgstr ""
+
+#: view/table/browse.phtml:23
+msgid "Browse:"
+msgstr ""
+
+#: view/table/browse.phtml:25
+msgid "total records."
+msgstr ""
+
+#: view/table/browse.phtml:26 view/table/browse.phtml:69
+msgid "Page"
+msgstr ""
+
+#: view/table/browse.phtml:36 view/table/search.phtml:56
+msgid "Search"
+msgstr ""
+
+#: view/table/browse.phtml:48
+msgid "No records were found in this table."
+msgstr ""
+
+#: view/table/browse.phtml:51
+msgid "Insert First Row"
+msgstr ""
+
+#: view/table/browse.phtml:64
+msgid "Previous"
+msgstr ""
+
+#: view/table/browse.phtml:77
+msgid "Next"
+msgstr ""
+
+#: view/table/edit.phtml:21
+msgid "Edit Row:"
+msgstr ""
+
+#: view/table/edit.phtml:22
+msgid "Update the selected record."
+msgstr ""
+
+#: view/table/edit.phtml:27 view/table/insert.phtml:26
+msgid "Back to Browse"
+msgstr ""
+
+#: view/table/edit.phtml:35
+msgid "No row data was found for editing."
+msgstr ""
+
+#: view/table/edit.phtml:136 view/table/insert.phtml:171
+msgid "Set NULL"
+msgstr ""
+
+#: view/table/edit.phtml:144
+msgid "Save Changes"
+msgstr ""
+
+#: view/table/export.phtml:18
+msgid "Export Table:"
+msgstr ""
+
+#: view/table/export.phtml:19
+msgid "Download this table as SQL or CSV."
+msgstr ""
+
+#: view/table/export.phtml:46
+msgid "SQL includes CREATE TABLE and INSERT statements. CSV exports row data."
+msgstr ""
+
+#: view/table/export.phtml:57 view/table/import.phtml:65
+msgid "Table Information"
+msgstr ""
+
+#: view/table/export.phtml:60 view/table/import.phtml:68
+msgid "Table"
+msgstr ""
+
+#: view/table/export.phtml:63 view/table/export.phtml:70
+#: view/table/import.phtml:71 view/table/indexes.phtml:81
+#: view/table/structure.phtml:102 view/table/structure.phtml:118
+msgid "Columns"
+msgstr ""
+
+#: view/table/import.phtml:18
+msgid "Import Into Table:"
+msgstr ""
+
+#: view/table/import.phtml:19
+msgid "Import CSV or SQL data into this table."
+msgstr ""
+
+#: view/table/import.phtml:35 view/table/import.phtml:45
+msgid "Import File"
+msgstr ""
+
+#: view/table/import.phtml:47
+msgid ""
+"CSV imports are matched by header row. SQL files are executed against this "
+"table scope."
+msgstr ""
+
+#: view/table/import.phtml:53
+msgid "I understand this import may modify records."
+msgstr ""
+
+#: view/table/import.phtml:54
+msgid "Export a backup before importing production data."
+msgstr ""
+
+#: view/table/import.phtml:59
+msgid "Import Table"
+msgstr ""
+
+#: view/table/import.phtml:74
+msgid "CSV Requirements"
+msgstr ""
+
+#: view/table/import.phtml:75
+msgid "First row must contain column names matching this table."
+msgstr ""
+
+#: view/table/import.phtml:81
+msgid "Available Columns"
+msgstr ""
+
+#: view/table/import.phtml:89 view/table/structure.phtml:131
+#: view/table/structure.phtml:194
+msgid "Nullable"
+msgstr ""
+
+#: view/table/import.phtml:90 view/table/structure.phtml:132
+msgid "Default"
+msgstr ""
+
+#: view/table/import.phtml:91 view/table/structure.phtml:133
+msgid "Primary Key"
+msgstr ""
+
+#: view/table/indexes.phtml:16
+msgid "Indexes:"
+msgstr ""
+
+#: view/table/indexes.phtml:17
+msgid "Create, inspect, and drop indexes for this table."
+msgstr ""
+
+#: view/table/indexes.phtml:22
+msgid "Existing Indexes"
+msgstr ""
+
+#: view/table/indexes.phtml:25
+msgid "No indexes found for this table."
+msgstr ""
+
+#: view/table/indexes.phtml:32
+msgid "Unique"
+msgstr ""
+
+#: view/table/indexes.phtml:33
+msgid "Origin"
+msgstr ""
+
+#: view/table/indexes.phtml:34
+msgid "Partial"
+msgstr ""
+
+#: view/table/indexes.phtml:35 view/table/triggers.phtml:33
+msgid "Action"
+msgstr ""
+
+#: view/table/indexes.phtml:49
+msgid "Drop this index?"
+msgstr ""
+
+#: view/table/indexes.phtml:50 view/table/triggers.phtml:78
+msgid "Drop"
+msgstr ""
+
+#: view/table/indexes.phtml:54
+msgid "System index"
+msgstr ""
+
+#: view/table/indexes.phtml:66 view/table/indexes.phtml:92
+msgid "Create Index"
+msgstr ""
+
+#: view/table/indexes.phtml:71
+msgid "Index Name"
+msgstr ""
+
+#: view/table/indexes.phtml:77
+msgid "Unique index"
+msgstr ""
+
+#: view/table/insert.phtml:20
+msgid "Insert Row:"
+msgstr ""
+
+#: view/table/insert.phtml:21
+msgid "Add a new record to this table."
+msgstr ""
+
+#: view/table/insert.phtml:34 view/table/structure.phtml:122
+msgid "No columns were found for this table."
+msgstr ""
+
+#: view/table/insert.phtml:192
+msgid "Cancel"
+msgstr ""
+
+#: view/table/search.phtml:22
+msgid "Search:"
+msgstr ""
+
+#: view/table/search.phtml:23
+msgid "matching records."
+msgstr ""
+
+#: view/table/search.phtml:41
+msgid "contains"
+msgstr ""
+
+#: view/table/search.phtml:62
+msgid "Results"
+msgstr ""
+
+#: view/table/structure.phtml:22
+msgid "Structure:"
+msgstr ""
+
+#: view/table/structure.phtml:23
+msgid "Columns, indexes, triggers, and CREATE SQL for this table."
+msgstr ""
+
+#: view/table/structure.phtml:46
+msgid "Danger Zone"
+msgstr ""
+
+#: view/table/structure.phtml:52
+msgid "Empty this table? All rows will be permanently deleted."
+msgstr ""
+
+#: view/table/structure.phtml:59
+msgid "Empty Table"
+msgstr ""
+
+#: view/table/structure.phtml:73
+msgid "Drop Table"
+msgstr ""
+
+#: view/table/structure.phtml:86
+msgid "New table name"
+msgstr ""
+
+#: view/table/structure.phtml:91
+msgid "Rename Table"
+msgstr ""
+
+#: view/table/structure.phtml:155
+msgid "Column Tools"
+msgstr ""
+
+#: view/table/structure.phtml:163 view/table/structure.phtml:197
+msgid "Add Column"
+msgstr ""
+
+#: view/table/structure.phtml:166
+msgid "Column Name"
+msgstr ""
+
+#: view/table/structure.phtml:171
+msgid "Column Type"
+msgstr ""
+
+#: view/table/structure.phtml:188
+msgid "Default Value"
+msgstr ""
+
+#: view/table/structure.phtml:205 view/table/structure.phtml:223
+msgid "Rename Column"
+msgstr ""
+
+#: view/table/structure.phtml:208
+msgid "Existing Column"
+msgstr ""
+
+#: view/table/structure.phtml:219
+msgid "New Column Name"
+msgstr ""
+
+#: view/table/structure.phtml:232 view/table/structure.phtml:246
+msgid "Drop Column"
+msgstr ""
+
+#: view/table/structure.phtml:235
+msgid "Column"
+msgstr ""
+
+#: view/table/structure.phtml:250
+msgid ""
+"Requires SQLite 3.35.0 or newer and may fail if the column is used by "
+"constraints, indexes, triggers, or generated columns."
+msgstr ""
+
+#: view/table/structure.phtml:262
+msgid "No indexes were found for this table."
+msgstr ""
+
+#: view/table/structure.phtml:277
+msgid "No triggers were found for this table."
+msgstr ""
+
+#: view/table/structure.phtml:288
+msgid "CREATE SQL"
+msgstr ""
+
+#: view/table/structure.phtml:292
+msgid "No CREATE SQL was found for this table."
+msgstr ""
+
+#: view/table/trigger-edit.phtml:20
+msgid "Edit Trigger"
+msgstr ""
+
+#: view/table/trigger-edit.phtml:56
+msgid "Save Trigger"
+msgstr ""
+
+#: view/table/triggers.phtml:16
+msgid "Triggers:"
+msgstr ""
+
+#: view/table/triggers.phtml:17
+msgid "Create, inspect, and drop triggers for this table."
+msgstr ""
+
+#: view/table/triggers.phtml:22
+msgid "Existing Triggers"
+msgstr ""
+
+#: view/table/triggers.phtml:25
+msgid "No triggers found for this table."
+msgstr ""
+
+#: view/table/triggers.phtml:97 view/table/triggers.phtml:167
+msgid "Create Trigger"
+msgstr ""
+
+#: view/table/triggers.phtml:105
+msgid "Audit Log"
+msgstr ""
+
+#: view/table/triggers.phtml:113
+msgid "Auto Updated At"
+msgstr ""
+
+#: view/table/triggers.phtml:119
+msgid "Trigger Name"
+msgstr ""
+
+#: view/table/triggers.phtml:124
+msgid "Timing"
+msgstr ""
+
+#: view/table/triggers.phtml:126
+msgid "BEFORE"
+msgstr ""
+
+#: view/table/triggers.phtml:127
+msgid "AFTER"
+msgstr ""
+
+#: view/table/triggers.phtml:128
+msgid "INSTEAD OF"
+msgstr ""
+
+#: view/table/triggers.phtml:133
+msgid "Event"
+msgstr ""
+
+#: view/table/triggers.phtml:135
+msgid "INSERT"
+msgstr ""
+
+#: view/table/triggers.phtml:136
+msgid "UPDATE"
+msgstr ""
+
+#: view/table/triggers.phtml:137
+msgid "DELETE"
+msgstr ""
+
+#: view/table/triggers.phtml:147
+msgid "Trigger SQL Statement"
+msgstr ""

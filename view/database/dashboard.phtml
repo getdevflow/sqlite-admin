@@ -1,0 +1,176 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$this->parent('plugin::SqliteAdmin/view/layout');
+$this->block('sqlite-admin', function ($params) {
+
+$r = Registry::getInstance()->get('sqlite-admin');
+$tableCount = count($params['tables'] ?? []);
+
+$formattedSize = match (true) {
+    ($params['databaseSize'] ?? 0) >= 1073741824 => round(($params['databaseSize'] ?? 0) / 1073741824, 2) . ' GB',
+    ($params['databaseSize'] ?? 0) >= 1048576 => round(($params['databaseSize'] ?? 0) / 1048576, 2) . ' MB',
+    ($params['databaseSize'] ?? 0) >= 1024 => round(($params['databaseSize'] ?? 0) / 1024, 2) . ' KB',
+    default => (string) ($params['databaseSize'] ?? 0) . ' bytes',
+};
+
+$tableTotals = [
+    'tables' => 0,
+    'views' => 0,
+];
+
+foreach (($params['tables'] ?? []) as $item) {
+    if (($item['type'] ?? '') === 'view') {
+        $tableTotals['views']++;
+    } else {
+        $tableTotals['tables']++;
+    }
+}
+?>
+
+<section class="df-sqlite-card">
+    <header class="df-sqlite-card-header">
+        <div>
+            <h2><?=esc_html__('Database Dashboard', $r['id']);?></h2>
+            <p><?=esc_html__('SQLite database overview and statistics.', $r['id']);?></p>
+        </div>
+
+        <div class="df-sqlite-actions">
+            <a class="button" href="<?= admin_url('plugin/sqlite-admin/sql'); ?>">
+                <?=esc_html__('SQL Editor', $r['id']);?>
+            </a>
+
+            <a class="button" href="<?= admin_url('plugin/sqlite-admin/export'); ?>">
+                <?=esc_html__('Export', $r['id']);?>
+            </a>
+
+            <a class="button" href="<?= admin_url('plugin/sqlite-admin/import'); ?>">
+                <?=esc_html__('Import', $r['id']);?>
+            </a>
+        </div>
+    </header>
+
+    <div class="df-sqlite-card-body">
+        <div class="df-sqlite-stats-grid">
+            <div class="df-sqlite-stat">
+                <span class="df-sqlite-stat-label"><?=esc_html__('Tables', $r['id']);?></span>
+                <strong><?= (string) $tableTotals['tables']; ?></strong>
+            </div>
+
+            <div class="df-sqlite-stat">
+                <span class="df-sqlite-stat-label"><?=esc_html__('Views', $r['id']);?></span>
+                <strong><?= (string) $tableTotals['views']; ?></strong>
+            </div>
+
+            <div class="df-sqlite-stat">
+                <span class="df-sqlite-stat-label"><?=esc_html__('Objects', $r['id']);?></span>
+                <strong><?= (string) $tableCount; ?></strong>
+            </div>
+
+            <div class="df-sqlite-stat">
+                <span class="df-sqlite-stat-label"><?=esc_html__('SQLite Version', $r['id']);?></span>
+                <strong><?= (string) ($params['sqliteVersion'] ?? 'Unknown'); ?></strong>
+            </div>
+        </div>
+
+        <div class="df-sqlite-panel">
+            <h3><?=esc_html__('Database Information', $r['id']);?></h3>
+
+            <dl class="df-sqlite-meta">
+                <dt><?=esc_html__('Database Path', $r['id']);?></dt>
+                <dd>
+                    <code><?= $params['databasePath'] ?? ''; ?></code>
+                </dd>
+
+                <dt><?=esc_html__('Database Size', $r['id']);?></dt>
+                <dd><?= esc_html($formattedSize); ?></dd>
+
+                <dt><?=esc_html__('Last Modified', $r['id']);?></dt>
+                <dd>
+                    <?= ! empty($params['databaseModified'])
+                            ? esc_html(date('Y-m-d H:i:s', (int) $params['databaseModified']))
+                            : 'N/A'; ?>
+                </dd>
+
+                <dt><?=esc_html__('PDO SQLite Extension', $r['id']);?></dt>
+                <dd>
+                    <?= extension_loaded('pdo_sqlite') ? 'Enabled' : 'Disabled'; ?>
+                </dd>
+
+                <dt><?=esc_html__('SQLite3 Extension', $r['id']);?></dt>
+                <dd>
+                    <?= extension_loaded('sqlite3') ? 'Enabled' : 'Disabled'; ?>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="df-sqlite-panel">
+            <h3><?=esc_html__('Database Objects', $r['id']);?></h3>
+
+            <?php if (($params['tables'] ?? []) === []): ?>
+                <div class="df-sqlite-empty">
+                    <p><?=esc_html__('No tables or views were found.', $r['id']);?></p>
+                </div>
+            <?php else: ?>
+                <div class="df-sqlite-table-wrap">
+                    <table class="df-sqlite-grid">
+                        <thead>
+                        <tr>
+                            <th><?=esc_html__('Name', $r['id']);?></th>
+                            <th><?=esc_html__('Type', $r['id']);?></th>
+                            <th><?=esc_html__('Actions', $r['id']);?></th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <?php foreach ($params['tables'] as $item): ?>
+                            <?php
+                            $name = (string) ($item['name'] ?? '');
+                            $type = (string) ($item['type'] ?? 'table');
+                            ?>
+
+                            <tr>
+                                <td>
+                                    <strong><?= $name; ?></strong>
+                                </td>
+
+                                <td>
+                                        <span class="df-sqlite-badge">
+                                            <?= ucfirst($type); ?>
+                                        </span>
+                                </td>
+
+                                <td>
+                                    <div class="df-sqlite-row-actions">
+                                        <a href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($name)); ?>">
+                                            <?=esc_html__('Browse', $r['id']);?>
+                                        </a>
+
+                                        <a href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($name) . '/structure'); ?>">
+                                            <?=esc_html__('Structure', $r['id']);?>
+                                        </a>
+
+                                        <a href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($name) . '/sql'); ?>">
+                                            <?=esc_html__('SQL', $r['id']);?>
+                                        </a>
+
+                                        <a href="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($name) . '/export'); ?>">
+                                            <?=esc_html__('Export', $r['id']);?>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+<?php }); ?>

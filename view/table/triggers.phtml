@@ -1,0 +1,218 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function App\Shared\Helpers\admin_url;
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$this->parent('plugin::SqliteAdmin/view/layout');
+$this->block('sqlite-admin', function ($params) {
+$r = Registry::getInstance()->get('sqlite-admin');
+?>
+<section class="df-sqlite-card">
+    <header class="df-sqlite-card-header">
+        <div>
+            <h2><?=esc_html__('Triggers:', $r['id']);?> <?= esc_html($params['table']); ?></h2>
+            <p><?=esc_html__('Create, inspect, and drop triggers for this table.', $r['id']);?></p>
+        </div>
+    </header>
+
+    <div class="df-sqlite-panel">
+        <h3><?=esc_html__('Existing Triggers', $r['id']);?></h3>
+
+        <?php if ($params['triggers'] === []): ?>
+            <p><?=esc_html__('No triggers found for this table.', $r['id']);?></p>
+        <?php else: ?>
+            <div class="df-sqlite-table-wrap">
+                <table class="df-sqlite-grid">
+                    <thead>
+                    <tr>
+                        <th><?=esc_html__('Name', $r['id']);?></th>
+                        <th>SQL</th>
+                        <th><?=esc_html__('Action', $r['id']);?></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($params['triggers'] as $trigger): ?>
+
+                        <div class="df-sqlite-trigger">
+                            <div class="df-sqlite-trigger-header">
+                                <div>
+                                    <h3><?= esc_html($trigger['name']); ?></h3>
+                                </div>
+
+                                <div class="df-sqlite-trigger-actions">
+                                    <a
+                                            class="button"
+                                            href="<?= admin_url(
+                                                    'plugin/sqlite-admin/table/'
+                                                    . rawurlencode($params['table'])
+                                                    . '/triggers/edit/'
+                                                    . rawurlencode($trigger['name'])
+                                            ); ?>"
+                                    >
+                                        <?=esc_html__('Edit', $r['id']);?>
+                                    </a>
+
+                                    <form
+                                            method="post"
+                                            action="<?= admin_url(
+                                                    'plugin/sqlite-admin/table/'
+                                                    . rawurlencode($params['table'])
+                                                    . '/triggers/drop'
+                                            ); ?>"
+                                    >
+
+                                        <input
+                                                type="hidden"
+                                                name="trigger_name"
+                                                value="<?= esc_html($trigger['name']); ?>"
+                                        >
+
+                                        <button
+                                                type="submit"
+                                                class="button button-danger"
+                                                onclick="return confirm('Drop trigger?');"
+                                        >
+                                            <?=esc_html__('Drop', $r['id']);?>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="df-sqlite-code-wrap">
+                                <pre class="df-sqlite-code language-sql"><code class="language-sql"><?= esc_html($trigger['sql'] ?? ''); ?></code></pre>
+                            </div>
+                        </div>
+
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <div class="df-sqlite-panel">
+        <h3><?=esc_html__('Create Trigger', $r['id']);?></h3>
+
+        <div class="df-sqlite-snippets">
+            <button
+                    type="button"
+                    class="df-sqlite-snippet"
+                    data-sql="INSERT INTO audit_log(table_name, row_id, created_at) VALUES ('<?= esc_html($params['table']); ?>', NEW.id, CURRENT_TIMESTAMP)"
+            >
+            <?=esc_html__('Audit Log', $r['id']);?>
+            </button>
+
+            <button
+                    type="button"
+                    class="df-sqlite-snippet"
+                    data-sql="UPDATE <?= esc_html($params['table']); ?> SET updated_at = CURRENT_TIMESTAMP HERE id = NEW.id"
+            >
+                <?=esc_html__('Auto Updated At', $r['id']);?>
+            </button>
+        </div>
+        <form method="post" action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/triggers'); ?>" class="df-sqlite-form">
+
+            <label>
+                <?=esc_html__('Trigger Name', $r['id']);?>
+                <input type="text" name="trigger_name" placeholder="<?= esc_html($params['table']); ?>_after_insert" required>
+            </label>
+
+            <label>
+                <?=esc_html__('Timing', $r['id']);?>
+                <select name="timing">
+                    <option value="BEFORE"><?=esc_html__('BEFORE', $r['id']);?></option>
+                    <option value="AFTER" selected><?=esc_html__('AFTER', $r['id']);?></option>
+                    <option value="INSTEAD OF"><?=esc_html__('INSTEAD OF', $r['id']);?></option>
+                </select>
+            </label>
+
+            <label>
+                <?=esc_html__('Event', $r['id']);?>
+                <select name="event">
+                    <option value="INSERT" selected><?=esc_html__('INSERT', $r['id']);?></option>
+                    <option value="UPDATE"><?=esc_html__('UPDATE', $r['id']);?></option>
+                    <option value="DELETE"><?=esc_html__('DELETE', $r['id']);?></option>
+                </select>
+            </label>
+
+            <label>
+                WHEN expression
+                <input type="text" name="when_expression" placeholder="Optional, without WHEN">
+            </label>
+
+            <label>
+                <?=esc_html__('Trigger SQL Statement', $r['id']);?>
+            </label>
+
+            <div class="df-sqlite-sql-editor">
+                <pre
+                        id="sql-highlighting"
+                        class="df-sqlite-sql-highlight language-sql"
+                        aria-hidden="true"
+                ><code id="sql-highlight" class="language-sql"></code></pre>
+
+                <textarea
+                        name="statement"
+                        id="sql-editor"
+                        class="df-sqlite-sql-textarea"
+                        rows="14"
+                        spellcheck="false"
+                        required
+                ></textarea>
+            </div>
+
+            <button type="submit"><?=esc_html__('Create Trigger', $r['id']);?></button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const textarea = document.querySelector('#sql-editor');
+            const pre = document.querySelector('#sql-highlighting');
+            const code = document.querySelector('#sql-highlight');
+
+            const syncHighlight = () => {
+                if (!textarea || !code) {
+                    return;
+                }
+
+                code.textContent = textarea.value || ' ';
+
+                if (window.Prism) {
+                    Prism.highlightElement(code);
+                }
+            };
+
+            const syncScroll = () => {
+                if (!textarea || !pre) {
+                    return;
+                }
+
+                pre.scrollTop = textarea.scrollTop;
+                pre.scrollLeft = textarea.scrollLeft;
+            };
+
+            document.querySelectorAll('.df-sqlite-snippet').forEach((button) => {
+                button.addEventListener('click', () => {
+                    if (!textarea) {
+                        return;
+                    }
+
+                    textarea.value = button.dataset.sql || '';
+                    syncHighlight();
+                    syncScroll();
+                    textarea.focus();
+                    textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+                });
+            });
+
+            textarea?.addEventListener('input', syncHighlight);
+            textarea?.addEventListener('scroll', syncScroll);
+
+            syncHighlight();
+        });
+    </script>
+</section>
+<?php }); ?>

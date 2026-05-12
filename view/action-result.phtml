@@ -1,0 +1,51 @@
+<?php
+
+use App\Shared\Services\Registry;
+
+use function Qubus\Security\Helpers\esc_html;
+use function Qubus\Security\Helpers\esc_html__;
+
+$this->parent('plugin::SqliteAdmin/view/layout');
+$this->block('sqlite-admin', function ($params) {
+$r = Registry::getInstance()->get('sqlite-admin');
+
+$heading = $title ?? esc_html__('Result', $r['id']);
+$bodyMessage = $message ?? esc_html__('Action complete.', $r['id']);
+$backLabel = $backLabel ?? esc_html__('Go Back', $r['id']);
+?>
+
+<section class="df-sqlite-card">
+    <header class="df-sqlite-card-header">
+        <div>
+            <h2><?= $heading; ?></h2>
+            <p><?= $bodyMessage; ?></p>
+        </div>
+
+        <?php if (! empty($backUrl)): ?>
+            <a class="button" href="<?= $backUrl; ?>">
+                <?= $backLabel; ?>
+            </a>
+        <?php endif; ?>
+    </header>
+
+    <div class="df-sqlite-card-body">
+        <?php if (! empty($params['result'])): ?>
+            <?php if (is_array($params['result'])): ?>
+                <?php
+                $rows = array_is_list($params['result'])
+                        ? $params['result']
+                        : [$params['result']];
+
+                $this->insert('plugin::SqliteAdmin/view/partial/table-grid', ['rows' => $rows]);
+                ?>
+            <?php else: ?>
+                <pre class="df-sqlite-code"><code><?= esc_html((string) $params['result']); ?></code></pre>
+            <?php endif; ?>
+        <?php else: ?>
+            <div class="df-sqlite-empty">
+                <p><?=esc_html__('No additional result data was returned.', $r['id']);?></p>
+            </div>
+        <?php endif; ?>
+    </div>
+</section>
+<?php }); ?>
