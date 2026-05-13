@@ -10,7 +10,7 @@ repository for your Devflow CMF install.
 
 > __Requires PHP:__ 8.4+
 
-> __Stable Tag:__ 1.0.0
+> __Stable Tag:__ 1.0.1
 
 > __License:__ GPLv2-only
 
@@ -71,7 +71,9 @@ Portuguese, Chines (Simplified), German, English, Spanish, French, Italian Japan
 
 ## Changelog
 
-### 1.0.0
+### 1.0.1
+- Fixed route loading issue.
 
+### 1.0.0
 - Initial release.
 
