@@ -6,7 +6,7 @@ repository for your Devflow CMF install.
 
 > __Requires__ Devflow Version: 2.x
 
-> __Tested Up To:__ 2.0.0
+> __Tested Up To:__ 2.2.1
 
 > __Requires PHP:__ 8.4+
 
@@ -65,9 +65,9 @@ repository for your Devflow CMF install.
 ## Localization
 Portuguese, Chines (Simplified), German, English, Spanish, French, Italian Japanese, and Russian
 
-## Composer Installation
+## Codex Installation
 1. Start a new shell session.
-2. In the root of your install, run the following command ```composer require getdevflow/sqlite-admin```.
+2. In the root of your install, run the following command ```php codex plugin:install getdevflow/sqlite-admin```.
 
 ## Changelog
 
