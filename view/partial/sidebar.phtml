@@ -7,8 +7,8 @@ use function Qubus\Security\Helpers\esc_html;
 use function Qubus\Security\Helpers\esc_html__;
 
 $r = Registry::getInstance()->get('sqlite-admin');
-$objects = $params['tables'] ?? [];
-$currentTable = $activeTable ?? null;
+$objects = $tables ?? [];
+$currentTable = $table ?? null;
 
 $tableCount = 0;
 $viewCount = 0;

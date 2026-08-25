@@ -48,7 +48,7 @@ class SqliteAdminPlugin extends Plugin
             'id' => 'sqlite-admin',
             'slug' => 'SqliteAdmin',
             'author' => 'Joshua Parker',
-            'version' => '1.0.1',
+            'version' => '1.0.2',
             'description' => 'An easy web-based database management tool for SQLite.',
             'basename' => plugin_basename(dirname(__FILE__)),
             'path' => plugin_dir_path(dirname(__FILE__)),
