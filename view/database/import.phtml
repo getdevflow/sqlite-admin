@@ -35,6 +35,7 @@ $tableCount = count($params['tables'] ?? []);
                 enctype="multipart/form-data"
                 class="df-sqlite-form"
             >
+                <?= csrf_field(); ?>
 
                 <label>
                     SQL File

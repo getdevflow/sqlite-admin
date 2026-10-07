@@ -24,7 +24,6 @@ use Qubus\Exception\Exception;
 use Qubus\Http\ServerRequest;
 use Qubus\Routing\Psr7Router;
 use ReflectionException;
-
 use Throwable;
 
 use function App\Shared\Helpers\add_plugins_submenu;
@@ -48,7 +47,7 @@ class SqliteAdminPlugin extends Plugin
             'id' => 'sqlite-admin',
             'slug' => 'SqliteAdmin',
             'author' => 'Joshua Parker',
-            'version' => '1.0.2',
+            'version' => '2.0.0',
             'description' => 'An easy web-based database management tool for SQLite.',
             'basename' => plugin_basename(dirname(__FILE__)),
             'path' => plugin_dir_path(dirname(__FILE__)),
@@ -107,7 +106,7 @@ class SqliteAdminPlugin extends Plugin
     {
         $router = Devflow::$PHP->make(name: Psr7Router::class);
 
-        $router->group('/admin/plugin/sqlite-admin', function ($route): void {
+        $router->group(['prefix' => '/admin/plugin/sqlite-admin', 'middleware' => ['gate:manage:plugins, /admin/']], function ($route): void {
             $route->get('/', fn(DatabaseController $c) => $c->dashboard());
             $route->get('/structure', fn(DatabaseController $c) => $c->structure());
             $route->get('/sql', fn(SqlController $c) => $c->editor());

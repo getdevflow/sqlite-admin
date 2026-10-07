@@ -4,13 +4,13 @@
 SQLite admin gives you an interface to interact with your SQLite database if you've chosen SQLite as the database 
 repository for your Devflow CMF install.
 
-> __Requires__ Devflow Version: 2.x
+> __Requires__ Devflow Version: 3.x
 
-> __Tested Up To:__ 2.6.0
+> __Tested Up To:__ 3.0.0
 
 > __Requires PHP:__ 8.4+
 
-> __Stable Tag:__ 1.0.2
+> __Stable Tag:__ 2.0.0
 
 > __License:__ GPLv2-only
 
@@ -70,6 +70,10 @@ Portuguese, Chines (Simplified), German, English, Spanish, French, Italian Japan
 2. In the root of your install, run the following command ```php codex plugin:install getdevflow/sqlite-admin```.
 
 ## Changelog
+
+### 2.0.0
+- Upgraded for Devflow v3
+- added csrf_field() to POST forms
 
 ### 1.0.1
 - Fixed route loading issue.

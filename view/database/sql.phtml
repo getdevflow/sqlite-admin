@@ -45,6 +45,7 @@ $isTableScoped = isset($params['table']) && $params['table'] !== '';
     <div class="df-sqlite-card-body">
         <div class="df-sqlite-panel">
             <form method="post" class="df-sqlite-form">
+                <?= csrf_field(); ?>
 
                 <label>
                     <?=esc_html__('SQL Query', $r['id']);?>

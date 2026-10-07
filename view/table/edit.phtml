@@ -40,6 +40,7 @@ $columns = $params['columns'] ?? [];
                         action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($table) . '/edit'); ?>"
                         class="df-sqlite-form"
                 >
+                    <?= csrf_field(); ?>
                     <?php foreach ($where as $key => $value): ?>
                         <input
                             type="hidden"

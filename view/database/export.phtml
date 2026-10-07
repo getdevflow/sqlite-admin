@@ -40,6 +40,7 @@ $tableCount = count($params['tables'] ?? []);
                     action="<?= admin_url('plugin/sqlite-admin/export'); ?>"
                     class="df-sqlite-form"
             >
+                <?= csrf_field(); ?>
 
                 <div class="df-sqlite-form-grid">
                     <label>

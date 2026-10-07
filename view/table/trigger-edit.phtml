@@ -32,6 +32,7 @@ $trigger = $params['trigger'] ?? [];
                         . rawurlencode((string) ($trigger['name'] ?? ''))
                 ); ?>"
         >
+            <?= csrf_field(); ?>
 
             <div class="df-sqlite-sql-editor">
                 <pre

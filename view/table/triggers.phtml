@@ -63,6 +63,7 @@ $r = Registry::getInstance()->get('sqlite-admin');
                                                     . '/triggers/drop'
                                             ); ?>"
                                     >
+                                        <?= csrf_field(); ?>
 
                                         <input
                                                 type="hidden"
@@ -114,6 +115,7 @@ $r = Registry::getInstance()->get('sqlite-admin');
             </button>
         </div>
         <form method="post" action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/triggers'); ?>" class="df-sqlite-form">
+            <?= csrf_field(); ?>
 
             <label>
                 <?=esc_html__('Trigger Name', $r['id']);?>

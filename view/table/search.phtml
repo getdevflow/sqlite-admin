@@ -30,6 +30,7 @@ $total = (int) ($params['total'] ?? 0);
 
         <div class="df-sqlite-card-body">
             <form method="post" class="df-sqlite-form">
+                <?= csrf_field(); ?>
                 <div class="df-sqlite-form-grid">
                     <?php foreach ($columns as $column): ?>
                         <?php $name = (string) ($column['name'] ?? ''); ?>

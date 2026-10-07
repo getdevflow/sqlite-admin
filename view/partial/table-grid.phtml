@@ -55,6 +55,7 @@ $visibleColumns = array_values(array_filter(
                                         action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($table) . '/delete-row'); ?>"
                                         onsubmit="return confirm('Delete this row? This cannot be undone.');"
                                 >
+                                    <?= csrf_field(); ?>
 
                                     <input
                                         type="hidden"

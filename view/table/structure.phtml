@@ -51,6 +51,7 @@ $createSql = $params['createSql'] ?? '';
                             action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/empty'); ?>"
                             onsubmit="return confirm(<?=esc_attr__('Empty this table? All rows will be permanently deleted.', $r['id']);?>);"
                     >
+                        <?= csrf_field(); ?>
 
                         <button
                                 type="submit"
@@ -65,6 +66,7 @@ $createSql = $params['createSql'] ?? '';
                             action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/drop'); ?>"
                             onsubmit="return confirm('DROP TABLE <?= esc_html($params['table']); ?>? This cannot be undone.');"
                     >
+                        <?= csrf_field(); ?>
 
                         <button
                                 type="submit"
@@ -79,6 +81,7 @@ $createSql = $params['createSql'] ?? '';
                         action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/rename'); ?>"
                         class="df-sqlite-rename-form"
                     >
+                        <?= csrf_field(); ?>
 
                         <input
                             type="text"
@@ -160,6 +163,7 @@ $createSql = $params['createSql'] ?? '';
                             action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/columns/add'); ?>"
                             class="df-sqlite-form df-sqlite-tool-form"
                     >
+                        <?= csrf_field(); ?>
                         <h4><?=esc_html__('Add Column', $r['id']);?></h4>
 
                         <label>
@@ -202,6 +206,7 @@ $createSql = $params['createSql'] ?? '';
                             action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($params['table']) . '/columns/rename'); ?>"
                             class="df-sqlite-form df-sqlite-tool-form"
                     >
+                        <?= csrf_field(); ?>
                         <h4><?=esc_html__('Rename Column', $r['id']);?></h4>
 
                         <label>
@@ -229,6 +234,7 @@ $createSql = $params['createSql'] ?? '';
                             class="df-sqlite-form df-sqlite-tool-form"
                             onsubmit="return confirm('Drop this column? This cannot be undone.');"
                     >
+                        <?= csrf_field(); ?>
                         <h4><?=esc_html__('Drop Column', $r['id']);?></h4>
 
                         <label>

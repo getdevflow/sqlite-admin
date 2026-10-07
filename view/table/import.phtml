@@ -40,6 +40,7 @@ $columnCount = count($params['columns'] ?? []);
                     enctype="multipart/form-data"
                     class="df-sqlite-form"
             >
+                <?= csrf_field(); ?>
 
                 <label>
                     <?=esc_html__('Import File', $r['id']);?>

@@ -39,6 +39,7 @@ $columns = $params['columns'] ?? [];
                     action="<?= admin_url('plugin/sqlite-admin/table/' . rawurlencode($table) . '/insert'); ?>"
                     class="df-sqlite-form"
                 >
+                    <?= csrf_field(); ?>
                     <div class="df-sqlite-form-grid">
                         <?php foreach ($columns as $column): ?>
                             <?php
